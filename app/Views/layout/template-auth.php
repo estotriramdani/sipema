@@ -14,9 +14,7 @@
     <title><?= $tittle; ?></title>
 </head>
 
-<body>
-    <?= $this->include('layout/navbar');; ?>
-
+<body class="bg-light">
 
     <?= $this->renderSection('content'); ?>
 

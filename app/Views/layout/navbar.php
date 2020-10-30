@@ -1,16 +1,26 @@
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-putih fixed-top p-4" style="width: 100vw;">
     <div class="container">
-        <a class="navbar-brand" href="#">Esto </a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <a class="navbar-brand" href="#">SIPEMA</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
         </button>
-        <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
-            <div class="navbar-nav">
-                <a class="nav-link active" href="/">Home </a>
-                <a class="nav-link" href="/pages/about">About</a>
-                <a class="nav-link" href="/pages/contact">Contact</a>
-                <a class="nav-link" href="/komik">Komik</a>
-            </div>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav ">
+                <li class="nav-item">
+                    <a class="nav-link" href="#info">Info</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#kerjasama">Kerjasama</a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+                <li class="nav-item">
+                    <a class="nav-link auth login buton" href="auth/login.php">Login</a>
+                </li>
+                <li class="nav-item">
+                    <span class="nav-link auth daftar buton">Daftar</span>
+                </li>
+            </ul>
         </div>
     </div>
 </nav>
