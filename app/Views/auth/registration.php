@@ -78,9 +78,6 @@
   </div>
 </div>
 
-<footer class="footer-auth">
-
-</footer>
 
 <script type="text/javascript" src="../js/regis.js"></script>
 

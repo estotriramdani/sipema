@@ -139,7 +139,7 @@ $(document).ready(function () {
         $(".gambar-regis").addClass('img-muncul');
         $(".roleId").attr("value", "2");
         $(".roles").attr("value", "Daftar Sebagai Guru");
-        // alert('Silakan mendaftar sebagai guru');
+        alert('Silakan mendaftar sebagai guru');
     });
 });
 
