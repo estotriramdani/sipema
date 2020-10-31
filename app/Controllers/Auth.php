@@ -17,12 +17,17 @@ class Auth extends BaseController
         return view('auth/login', $data);
     }
 
-    public function siswa()
+    public function registration()
     {
         $data = [
             'tittle' => 'Registrasi Siswa'
         ];
-        return view('auth/registration/siswa', $data);
+        return view('auth/registration', $data);
+    }
+
+    public function siswaAction()
+    {
+        echo "berhasil!";
     }
 
     public function guru()

@@ -18,7 +18,7 @@
                     <a class="nav-link auth login buton" href="auth/login.php">Login</a>
                 </li>
                 <li class="nav-item">
-                    <span class="nav-link auth daftar buton">Daftar</span>
+                    <a href="/auth/registration" class="nav-link auth daftar buton">Daftar</a>
                 </li>
             </ul>
         </div>

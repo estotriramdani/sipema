@@ -33,7 +33,7 @@ $routes->setAutoRoute(true);
 // route since we don't have to scan directories.
 $routes->get('/', 'Pages::index');
 
-$routes->get('/auth/registration/siswa', 'Auth::siswa');
+// $routes->get('/auth/registration/', 'Auth::siswa');
 $routes->get('/auth/registration/guru', 'Auth::guru');
 
 

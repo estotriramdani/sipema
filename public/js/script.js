@@ -72,9 +72,8 @@ $(document).ready(function () {
     // daftar
     const daftar = `
     
-    <p>Daftar sebagai</p>
-    <a href="auth/registration/siswa" class="btn-mulai">Siswa</a>
-    <a href="auth/registration/guru" class="btn-mulai mb-5">Guru</a>
+    <p>Daftar Sekarang</p>
+    <a href="auth/registration" class="btn-mulai">Daftar</a>
     <p class="mt-4"> Sudah memiliki akun? Masuk <a href="auth/login">di sini</a></p>
 
     `;
@@ -102,7 +101,7 @@ $(document).ready(function () {
         </div>
         <button type="submit" class="btn-mulai" style="border-color: white; box-shadow:0px;">Login</button>
     </form>
-    <p class="mt-4"> Belum memiliki akun? Daftar gratis <a href="auth/registration/siswa">di sini</a></p>
+    <p class="mt-4"> Belum memiliki akun? Daftar gratis <a href="auth/registration">di sini</a></p>
     `;
 
     $('.login').on('click', function () {
@@ -128,22 +127,36 @@ $(document).ready(function () {
     //         showConfirmButton = false;
     //     })
     // });
+
+
+    // ganti laman registrasi
+    $('.ganti').click(function(){
+        $( ".role:eq(0)" ).replaceWith( `<b style="font-weight: bold; transition: 1s;"><u>Guru</u></b>` );
+        $( ".kode_identitas" ).text( `NIP atau setara` );
+        $("img").attr("src", null);
+        $("img").attr("src", "/img/teacher.png");
+        $(".gambar-regis").attr('style', 'position: relative; top: 15%;');
+        $(".gambar-regis").addClass('img-muncul');
+        $(".roleId").attr("value", "2");
+        $(".roles").attr("value", "Daftar Sebagai Guru");
+        // alert('Silakan mendaftar sebagai guru');
+    });
 });
 
-const dark = document.querySelector('.tombol');
-const jumbotron = document.querySelector('.jumbotron');
-const descTop = document.querySelector('.desc-top');
-const display4 = document.querySelector('.display-4');
-const mulai = document.querySelectorAll('.buton');
+// const dark = document.querySelector('.tombol');
+// const jumbotron = document.querySelector('.jumbotron');
+// const descTop = document.querySelector('.desc-top');
+// const display4 = document.querySelector('.display-4');
+// const mulai = document.querySelectorAll('.buton');
 
-dark.addEventListener('click', function () {
-    document.body.classList.toggle('bg-dark');
-    jumbotron.classList.toggle('bg-dark');
-    document.body.classList.add('text-white');
-    display4.classList.add('text-white');
-    mulai[0].classList.add('bg-light');
-    mulai[1].classList.add('bg-light');
-    mulai[0].classList.add('text-dark');
-    mulai[1].classList.add('text-dark');
-    preventDefault();
-})
+// dark.addEventListener('click', function () {
+//     document.body.classList.toggle('bg-dark');
+//     jumbotron.classList.toggle('bg-dark');
+//     document.body.classList.add('text-white');
+//     display4.classList.add('text-white');
+//     mulai[0].classList.add('bg-light');
+//     mulai[1].classList.add('bg-light');
+//     mulai[0].classList.add('text-dark');
+//     mulai[1].classList.add('text-dark');
+//     preventDefault();
+// })
