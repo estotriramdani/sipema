@@ -15,6 +15,7 @@
             <span aria-hidden="true">&times;</span>
           </button>
         </div> -->
+
         <p>Ingin mendaftar sebagai guru? Klik  <span class="ganti">di sini</span></p>
 
       </div>
@@ -27,7 +28,7 @@
       <div class="col-sm-6 ">
         <!-- buat form processing lakukannya di controller registrationAction() terus nanti dikasih redirect 
         langsung ke halaman login kalo pendaftaran berhasil -->
-        <form action="../../auth/siswaAction">
+        <form action="../../auth/registrationAction">
           <div class="form-group">
             <label for="exampleInputEmail1" class="kode_identitas">NIS</label>
             <input type="text" class="form-control" id="" aria-describedby="emailHelp" autofocus  >

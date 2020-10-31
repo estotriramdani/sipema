@@ -138,7 +138,7 @@
 
 .img-muncul {
   animation-name: example;
-  animation-duration: 4s;
+  animation-duration: 2s;
   opacity: 1;
   /* overflow: hidden; */
   transition: 1s;

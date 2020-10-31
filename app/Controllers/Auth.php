@@ -20,14 +20,16 @@ class Auth extends BaseController
     public function registration()
     {
         $data = [
-            'tittle' => 'Registrasi Siswa'
+            'tittle' => 'Registrasi'
         ];
         return view('auth/registration', $data);
     }
 
-    public function siswaAction()
+    public function registrationAction()
     {
-        echo "berhasil!";
+        // nanti uncomment kalau form processing registrasinya berhasil
+        // return redirect()->to(base_url('auth/login'));
+
     }
 
     public function guru()
