@@ -32,6 +32,17 @@
     <script src="https://cdn.jsdelivr.net/npm/jump.js/dist/jump.min.js"></script>
     </script>
     <script type="text/javascript" src="js/script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
+
+    <script>
+
+var image = document.getElementsByClassName('image')[0];
+new simpleParallax(image, {
+	delay: .6,
+    transition: 'cubic-bezier(0,0,0,1)',
+    scale: 1.5
+});
+    </script>
 </body>
 
 </html>

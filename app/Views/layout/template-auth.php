@@ -17,7 +17,7 @@
     <title><?= $tittle; ?></title>
 </head>
 
-<body class="bg-light">
+<body class="">
 
     <?= $this->renderSection('content'); ?>
 

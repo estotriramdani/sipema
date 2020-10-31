@@ -116,23 +116,11 @@ $(document).ready(function () {
     });
 
 
-    // $('.login').on('click', function () {
-    //     Swal.fire({
-    //         title: '<strong>HTML <u>example</u></strong>',
-    //         icon: 'info',
-    //         html:
-    //             'You can use <b>bold text</b>, ' +
-    //             '<a href="//sweetalert2.github.io">links</a> ' +
-    //             'and other HTML tags',
-    //         showConfirmButton = false;
-    //     })
-    // });
-
-
     // ganti laman registrasi
     $('.ganti').click(function(){
         $( ".role:eq(0)" ).replaceWith( `<b style="font-weight: bold; transition: 1s;"><u>Guru</u></b>` );
         $( ".kode_identitas" ).text( `NIP atau setara` );
+        $( ".nama" ).text( `Guru` );
         $("img").attr("src", null);
         $("img").attr("src", "/img/teacher.png");
         $(".gambar-regis").attr('style', 'position: relative; top: 15%;');

@@ -2,8 +2,8 @@
 
 <?= $this->section('content'); ?>
 
-<div class="container p-5 mb-5">
-    <div class="container regis-wrapper shadow">
+<div class="container mb-5 p-2">
+    <div class="container regis-wrapper shadow-lg bg-light">
     <div class="row">
       <div class="col-sm-6">
         <h1>Daftar <span class="role">Siswa</span>  SIPEMA</h1>
@@ -30,11 +30,11 @@
         langsung ke halaman login kalo pendaftaran berhasil -->
         <form action="../../auth/registrationAction">
           <div class="form-group">
-            <label for="exampleInputEmail1" class="kode_identitas">NIS</label>
+            <label for="exampleInputEmail1" class="kode_identitas">NIS (Nomor Induk Siswa)</label>
             <input type="text" class="form-control" id="" aria-describedby="emailHelp" autofocus  >
           </div>
           <div class="form-group">
-            <label for="">Nama</label>
+            <label for="">Nama <span class="nama">Siswa</span></label>
             <input type="text" class="form-control" id="" aria-describedby="emailHelp">
           </div>
           <div class="form-check form-check-inline">
@@ -71,10 +71,10 @@
         <div class="gambar-regis">
           <img src="/img/student.png" alt="" class="img-fluid">
         </div>
+        <div class="mt-3" style="text-align: center;">
+          <a href="../../" class="btn-mulai shadow-sm posisi-tombol">Beranda</a>
+        </div>
       </div>
-    </div>
-    <div class="mt-3" style="text-align: center;">
-      <a href="../../" class="btn-mulai shadow-sm posisi-tombol">Beranda</a>
     </div>
   </div>
 </div>

@@ -6,7 +6,7 @@
 <div class="container">
     <div class="row justify-content-center ">
         <div class="col-sm-5 ">
-            <div class="login-wrapper shadow-sm">
+            <div class="login-wrapper shadow-lg">
                 <h1 class="login-tiitle d-inline">
                     Masuk
                 </h1>

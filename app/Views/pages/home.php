@@ -25,7 +25,7 @@
           </div>
         </div>
         <div class="col-sm-6 hide-img-top">
-          <img src="img/object-top.png" alt="" class="img-top">
+          <img src="img/object-top.png" alt="" class="img-top image">
         </div>
       </div>
     </div>
