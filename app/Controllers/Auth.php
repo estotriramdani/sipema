@@ -27,8 +27,8 @@ class Auth extends BaseController
 
     public function registrationAction()
     {
-        // nanti uncomment kalau form processing registrasinya berhasil
-        // return redirect()->to(base_url('auth/login'));
+
+        // return redirect()->to(base_url('auth/login'));         // nanti uncomment kalau form processing registrasinya berhasil
 
     }
 
