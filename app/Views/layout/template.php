@@ -35,13 +35,12 @@
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
 
     <script>
-
-var image = document.getElementsByClassName('image')[0];
-new simpleParallax(image, {
-	delay: .6,
-    transition: 'cubic-bezier(0,0,0,1)',
-    scale: 1.5
-});
+        // var image = document.getElementsByClassName('image')[0];
+        // new simpleParallax(image, {
+        //     delay: .6,
+        //     transition: 'cubic-bezier(0,0,0,1)',
+        //     scale: 1.5
+        // });
     </script>
 </body>
 

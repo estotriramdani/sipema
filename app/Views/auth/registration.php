@@ -3,10 +3,10 @@
 <?= $this->section('content'); ?>
 
 <div class="container mb-5 p-2">
-    <div class="container regis-wrapper shadow-lg bg-light">
+  <div class="container regis-wrapper shadow-lg bg-light">
     <div class="row">
       <div class="col-sm-6">
-        <h1>Daftar <span class="role">Siswa</span>  SIPEMA</h1>
+        <h1>Daftar <span class="role">Siswa</span> SIPEMA</h1>
 
         <!-- nanti alert ini dicut ke controller -->
         <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">
@@ -16,7 +16,18 @@
           </button>
         </div> -->
 
-        <p>Ingin mendaftar sebagai guru? Klik  <span class="ganti">di sini</span></p>
+        <!-- daftar sebagai -->
+        <div class="mb-4">
+          <h5>Daftar Sebagai</h5>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input ganti-siswa" type="radio" name="inlineRadioOptions" id="inlineRadio1" checked value="option1">
+            <label class="form-check-label" for="inlineRadio1">Siswa</label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input ganti-guru" type="radio" name="inlineRadioOptions" id="inlineRadio2" value="option2">
+            <label class="form-check-label" for="inlineRadio2">Guru</label>
+          </div>
+        </div>
 
       </div>
       <div class="col-sm-6">
@@ -24,14 +35,14 @@
       </div>
     </div>
     <div class="row">
-      
+
       <div class="col-sm-6 ">
         <!-- buat form processing lakukannya di controller registrationAction() terus nanti dikasih redirect 
         langsung ke halaman login kalo pendaftaran berhasil -->
         <form action="../../auth/registrationAction">
           <div class="form-group">
             <label for="exampleInputEmail1" class="kode_identitas">NIS (Nomor Induk Siswa)</label>
-            <input type="text" class="form-control" id="" aria-describedby="emailHelp" autofocus  >
+            <input type="text" class="form-control" id="" aria-describedby="emailHelp" autofocus>
           </div>
           <div class="form-group">
             <label for="">Nama <span class="nama">Siswa</span></label>
@@ -47,13 +58,12 @@
           </div>
           <div class="form-group">
             <label for="">Tanggal Lahir</label>
-            <input type="date" class="form-control" type="date" id="start" name="trip-start"
-        min="1970-01-01" max="2020-12-31">
+            <input type="date" class="form-control" type="date" id="start" name="trip-start" min="1970-01-01" max="2020-12-31">
           </div>
           <div class="form-group">
             <label for="">Email address</label>
             <input type="email" class="form-control" id="" aria-describedby="emailHelp">
-          </div> 
+          </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1">

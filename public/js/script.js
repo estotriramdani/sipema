@@ -1,5 +1,6 @@
 $(document).ready(function () {
 
+
     //navbar fix
 
     function getPos() {
@@ -24,6 +25,14 @@ $(document).ready(function () {
         }
 
     });
+
+    $(window).scroll(function () {
+        if (getPos() > $('#materi').offset().top + 300) {
+            $("#materi").removeClass("hide");
+            $("#materi").addClass("section-muncul");
+        }
+    });
+
 
     //smooth scroll
     new ActiveMenuLink(".navbar", {
@@ -53,20 +62,6 @@ $(document).ready(function () {
         showHash: false
 
     });
-
-    $('.btn-materi').on('click', function (e) {
-
-        var tujuan = $(this).attr('href');
-
-        var elemenTujuan = $(tujuan);
-
-        $('html , body').animate({
-            scrollTop: elemenTujuan.offset().top - 50
-        });
-
-        e.preventDefault();
-    });
-
     //swal
 
     // daftar
@@ -117,10 +112,10 @@ $(document).ready(function () {
 
 
     // ganti laman registrasi
-    $('.ganti').click(function(){
-        $( ".role:eq(0)" ).replaceWith( `<b style="font-weight: bold; transition: 1s;"><u>Guru</u></b>` );
-        $( ".kode_identitas" ).text( `NIP atau setara` );
-        $( ".nama" ).text( `Guru` );
+    $('.ganti-guru').click(function () {
+        $(".role:eq(0)").replaceWith(`<b style="font-weight: bold; transition: 1s;"><u>Guru</u></b>`);
+        $(".kode_identitas").text(`NIP atau setara`);
+        $(".nama").text(`Guru`);
         $("img").attr("src", null);
         $("img").attr("src", "/img/teacher.png");
         $(".gambar-regis").attr('style', 'position: relative; top: 15%;');
@@ -128,6 +123,19 @@ $(document).ready(function () {
         $(".roleId").attr("value", "2");
         $(".roles").attr("value", "Daftar Sebagai Guru");
         alert('Silakan mendaftar sebagai guru');
+    });
+
+    $('.ganti-siswa').click(function () {
+        $(".role:eq(0)").replaceWith(`<b style="font-weight: bold; transition: 1s;"><u>Siswa</u></b>`);
+        $(".kode_identitas").text(`Nomor Induk Siswa`);
+        $(".nama").text(`Siswa`);
+        $("img").attr("src", null);
+        $("img").attr("src", "/img/teacher.png");
+        // $(".gambar-regis").attr('style', 'position: relative; top: 15%;');
+        $(".gambar-regis").addClass('img-muncul');
+        $(".roleId").attr("value", "3");
+        $(".roles").attr("value", "Daftar Sebagai Siswa");
+        alert('Silakan mendaftar sebagai siswa');
     });
 });
 

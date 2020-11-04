@@ -31,38 +31,45 @@
     </div>
   </div>
 </div>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<div id="info">INfo</div>
-\<h2 class="btn btn-dark tombol">klik</h2>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<div id="kerjasama">kerjasama</div>
-<div id="materi">Materi</div>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
-<br><br><br>
+
+<!-- section materi -->
+<section id="materi" class="hide">
+  <div class="container">
+    <h1 class="subtittle-landing">Materi</h1>
+
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
+        <p class="desc-subtittle">
+          Di bawah merupakan materi yang tersedia di SIPEMA*
+        </p>
+        <p style="opacity: 0.5; text-align: right; font-size: 0.5em;">*terakhir diperbarui 4/11/2020</p>
+      </div>
+    </div>
+  </div>
+
+  <!-- materi 1 bangun datar -->
+  <div class="container">
+    <div class="row">
+      <div class="col-sm-6">
+        Lorem ipsum dolor sit amet consectetur adipisicing elit. In officiis iste voluptates, voluptas a sint natus at, iusto non dolor adipisci id architecto facilis tempore corporis temporibus, deleniti unde? Facere.
+      </div>
+      <div class="col-sm-6">
+        <p>
+          Bangun datar senantiasa kita temui di kehidupan sehari-hari. Ubin, penggaris, layar televisi, hingga buku-buku
+          pelajaran merupakan contoh dari bangun datar dalam berbagai bentuknya. SIPEMA menghadirkan materi bangun datar untuk dipelajari
+          dan tentunya diambil hikmahnya.
+        </p>
+      </div>
+    </div>
+  </div>
+</section>
+<!-- akhri section materi -->
+
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<br><br><br><br><br>
+<div id="kerjasama"></div>
 
 
 
