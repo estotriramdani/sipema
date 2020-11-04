@@ -32,14 +32,4 @@ class Auth extends BaseController
 
     }
 
-    public function guru()
-    {
-        $data = [
-            'tittle' => 'Registrasi guru'
-        ];
-        return view('auth/registration/guru', $data);
-    }
-
-    //--------------------------------------------------------------------
-
 }

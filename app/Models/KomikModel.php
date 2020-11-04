@@ -4,9 +4,9 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
-class KomikModel extends Model
+class IsimateriModel extends Model
 {
-    protected $table = 'komik';
+    protected $table = 'isimateris';
     protected $useTimestamps = true;
     protected $allowedFields = ['judul', 'slug', 'penulis', 'penerbit', 'sampul'];
 
