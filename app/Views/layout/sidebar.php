@@ -29,7 +29,7 @@
     <div id="wrapper">
 
         <!-- Sidebar -->
-        <div id="sidebar-wrapper" class="shadow">
+        <div id="sidebar-wrapper" class="">
             <ul class="sidebar-nav">
                 <li class="sidebar-brand">
                     <a href="#" class="">
@@ -37,22 +37,19 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Beranda</a>
+                    <a href="#">Dashboard</a>
                 </li>
                 <li>
-                    <a href="#">Shortcuts</a>
+                    <a href="#">Profile</a>
                 </li>
                 <li>
-                    <a href="#" class="dropdown">Overview</a>
+                    <a href="#">Materi</a>
                 </li>
                 <li>
-                    <a href="#">Events</a>
+                    <a href="#">Kuis</a>
                 </li>
                 <li>
-                    <a href="#">About</a>
-                </li>
-                <li>
-                    <a href="#">Services</a>
+                    <a href="#">Pojok Guru</a>
                 </li>
                 <li>
                     <a href="#">Keluar</a>
