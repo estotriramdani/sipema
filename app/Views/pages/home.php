@@ -136,7 +136,7 @@
 
 <div style="height: 150px; overflow: hidden;">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-    <path fill="#f8f9fa" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,74.7C480,53,600,75,720,80C840,85,960,75,1080,69.3C1200,64,1320,64,1380,64L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+    <path fill="#f8f9fa" fill-opacity="1" d="M0,224L48,229.3C96,235,192,245,288,213.3C384,181,480,107,576,106.7C672,107,768,181,864,186.7C960,192,1056,128,1152,133.3C1248,139,1344,213,1392,250.7L1440,288L1440,320L1392,320C1344,320,1248,320,1152,320C1056,320,960,320,864,320C768,320,672,320,576,320C480,320,384,320,288,320C192,320,96,320,48,320L0,320Z"></path>
   </svg>
 </div>
 
@@ -159,34 +159,110 @@
               <b>Project Manager</b>
 
             </p>
-            <p>Juniawati <br> J3D118129</p>
+            <p>Juniawati Wahyu Lestari <br> J3D118069</p>
             <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
           </div>
         </div>
       </div>
-      <!-- juni -->
+      <!-- esto -->
       <div class="row justify-content-center">
         <div class="col-sm-2 ">
           <img src="/img/profile-img/esto-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
         </div>
         <div class="col-sm-3 wow fadeInRight desc-profile">
           <p>
-            <b>Project Manager</b>
+            <b>Front-end Developer</b>
 
           </p>
-          <p>Juniawati <br> J3D118129</p>
+          <p>Esto Triramdani N <br> J3D118129</p>
           <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
         </div>
       </div>
+      <!-- agung -->
+      <div class="row justify-content-center">
+        <div class="col-sm-2 ">
+          <img src="/img/profile-img/agung-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
+        </div>
+        <div class="col-sm-3 wow fadeInRight desc-profile">
+          <p>
+            <b>Back-end Developer</b>
+
+          </p>
+          <p>M. Agung Zuhdi <br> J3D118098</p>
+          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+        </div>
+      </div>
+      <!-- end agung -->
+      <!-- alif -->
+      <div class="row justify-content-center">
+        <div class="col-sm-2 ">
+          <img src="/img/profile-img/alif-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
+        </div>
+        <div class="col-sm-3 wow fadeInRight desc-profile">
+          <p>
+            <b>Data Analyst</b>
+
+          </p>
+          <p>Naufal Alif Falah <br> J3D118131</p>
+          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+        </div>
+      </div>
+      <!-- end alif -->
+      <!-- andre -->
+      <div class="row justify-content-center">
+        <div class="col-sm-2 ">
+          <img src="/img/profile-img/andre-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
+        </div>
+        <div class="col-sm-3 wow fadeInRight desc-profile">
+          <p>
+            <b>System Analyst </b>
+
+          </p>
+          <p>Andre Alghifari C <br> J3D218184</p>
+          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+        </div>
+      </div>
+      <!-- end andre -->
+      <!-- fris -->
+      <div class="row justify-content-center">
+        <div class="col-sm-2 ">
+          <img src="/img/profile-img/faris-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
+        </div>
+        <div class="col-sm-3 wow fadeInRight desc-profile">
+          <p>
+            <b>Documenter</b>
+
+          </p>
+          <p>Muhammad Faris Rahthin R
+            <br> J3D118123</p>
+          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+        </div>
+      </div>
+      <!-- end faris -->
+      <!-- jiban -->
+      <div class="row justify-content-center">
+        <div class="col-sm-2 ">
+          <img src="/img/profile-img/jiban-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
+        </div>
+        <div class="col-sm-3 wow fadeInRight desc-profile">
+          <p>
+            <b>Tester </b>
+
+          </p>
+          <p>Fajar Mujiiban Achmad <br> J3D118073</p>
+          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+        </div>
+      </div>
+      <!-- end jiban -->
     </div>
   </div>
   </div>
 </section>
-<!-- akhir tentnag -->
+<!-- akhir tentang -->
 
-<div style="height: 300px; overflow: hidden;">
+<div style="height: 200px; overflow: hidden;">
   <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" style="height: 100%; width: 100%;">
-    <path fill="#f8f9fa" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,74.7C480,53,600,75,720,80C840,85,960,75,1080,69.3C1200,64,1320,64,1380,64L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+    <path fill="#f8f9fa" fill-opacity="1" d="M0,288L48,256C96,224,192,160,288,133.3C384,107,480,117,576,117.3C672,117,768,107,864,122.7C960,139,1056,181,1152,208C1248,235,1344,245,1392,250.7L1440,256L1440,0L1392,0C1344,0,1248,0,1152,0C1056,0,960,0,864,0C768,0,672,0,576,0C480,0,384,0,288,0C192,0,96,0,48,0L0,0Z"></path>
   </svg>
 </div>
 
