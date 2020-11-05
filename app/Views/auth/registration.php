@@ -42,7 +42,7 @@
         <form action="../../auth/registrationAction">
           <div class="form-group">
             <label for="exampleInputEmail1" class="kode_identitas">NIS (Nomor Induk Siswa)</label>
-            <input type="text" class="form-control" id="" aria-describedby="emailHelp" autofocus>
+            <input type="text" class="form-control" name="kode_identitas" id="" aria-describedby="emailHelp" autofocus>
           </div>
           <div class="form-group">
             <label for="">Nama <span class="nama">Siswa</span></label>
@@ -70,7 +70,7 @@
           </div>
           <div class="form-group">
             <label for="exampleFormControlTextarea1">Alamat</label>
-            <textarea class="form-control" id="exampleFormControlTextarea1" name="alamat" placeholder="alamat lengkap." rows="3"></textarea>
+            <textarea class="form-control" id="alamat" name="alamat" placeholder="alamat lengkap." rows="3"></textarea>
           </div>
           <!-- value hidden bakal berubah ketika user klik daftar sebagai guru -->
           <input type="hidden" value="3" name="role" class="roleId">
