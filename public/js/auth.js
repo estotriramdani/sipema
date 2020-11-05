@@ -65,7 +65,7 @@ $('.ganti-siswa').click(function () {
     $(".kode_identitas").text(`Nomor Induk Siswa`);
     $(".nama").text(`Siswa`);
     $("img").attr("src", null);
-    $("img").attr("src", "/img/teacher.png");
+    $("img").attr("src", "/img/student.png");
     // $(".gambar-regis").attr('style', 'position: relative; top: 15%;');
     $(".gambar-regis").addClass('img-muncul');
     $(".roleId").attr("value", "3");

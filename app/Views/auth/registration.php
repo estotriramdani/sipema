@@ -7,7 +7,7 @@
 <div class="container mb-5 p-2">
   <div class="container regis-wrapper shadow-lg bg-light">
     <div class="row">
-      <div class="col-sm-6">
+      <div class="col-sm-4">
         <h1>Daftar SIPEMA</h1>
 
         <!-- nanti alert ini dicut ke controller -->
@@ -19,7 +19,12 @@
         </div> -->
 
         <!-- daftar sebagai -->
-        <div class="mb-4">
+
+
+      </div>
+      <div class="col-sm-6">
+        <!-- <p class="text-right d-none d-xl-block" style="position: relative; bottom: 20%; "><b>O</b></p> -->
+        <div class="mb-4 ml-1">
           <h5>Daftar Sebagai</h5>
           <div class="form-check form-check-inline">
             <input class="form-check-input ganti-siswa" type="radio" name="inlineRadioOptions" id="inlineRadio1" checked value="option1">
@@ -30,10 +35,6 @@
             <label class="form-check-label" for="inlineRadio2">Guru</label>
           </div>
         </div>
-
-      </div>
-      <div class="col-sm-6">
-        <p class="text-right d-none d-xl-block" style="position: relative; bottom: 20%; "><b>O</b></p>
       </div>
     </div>
     <div class="row">
