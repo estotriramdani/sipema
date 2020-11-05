@@ -6,7 +6,11 @@ class Dashboard extends BaseController
 {
     public function index()
     {
-        echo 'halo';
+        $data = [
+            'name' => 'Esto',
+            'title' => 'Dashboard'
+        ];
+        return view('dashboard/index', $data);
     }
 
     public function coba()
