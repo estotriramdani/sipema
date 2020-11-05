@@ -147,21 +147,40 @@
   </div>
   <div class="container">
     <p class="text-center wow fadeInLeft">SIPEMA dikembangkan oleh Mahasiswa Teknik Komputer SV IPB</p>
-    <div class="row justify-content-center">
-      <div class="col-sm-2 ">
-        <img src="/img/profile-img/juni-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
-      </div>
-      <div class="col-sm-3 wow fadeInRight desc-profile">
-        <p>
-          <b>Project Manager</b>
+    <div class="owl-carousel">
+      <div>
+        <!-- juni -->
+        <div class="row justify-content-center">
+          <div class="col-sm-2 ">
+            <img src="/img/profile-img/juni-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
+          </div>
+          <div class="col-sm-3 wow fadeInRight desc-profile">
+            <p>
+              <b>Project Manager</b>
 
-        </p>
-        <p>Juniawati <br> J3D118129</p>
-        <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+            </p>
+            <p>Juniawati <br> J3D118129</p>
+            <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+          </div>
+        </div>
+      </div>
+      <!-- juni -->
+      <div class="row justify-content-center">
+        <div class="col-sm-2 ">
+          <img src="/img/profile-img/esto-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
+        </div>
+        <div class="col-sm-3 wow fadeInRight desc-profile">
+          <p>
+            <b>Project Manager</b>
+
+          </p>
+          <p>Juniawati <br> J3D118129</p>
+          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+        </div>
       </div>
     </div>
   </div>
-
+  </div>
 </section>
 <!-- akhir tentnag -->
 

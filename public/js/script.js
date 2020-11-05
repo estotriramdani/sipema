@@ -78,6 +78,16 @@ $(document).ready(function () {
     });
     //swal
 
+    $('.owl-carousel').owlCarousel({
+        loop: true,
+        margin: 10,
+        nav: true,
+        items: 1,
+        autoplay: true,
+        nav: false,
+        autoplayTimeout: 3000
+    })
+
     // daftar
     const daftar = `
     
