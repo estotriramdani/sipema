@@ -16,7 +16,17 @@
             </p>
           </div>
           <div class="col-sm-6">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. Quod eos voluptatibus culpa pariatur sint autem sed eius magni cumque blanditiis.
+            <div class="row">
+              <div class="col-6">
+                <h5><b>Teknik Komputer SV IPB</b></h5>
+                <p>Kampus IPB Cilibende Jalan Kumbang No 14 Bogor Tengah</p>
+              </div>
+              <div class="col-6">
+                <h5>Institut Pertanian Bogor</h5>
+                <p>Kampus IPB, Jl. Raya Dramaga, Babakan, Kec. Dramaga, Bogor, Jawa Barat 16680
+                </p>
+              </div>
+            </div>
           </div>
         </div>
         <div class="row justify-content-center mt-3">
