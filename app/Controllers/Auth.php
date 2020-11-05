@@ -17,6 +17,11 @@ class Auth extends BaseController
         return view('auth/login', $data);
     }
 
+    public function loginAction()
+    {
+        return redirect()->to('/dashboard');
+    }
+
     public function registration()
     {
         $data = [
@@ -28,8 +33,7 @@ class Auth extends BaseController
     public function registrationAction()
     {
 
-        // return redirect()->to(base_url('auth/login'));         // nanti uncomment kalau form processing registrasinya berhasil
+        return redirect()->to(base_url('auth/login'));         // nanti uncomment kalau form processing registrasinya berhasil
 
     }
-
 }

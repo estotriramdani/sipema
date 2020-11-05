@@ -42,7 +42,7 @@
       <div class="col-sm-6 ">
         <!-- buat form processing lakukannya di controller registrationAction() terus nanti dikasih redirect 
         langsung ke halaman login kalo pendaftaran berhasil -->
-        <form action="../../auth/registrationAction">
+        <form action="/auth/registrationAction">
           <div class="form-group">
             <label for="exampleInputEmail1" class="kode_identitas">NIS (Nomor Induk Siswa)</label>
             <input type="text" class="form-control" name="kode_identitas" id="" aria-describedby="emailHelp" autofocus>
