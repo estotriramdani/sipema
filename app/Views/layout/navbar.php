@@ -12,6 +12,9 @@
                 <li class="nav-item">
                     <a class="nav-link" href="#kerjasama">Kerjasama</a>
                 </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="#tentang">Tentang</a>
+                </li>
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">

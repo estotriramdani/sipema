@@ -55,9 +55,9 @@
 
   <!-- materi 1 bangun datar -->
   <div class="container wow fadeInUp mb-4">
-    <div class="row">
-      <div class="col-sm-6">
-        <img src="/img/1x/Asset1.png" class="img-fluid" alt="">
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
+        <img src="/img/1x/Asset1.png" class="img-fluid mx-auto d-block" alt="">
       </div>
       <div class="col-sm-6">
         <p>
@@ -71,14 +71,14 @@
 
   <!-- materi 2 himpunan -->
   <div class="container wow fadeInUp mb-4">
-    <div class="row">
-      <div class="col-sm-6">
-        <img src="/img/1x/Asset2.png" class="img-fluid" alt="">
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
+        <img src="/img/1x/Asset2.png" class="img-fluid mx-auto d-block" alt="">
       </div>
       <div class="col-sm-6">
         <p>
           <h5>Himpunan</h5>
-          Sifat dalam materi himpunan dalam matematika tidak hanya digunakan
+          Sifat dalam materi himpunan matematika tidak hanya digunakan
           pada materi SMP saja, melainkan <i>sifat</i> materi himpunan akan terus digunakan bahkan sampai tingkat pendidikan tinggi.
         </p>
       </div>
@@ -87,9 +87,9 @@
 
   <!-- materi 2 Pertidaksamaan -->
   <div class="container wow fadeInUp">
-    <div class="row">
-      <div class="col-sm-6">
-        <img src="/img/1x/Asset3.png" class="img-fluid" alt="">
+    <div class="row justify-content-center">
+      <div class="col-sm-4">
+        <img src="/img/1x/Asset3.png" class="img-fluid mx-auto d-block" alt="">
       </div>
       <div class="col-sm-6">
         <p>
@@ -107,17 +107,70 @@
     <path fill="#f8f9fa" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,74.7C480,53,600,75,720,80C840,85,960,75,1080,69.3C1200,64,1320,64,1380,64L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
   </svg>
 </div>
+
+
 <!-- akhri section materi -->
+
+<!-- kerja sama -->
 <section id="kerjasama">
   <div class="container">
-    <h1 class="subtittle-landing">Kerjasama</h1>
+    <h1 class="subtittle-landing wow fadeInDown">Kerjasama</h1>
+  </div>
+  <div class="container">
+    <div class="row justify-content-center">
+      <div class="col-sm-3">
+        <img src="/img/1x/Asset5.png" class="img-fluid mx-auto d-block wow fadeInLeft" alt="">
+      </div>
+      <div class="col-sm-3 wow fadeInRight">
+        <p>
+          Anda seorang guru/pengajar? Mari bergabung untuk bersama-sama membangun SIPEMA menjadi lebih baik!
+        </p>
+        <p>Klik <a href="/auth/registration">di sini</a> untuk bergabung!</p>
+      </div>
+    </div>
   </div>
 
 </section>
+<!-- akhir kerjasama -->
 
-<br><br><br><br><br>
-<br><br><br><br><br>
-<br><br><br><br><br>
+
+<div style="height: 150px; overflow: hidden;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+    <path fill="#f8f9fa" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,74.7C480,53,600,75,720,80C840,85,960,75,1080,69.3C1200,64,1320,64,1380,64L1440,64L1440,320L1380,320C1320,320,1200,320,1080,320C960,320,840,320,720,320C600,320,480,320,360,320C240,320,120,320,60,320L0,320Z"></path>
+  </svg>
+</div>
+
+<!-- tentang -->
+<section id="tentang" class="bg-light">
+  <div class="container">
+    <h1 class="subtittle-landing wow fadeInDown">Tentang</h1>
+  </div>
+  <div class="container">
+    <p class="text-center wow fadeInLeft">SIPEMA dikembangkan oleh Mahasiswa Teknik Komputer SV IPB</p>
+    <div class="row justify-content-center">
+      <div class="col-sm-2 ">
+        <img src="/img/profile-img/juni-1.png" class="profile-img rounded-circle mx-auto d-block wow fadeInLeft" alt="">
+      </div>
+      <div class="col-sm-3 wow fadeInRight desc-profile">
+        <p>
+          <b>Project Manager</b>
+
+        </p>
+        <p>Juniawati <br> J3D118129</p>
+        <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+      </div>
+    </div>
+  </div>
+
+</section>
+<!-- akhir tentnag -->
+
+<div style="height: 300px; overflow: hidden;">
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1440 320" preserveAspectRatio="none" style="height: 100%; width: 100%;">
+    <path fill="#f8f9fa" fill-opacity="1" d="M0,224L60,192C120,160,240,96,360,74.7C480,53,600,75,720,80C840,85,960,75,1080,69.3C1200,64,1320,64,1380,64L1440,64L1440,0L1380,0C1320,0,1200,0,1080,0C960,0,840,0,720,0C600,0,480,0,360,0C240,0,120,0,60,0L0,0Z"></path>
+  </svg>
+</div>
+
 <br><br><br><br><br>
 
 

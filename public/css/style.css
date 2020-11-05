@@ -4,6 +4,18 @@
   font-family: "Poppins", sans-serif;
 }
 
+a{
+  color: #ff55bf;
+}
+a:hover{
+  text-decoration: none;
+  color: #bd0f7a;
+}
+
+h5{
+  font-weight: bold;
+}
+
 .nav-link-color {
   color: white;
 }
@@ -124,17 +136,9 @@
 
 }
 
-.hide{
-  display: none;
-}
-
-.section-muncul {
-  animation-name: fadeUp;
-  animation-duration: 1s;
-  opacity: 1;
-  /* overflow: hidden; */
-  transition: 1s;
-      transform: translate(0px,-50px);
+/* section tentang */
+.profile-img{
+  width: 150px;
 }
 
 
@@ -210,6 +214,12 @@
     box-shadow: none;
   }
 
+  .desc-profile{
+    margin-top: 15px;
+    text-align: center;
+    /* line-height: 1em; */
+  }
+
   .auth {
     width: 100%;
     margin-bottom: 5px;
@@ -229,6 +239,8 @@
   .daftar-sebagai-guru {
     margin-top: 5px;
   }
+
+  
 }
 
 @media (min-width: 1200px) {
