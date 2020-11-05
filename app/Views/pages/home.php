@@ -122,7 +122,7 @@
         <img src="/img/1x/Asset5.png" class="img-fluid mx-auto d-block wow fadeInLeft" alt="">
       </div>
       <div class="col-sm-3 wow fadeInRight">
-        <p>
+        <p class="mt-4">
           Anda seorang guru/pengajar? Mari bergabung untuk bersama-sama membangun SIPEMA menjadi lebih baik!
         </p>
         <p>Klik <a href="/auth/registration">di sini</a> untuk bergabung!</p>
@@ -279,47 +279,5 @@
 
 
 
-<script>
-  new WOW().init();
-
-  $('.owl-carousel').owlCarousel({
-    loop: true,
-    margin: 10,
-    nav: true,
-    items: 1,
-    autoplay: true,
-    nav: false,
-    autoplayTimeout: 3000
-  })
-
-  //smooth scroll
-  new ActiveMenuLink(".navbar", {
-
-    // selector of menu item
-    itemTag: "li",
-
-    // active class
-    activeClass: "active",
-
-    // in pixels
-    scrollOffset: 0,
-
-    // duration in ms
-    scrollDuration: 500,
-
-    // easing function
-    ease: "out-circ",
-
-    // specifies the header height
-    headerHeight: null,
-
-    // string
-    default: null,
-
-    // shows hash tag
-    showHash: false
-
-  });
-</script>
 
 <?= $this->endSection(); ?>
