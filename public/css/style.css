@@ -100,6 +100,7 @@
 }
 
 /* section materi */
+
 .subtittle-landing{
   color: #ff55bf;
   font-size: 32px;
@@ -128,12 +129,14 @@
 }
 
 .section-muncul {
-  animation-name: example;
-  animation-duration: 0.5s;
+  animation-name: fadeUp;
+  animation-duration: 1s;
   opacity: 1;
   /* overflow: hidden; */
-  /* transition: 1s; */
+  transition: 1s;
+      transform: translate(0px,-50px);
 }
+
 
 
 /* login page */
@@ -189,6 +192,8 @@
   height: 100px;
   width: 100vw;
 }
+
+
 
 @keyframes example {
   from {

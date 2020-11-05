@@ -26,13 +26,27 @@ $(document).ready(function () {
 
     });
 
-    $(window).scroll(function () {
-        if (getPos() > $('#materi').offset().top + 300) {
-            $("#materi").removeClass("hide");
-            $("#materi").addClass("section-muncul");
-        }
-    });
+    // $(window).scroll(function () {
+    //     if (getPos() > $(".isi-materi:eq(0)").offset().top - 50) {
+    //         $(".isi-materi:eq(0)").removeClass("hide");
+    //         $(".isi-materi:eq(0)").addClass("section-muncul");
+    //     }
+    // });
+    // $(window).scroll(function () {
+    //     if (getPos() > $(".isi-materi:eq(1)").offset().top - 1000) {
+    //         $(".isi-materi:eq(1)").removeClass("hide");
+    //         $(".isi-materi:eq(1)").addClass("section-muncul");
+    //     }
+    // });
+    // $(window).scroll(function () {
+    //     if (getPos() > $(".isi-materi:eq(2)").offset().top - 200) {
+    //         $(".isi-materi:eq(2)").removeClass("hide");
+    //         $(".isi-materi:eq(2)").addClass("section-muncul");
+    //     }
+    // });
 
+    // init wow js
+    new WOW().init();
 
     //smooth scroll
     new ActiveMenuLink(".navbar", {
@@ -138,21 +152,3 @@ $(document).ready(function () {
         alert('Silakan mendaftar sebagai siswa');
     });
 });
-
-// const dark = document.querySelector('.tombol');
-// const jumbotron = document.querySelector('.jumbotron');
-// const descTop = document.querySelector('.desc-top');
-// const display4 = document.querySelector('.display-4');
-// const mulai = document.querySelectorAll('.buton');
-
-// dark.addEventListener('click', function () {
-//     document.body.classList.toggle('bg-dark');
-//     jumbotron.classList.toggle('bg-dark');
-//     document.body.classList.add('text-white');
-//     display4.classList.add('text-white');
-//     mulai[0].classList.add('bg-light');
-//     mulai[1].classList.add('bg-light');
-//     mulai[0].classList.add('text-dark');
-//     mulai[1].classList.add('text-dark');
-//     preventDefault();
-// })
