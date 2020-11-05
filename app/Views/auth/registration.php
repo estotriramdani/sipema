@@ -2,11 +2,13 @@
 
 <?= $this->section('content'); ?>
 
+<div class="owl-carousel wow"></div>
+
 <div class="container mb-5 p-2">
   <div class="container regis-wrapper shadow-lg bg-light">
     <div class="row">
       <div class="col-sm-6">
-        <h1>Daftar <span class="role">Siswa</span> SIPEMA</h1>
+        <h1>Daftar SIPEMA</h1>
 
         <!-- nanti alert ini dicut ke controller -->
         <!-- <div class="alert alert-success alert-dismissible fade show" role="alert">

@@ -190,9 +190,60 @@
   </svg>
 </div>
 
-<br><br><br><br><br>
+
+<section id="invite">
+  <div class="container">
+    <a href="/auth/registration" target="_blank">
+      <h2 class="invite-text">Yuk mulai belajar di SIPEMA!</h2>
+    </a>
+  </div>
+</section>
+<br><br>
+<br><br>
 
 
 
+<script>
+  new WOW().init();
+
+  $('.owl-carousel').owlCarousel({
+    loop: true,
+    margin: 10,
+    nav: true,
+    items: 1,
+    autoplay: true,
+    nav: false,
+    autoplayTimeout: 3000
+  })
+
+  //smooth scroll
+  new ActiveMenuLink(".navbar", {
+
+    // selector of menu item
+    itemTag: "li",
+
+    // active class
+    activeClass: "active",
+
+    // in pixels
+    scrollOffset: 0,
+
+    // duration in ms
+    scrollDuration: 500,
+
+    // easing function
+    ease: "out-circ",
+
+    // specifies the header height
+    headerHeight: null,
+
+    // string
+    default: null,
+
+    // shows hash tag
+    showHash: false
+
+  });
+</script>
 
 <?= $this->endSection(); ?>

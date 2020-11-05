@@ -141,6 +141,21 @@ h5{
   width: 150px;
 }
 
+/* invite */
+.invite-text{
+  width: 50%;
+  margin: 0 auto;
+}
+
+.invite-text::after{
+  content: "";
+    display: block;
+    border-bottom: 3px solid #ff55bf;
+    width: 25%;
+    padding-bottom: 5px;
+    margin-bottom: -8px;
+}
+
 
 
 /* login page */
