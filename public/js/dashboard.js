@@ -12,3 +12,5 @@ console.log(res);
 var active = document.getElementById(res);
 active.classList.add("active-page");
 
+sessionStorage.setItem("lastname", "Smith");
+document.getElementById("result").innerHTML = sessionStorage.getItem("lastname");

@@ -15,11 +15,11 @@
         <div class="card">
           <div class="card-body">
             <div class="row">
-              <div class="col-6">
+              <div class="col-9">
                 <h5 class="card-title">Bangun Ruang</h5>
                 <h6 class="card-subtitle mb-2">Materi #1</h6>
               </div>
-              <div class="col-6">
+              <div class="col-3">
                 <h2 class="card-text text-right nilai">90</h2>
               </div>
             </div>
@@ -31,11 +31,11 @@
         <div class="card">
           <div class="card-body">
             <div class="row">
-              <div class="col-6">
-                <h5 class="card-title">Bangun Ruang</h5>
-                <h6 class="card-subtitle mb-2">Materi #1</h6>
+              <div class="col-9">
+                <h5 class="card-title">Himpunan</h5>
+                <h6 class="card-subtitle mb-2">Materi #2</h6>
               </div>
-              <div class="col-6">
+              <div class="col-3">
                 <h2 class="card-text text-right nilai">90</h2>
               </div>
             </div>
@@ -47,11 +47,11 @@
         <div class="card">
           <div class="card-body">
             <div class="row">
-              <div class="col-6">
-                <h5 class="card-title">Bangun Ruang</h5>
-                <h6 class="card-subtitle mb-2">Materi #1</h6>
+              <div class="col-9">
+                <h5 class="card-title">Persamaan dan Pertidaksamaan</h5>
+                <h6 class="card-subtitle mb-2">Materi #3</h6>
               </div>
-              <div class="col-6">
+              <div class="col-3">
                 <h2 class="card-text text-right nilai">90</h2>
               </div>
             </div>
@@ -78,6 +78,8 @@
     <a class="btn-mulai d-block text-center" style="width: 100%" href="/kuis">Ambil Kuis</a>
   </div>
 </div>
+
+<div id="result"></div>
 
 
 

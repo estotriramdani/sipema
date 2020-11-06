@@ -56,7 +56,7 @@
                 }
                 ?>
                 <li>
-                    <a href="/auth/logout">Keluar</a>
+                    <a href="/auth/logout" onClick="confirm('Yakin keluar?')">Keluar</a>
                 </li>
             </ul>
         </div>
