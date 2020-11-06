@@ -1,6 +1,7 @@
 <?php
 
 namespace App\Controllers;
+
 use CodeIgniter\I18n\Time;
 use config\Validation;
 
@@ -34,7 +35,7 @@ class Auth extends BaseController
 
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
-        
+
         $query = $db->query("SELECT * FROM users WHERE email='$email' ");
         $user   = $query->getRow();
 
@@ -55,6 +56,7 @@ class Auth extends BaseController
                 // } else {
                 //     redirect('user');
                 // }
+                // #esto: langsung ke dashboard aja redirectnya
                 return redirect()->to('/dashboard');
             } else {
                 return redirect()->to('/auth');
@@ -67,7 +69,7 @@ class Auth extends BaseController
     public function logout()
     {
         $session = session();
-        
+
         $session->remove('email');
         $session->remove('role_id');
 
@@ -83,7 +85,6 @@ class Auth extends BaseController
             'tittle' => 'Registrasi'
         ];
         return view('auth/registration', $data);
-
     }
 
     public function registrationAction()
@@ -94,9 +95,9 @@ class Auth extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'email'        	=> 'required|valid_email',
+            'email'            => 'required|valid_email',
             'password'      => 'required',
-            'kode_identitas'=> 'required',
+            'kode_identitas' => 'required',
             'nama'          => 'required',
             'jenis_kelamin' => 'required',
             'alamat'        => 'required',
@@ -105,7 +106,7 @@ class Auth extends BaseController
             'tanggal_lahir' => 'required',
             'role_id'       => 'required',
         ]);
-        
+
         // var_dump($validation->run($data));
         // var_dump($validation->getErrors());
         // dd($validation->getErrors());
@@ -114,12 +115,12 @@ class Auth extends BaseController
             $data = [
                 'tittle' => 'Registrasi'
             ];
-            return redirect()->to(base_url('auth/registration'));  
+            return redirect()->to(base_url('auth/registration'));
         } else {
             $data = [
                 'email'         => $this->request->getPost('email'),
                 'password'      => password_hash($this->request->getPost('password'), PASSWORD_DEFAULT),
-                'kode_identitas'=> $this->request->getPost('kode_identitas'),
+                'kode_identitas' => $this->request->getPost('kode_identitas'),
                 'nama'          => $this->request->getPost('nama'),
                 'jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
                 'alamat'        => $this->request->getPost('alamat'),
@@ -131,7 +132,7 @@ class Auth extends BaseController
                 'updated_at'    => Time::now(),
             ];
             $db->table('users')->insert($data);
-            
+
             //$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! your account has been created.</div>');
             return redirect()->to(base_url('auth/login'));          // nanti uncomment kalau form processing registrasinya berhasil
         }

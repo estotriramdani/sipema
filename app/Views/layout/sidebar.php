@@ -37,22 +37,26 @@
                     </a>
                 </li>
                 <li>
-                    <a href="#">Dashboard</a>
+                    <a href="/dashboard" id="dashboard">Dashboard</a>
                 </li>
                 <li>
-                    <a href="#">Profile</a>
+                    <a href="/profile" id="profile">Profile</a>
                 </li>
                 <li>
-                    <a href="#">Materi</a>
+                    <a href="/materi" id="materi">Materi</a>
                 </li>
                 <li>
-                    <a href="#">Kuis</a>
+                    <a href="/kuis" id="kuis">Kuis</a>
                 </li>
+                <?php
+                if (($role == 2)) {
+                    echo '<li><a href="#" class="pojok-guru">Pojok Guru</a></li>';
+                } else if (($role == 3)) {
+                    echo '<li><a href="#" class="pojok-guru">Pojok Siswa</a></li>';
+                }
+                ?>
                 <li>
-                    <a href="#">Pojok Guru</a>
-                </li>
-                <li>
-                    <a href="#">Keluar</a>
+                    <a href="/auth/logout">Keluar</a>
                 </li>
             </ul>
         </div>

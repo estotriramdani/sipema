@@ -68,6 +68,10 @@ body {
     color: white;
 }
 
+.active-page{
+    background: rgba(255,255,255,0.2);
+}
+
 .sidebar-nav li a:hover {
     text-decoration: none;
     color: #fff;
@@ -112,6 +116,30 @@ body {
 .btn-dashboard:hover{
     background-color: #f53eaf;
 }
+
+.card{
+    height: 100%;
+    position: relative;
+    border-width: 3px;
+    border-color: #ff55bf;
+    color: #ff55bf;
+}
+
+.card:hover{
+    background-color: #ff55bf;
+    color:white!important;
+}
+.card:active{
+    background-color: #ff55bf;
+    color:white!important;
+}
+
+.nilai{
+    position: relative;
+    top: 36%;
+}
+
+
 
 @media(min-width:768px) {
     #wrapper {

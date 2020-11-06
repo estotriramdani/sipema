@@ -1,6 +1,7 @@
 </div>
 <!-- /#wrapper -->
 
+
 <!-- Option 1: jQuery and Bootstrap Bundle (includes Popper) -->
 <script src="https://cdn.jsdelivr.net/npm/sweetalert2@10"></script>
 
@@ -12,7 +13,7 @@
 
 <script src="/js/owl.carousel.min.js"></script>
 
-<script type="text/javascript" src="js/script.js"></script>
+<!-- <script type="text/javascript" src="js/script.js"></script> -->
 <!-- custom js -->
 <script type="text/javascript" src="js/dashboard.js"></script>
 
