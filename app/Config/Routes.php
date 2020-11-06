@@ -37,6 +37,7 @@ $routes->get('/', 'Pages::index');
 $routes->get('/auth/registration/guru', 'Auth::guru');
 
 
+
 /**
  * --------------------------------------------------------------------
  * Additional Routing

@@ -11,7 +11,7 @@
                     Masuk
                 </h1>
                 <p>Simulasi Pembelajaran Matematika SMP</p>
-                <form action="#" method="post">
+                <form action="/auth/loginAction" method="post">
                     <div class="form-group">
                         <label for="exampleInputEmail1">Email address</label>
                         <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" autofocus placeholder="admin@mail.com">

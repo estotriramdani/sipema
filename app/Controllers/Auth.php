@@ -75,7 +75,6 @@ class Auth extends BaseController
             $this->db->insert('user', $data);
         }
         $this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! your account has been created.</div>');
-        return redirect()->to(base_url('auth/login'));         // nanti uncomment kalau form processing registrasinya berhasil
+        return redirect()->to(base_url('auth/login'));          // nanti uncomment kalau form processing registrasinya berhasil
     }
-
 }
