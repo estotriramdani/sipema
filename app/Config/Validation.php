@@ -17,6 +17,7 @@ class Validation
 		\CodeIgniter\Validation\FormatRules::class,
 		\CodeIgniter\Validation\FileRules::class,
 		\CodeIgniter\Validation\CreditCardRules::class,
+		
 	];
 
 	/**
@@ -42,7 +43,7 @@ class Validation
 		'jenis_kelamin' => 'required',
 		'alamat'        => 'required',
 		'foto'          => '',
-		'tempat_lahir'  => 'required',
+		//'tempat_lahir'  => 'required',
 		'tanggal_lahir' => 'required',
 		'role_id'       => 'required',
 	];
@@ -61,9 +62,9 @@ class Validation
 		'alamat' => [
             'required'    => 'Mohon masukkan alamat anda.',
 		],
-		'tempat_lahir' => [
-            'required'    => 'Mohon masukkan tempat lahir.',
-		],
+		// 'tempat_lahir' => [
+        //     'required'    => 'Mohon masukkan tempat lahir.',
+		// ],
 		'tanggal_lahir' => [
             'required'    => 'Mohon masukkan tanggal lahir.',
 		],
