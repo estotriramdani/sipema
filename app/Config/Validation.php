@@ -33,4 +33,43 @@ class Validation
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------
+	public $registrasi = [
+        // 'pass_confirm' 	=> 'required|matches[password]',
+		'email'        	=> 'required|valid_email',
+		'password'      => 'required',
+		'kode_identitas'=> 'required',
+		'name'          => 'required',
+		'jenis_kelamin' => 'required',
+		'alamat'        => 'required',
+		'foto'          => '',
+		'tempat_lahir'  => 'required',
+		'tanggal_lahir' => 'required',
+		'role_id'       => 'required',
+	];
+	
+	public $registrasi_errors = [
+        'email'    => [
+			'required'    => 'Mohon masukkan alamat email.',
+            'valid_email' => 'Email yang dimasukkan tidak valid.'
+		],
+		'kode_identitas' => [
+            'required'    => 'Mohon masukkan NIS/NIP.',
+		],
+		'name' => [
+            'required'    => 'Mohon masukkan nama anda.',
+		],
+		'alamat' => [
+            'required'    => 'Mohon masukkan alamat anda.',
+		],
+		'tempat_lahir' => [
+            'required'    => 'Mohon masukkan tempat lahir.',
+		],
+		'tanggal_lahir' => [
+            'required'    => 'Mohon masukkan tanggal lahir.',
+		],
+		'role_id' => [
+            'required'    => 'Role ID error, mohoh kontak adminsipema@gmail.com',
+		],
+	];
+	
 }

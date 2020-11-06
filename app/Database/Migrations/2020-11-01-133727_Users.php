@@ -9,15 +9,23 @@ class Users extends Migration
 	public function up()
 	{
 		$this->forge->addField([
-			'users_id' => [
+			'user_id' => [
 				'type'           => 'INT',
 				'constraint'     => '10',
 				'unsigned'		 => TRUE,
 				'auto_increment' => TRUE,
-			],			
+			],
+			'email' 		 => [
+				'type'			=> 'VARCHAR',
+				'constraint'	=> '40',
+			],
+			'password'		 => [
+				'type'			=> 'VARCHAR',
+				'constraint'	=> '255',
+			],		
 			'kode_identitas' => [ 
 					'type'           => 'VARCHAR',
-					'constraint'     => '10',
+					'constraint'     => '10', 
 			],
 			'nama' => [
 					'type'           => 'VARCHAR',
@@ -54,7 +62,7 @@ class Users extends Migration
 					'null'			=> TRUE,
 			],
 		]);
-		$this->forge->addKey('users_id', true);
+		$this->forge->addKey('user_id', true);
 		$this->forge->addForeignKey('role_id', 'roles', 'role_id', 'CASCADE', 'CASCADE');
 		$this->forge->createTable($this->table);
 	}

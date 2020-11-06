@@ -10,6 +10,8 @@ class UsersSeeder extends Seeder
 		$data = [
 			'kode_identitas' => 'SIPEMA',
 			'nama'    		 => 'Admin',
+			'email'			 => 'adminsipema@gmail.com',
+			'password'		 => password_hash('admin', PASSWORD_DEFAULT),
 			'foto'			 => '',
 			'tanggal_lahir'  => Time::today(),
 			'role_id' 		 => 1,
@@ -18,8 +20,8 @@ class UsersSeeder extends Seeder
 		];
 
 		// Simple Queries
-		$this->db->query("INSERT INTO users (kode_identitas, nama, foto, tanggal_lahir, role_id, created_at, updated_at) 
-						  VALUES(:kode_identitas:, :nama:, :foto:, :tanggal_lahir:,:role_id:, :created_at:, :updated_at:)",
+		$this->db->query("INSERT INTO users (kode_identitas, nama, email, password, foto, tanggal_lahir, role_id, created_at, updated_at) 
+						  VALUES(:kode_identitas:, :nama:, :email:, :password:, :foto:, :tanggal_lahir:,:role_id:, :created_at:, :updated_at:)",
 				$data
 		);
 
