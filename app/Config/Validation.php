@@ -34,9 +34,9 @@ class Validation
 	//--------------------------------------------------------------------
 	// Rules
 	//--------------------------------------------------------------------
-	public $registrasi = [
+	public $register = [
         // 'pass_confirm' 	=> 'required|matches[password]',
-		'email'        	=> 'required|valid_email',
+		'email'        	=> 'required',
 		'password'      => 'required',
 		'kode_identitas'=> 'required',
 		'name'          => 'required',
@@ -45,10 +45,10 @@ class Validation
 		'foto'          => '',
 		//'tempat_lahir'  => 'required',
 		'tanggal_lahir' => 'required',
-		'role_id'       => 'required',
+		'role_id'       => 'required'
 	];
 	
-	public $registrasi_errors = [
+	public $register_errors = [
         'email'    => [
 			'required'    => 'Mohon masukkan alamat email.',
             'valid_email' => 'Email yang dimasukkan tidak valid.'

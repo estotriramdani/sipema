@@ -98,8 +98,33 @@ class Auth extends BaseController
             //'tempat_lahir'  => 'required',
             'tanggal_lahir' => 'required',
             'role_id'       => 'required',
+        ],    [   // Errors
+            'email'    => [
+                'required'    => 'Mohon masukkan alamat email.',
+                'valid_email' => 'Email yang dimasukkan tidak valid.'
+            ],
+            'kode_identitas' => [
+                'required'    => 'Mohon masukkan NIS/NIP.',
+            ],
+            'nama' => [
+                'required'    => 'Mohon masukkan nama anda.',
+            ],
+            'jenis_kelamin' => [
+                'required'    => 'Mohon masukkan jenis kelamin.',
+            ],
+            'alamat' => [
+                'required'    => 'Mohon masukkan alamat anda.',
+            ],
+            // 'tempat_lahir' => [
+            //     'required'    => 'Mohon masukkan tempat lahir.',
+            // ],
+            'tanggal_lahir' => [
+                'required'    => 'Mohon masukkan tanggal lahir.',
+            ],
+            'role_id' => [
+                'required'    => 'Role ID error, mohoh kontak adminsipema@gmail.com',
+            ],
         ]);
-
         //  var_dump($validation->run($data));
         //  var_dump($validation->getErrors());
         //  dd($validation->getErrors());
