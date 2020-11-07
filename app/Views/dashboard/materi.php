@@ -21,9 +21,9 @@
 <?php
 
 
-if ($_GET['materi'] == 'bangundatar') {
-  echo $this->include('dashboard/materi/bangundatar');
-}
+// if ($_GET['materi'] == 'bangundatar') {
+//   echo $this->include('dashboard/materi/bangundatar');
+// }
 // echo $this->include('dashboard/materi/himpunan');
 
 
