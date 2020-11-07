@@ -57,6 +57,8 @@ class Auth extends BaseController
                 //     redirect('user');
                 // }
                 // #esto: langsung ke dashboard aja redirectnya
+                session()->setFlashdata('pesan', 'Login sukses.');
+
                 return redirect()->to('/dashboard');
             } else {
                 return redirect()->to('/auth');
