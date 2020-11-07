@@ -43,8 +43,10 @@
         <!-- buat form processing lakukannya di controller registrationAction() terus nanti dikasih redirect 
         langsung ke halaman login kalo pendaftaran berhasil -->
         <!-- //= $validation->listErrors() ?> -->
+        <?= $validation->listErrors() ?>
 
         <form method="POST" action="/auth/registrationAction">
+          <?= csrf_field(); ?>
           <div class="form-group">
             <label for="exampleInputEmail1" class="kode_identitas">NIS (Nomor Induk Siswa)</label>
             <input type="text" class="form-control" name="kode_identitas" id="" aria-describedby="emailHelp" autofocus>

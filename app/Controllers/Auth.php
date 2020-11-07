@@ -48,17 +48,7 @@ class Auth extends BaseController
                     'role_id' => $user->role_id
                 ];
                 $session->set($newdata);
-
-                //ini sama redirect nya sama ga?
-
-                // if ($user['role_id'] == 1) {
-                //     redirect('admin');
-                // } else {
-                //     redirect('user');
-                // }
-                // #esto: langsung ke dashboard aja redirectnya
                 session()->setFlashdata('pesan', 'Login sukses.');
-
                 return redirect()->to('/dashboard');
             } else {
                 return redirect()->to('/auth');
@@ -75,7 +65,7 @@ class Auth extends BaseController
         $session->remove('email');
         $session->remove('role_id');
 
-        //belom ada flashdata
+        session()->setFlashdata('pesan', 'Anda Berhasil Logout.');
 
         return redirect()->to('/auth');
     }
@@ -84,7 +74,8 @@ class Auth extends BaseController
     {
         $validation =  \Config\Services::validation();
         $data = [
-            'tittle' => 'Registrasi'
+            'tittle' => 'Registrasi',
+            'validation' => \Config\Services::validation()
         ];
         return view('auth/registration', $data);
     }
@@ -109,15 +100,19 @@ class Auth extends BaseController
             'role_id'       => 'required',
         ]);
 
-        // var_dump($validation->run($data));
-        // var_dump($validation->getErrors());
-        // dd($validation->getErrors());
+        //  var_dump($validation->run($data));
+        //  var_dump($validation->getErrors());
+        //  dd($validation->getErrors());
 
         if ($validation->run($data) == false) {
             $data = [
-                'tittle' => 'Registrasi'
+                'tittle' => 'Registrasi',
+
             ];
-            return redirect()->to(base_url('auth/registration'));
+
+            //$dataerr = $validation->getErrors();
+            
+            return redirect()->to(base_url('auth/registration'))->withInput();
         } else {
             $data = [
                 'email'         => $this->request->getPost('email'),
@@ -136,7 +131,7 @@ class Auth extends BaseController
             $db->table('users')->insert($data);
 
             session()->setFlashdata('message', 'Pendaftaran sukses, silakan login');
-            return redirect()->to(base_url('auth/login'));          // nanti uncomment kalau form processing registrasinya berhasil
+            return redirect()->to(base_url('auth/login')); 
         }
     }
 }
