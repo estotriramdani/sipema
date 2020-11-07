@@ -4,10 +4,11 @@
 <div class="reveal">
     <div class="slides">
         <section>
-            <div class="row">
-                <div class="col-sm-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptatibus obcaecati cupiditate optio hic illum aperiam libero mollitia nisi, maiores minima dicta. Quaerat, ducimus est iure nesciunt tempora quia eaque.</div>
-                <div class="col-sm-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptatibus obcaecati cupiditate optio hic illum aperiam libero mollitia nisi, maiores minima dicta. Quaerat, ducimus est iure nesciunt tempora quia eaque.</div>
-            </div>
+
+            <h2>Materi #1</h2>
+            <h2 class="r-fit-text">Bangun Datar</h2>
+            <h2>SIPEMA</h2>
+
         </section>
         <section>
             <section>

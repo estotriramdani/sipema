@@ -5,8 +5,8 @@
     <div class="slides">
         <section>
 
-            <h2>Materi #2</h2>
-            <h2 class="r-fit-text">HIMPUNAN</h2>
+            <h2>Materi #3</h2>
+            <h2 class="r-fit-text">Persamaan dan Pertidaksamaan</h2>
             <h2>SIPEMA</h2>
 
         </section>

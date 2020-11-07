@@ -17,7 +17,7 @@
     <table class="table table-borderless mb-4">
       <tbody>
         <tr>
-          <td>NIS</td>
+          <td>Kode Identitas</td>
           <td>007010292</td>
         </tr>
         <tr>

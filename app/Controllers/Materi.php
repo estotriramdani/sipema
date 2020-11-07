@@ -16,6 +16,6 @@ class Materi extends BaseController
 
     public function persamaan()
     {
-        return view('dashboard/materi/bangundatar');
+        return view('dashboard/materi/persamaan');
     }
 }

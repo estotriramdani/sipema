@@ -18,7 +18,7 @@
                 Simulasi Pembelajaran Matematika Sekolah Menengah Pertama <br> Belajar menyenangkan bersama SIPEMA SMP
               </p>
               <div class="tombol-grup">
-                <a class="btn-mulai buton shadow-sm" onclick="alert('nanti diarahkan ke dashboard, kalo belum login (belum ada session) diarahkan ke login')" href="#">Mulai</a>
+                <a class="btn-mulai buton shadow-sm" href="/dashboard">Mulai</a>
                 <a class="btn-materi buton  shadow-sm" href="#materi">Lihat Materi</a>
               </div>
             </div>

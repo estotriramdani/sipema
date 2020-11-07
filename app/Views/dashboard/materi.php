@@ -11,7 +11,7 @@
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <a class="dropdown-item" href="/materi/bangundatar" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Bangun Datar</a>
     <a class="dropdown-item" href="/materi/himpunan" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Himpunan</a>
-    <a class="dropdown-item" href="/materi/persamaa" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Something else here</a>
+    <a class="dropdown-item" href="/materi/persamaan" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Persamaan</a>
   </div>
 </div>
 

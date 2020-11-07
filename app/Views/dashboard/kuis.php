@@ -2,5 +2,5 @@
 
 <?= $this->section('content'); ?>
 
-Halo, Guru!
+Ini halaman kuis
 <?= $this->endSection(); ?>
