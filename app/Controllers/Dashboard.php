@@ -6,20 +6,16 @@ class Dashboard extends BaseController
 {
     public function index()
     {
-        if (session() == true) {
-            $data = [
-                'role' => 3,
-                'name' => 'Esto',
-                'rolename' => 'Siswa',
-                'title' => 'Dashboard',
-                'user' => [
-                    //nah nanti masukin ke sini data-data usernya. Cukup sekali aja, nanti aing copy ke method yang lainnya
-                ]
-            ];
-            return view('dashboard/index', $data);
-        } else {
-            return redirect()->to('/auth');
-        }
+        $data = [
+            'role' => 3,
+            'name' => 'Esto',
+            'rolename' => 'Siswa',
+            'title' => 'Dashboard',
+            'user' => [
+                //nah nanti masukin ke sini data-data usernya. Cukup sekali aja, nanti aing copy ke method yang lainnya
+            ]
+        ];
+        return view('dashboard/index', $data);
     }
 
     public function profile()

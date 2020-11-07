@@ -9,7 +9,7 @@
 </div>
 
 <div class="row">
-  <div class="col-sm-9">
+  <div class="col-sm-12">
     <div class="row">
       <div class="col-sm-4 mb-3">
         <div class="card">
@@ -71,10 +71,10 @@
 
 <p class="mt-4">Yuk, pelajari materi dan kerjakan kuisnya!</p>
 <div class="row ">
-  <div class="col-sm-2 mb-2">
+  <div class="col-sm-3 mb-2">
     <a class="btn-mulai d-block text-center" style="width: 100%" href="/materi">Pelajari Materi</a>
   </div>
-  <div class="col-sm-2">
+  <div class="col-sm-3">
     <a class="btn-mulai d-block text-center" style="width: 100%" href="/kuis">Ambil Kuis</a>
   </div>
 </div>

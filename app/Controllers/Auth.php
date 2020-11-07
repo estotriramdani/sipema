@@ -133,7 +133,7 @@ class Auth extends BaseController
             ];
             $db->table('users')->insert($data);
 
-            //$this->session->set_flashdata('message', '<div class="alert alert-success" role="alert">Congratulation! your account has been created.</div>');
+            session()->setFlashdata('message', 'Pendaftaran sukses, silakan login');
             return redirect()->to(base_url('auth/login'));          // nanti uncomment kalau form processing registrasinya berhasil
         }
     }
