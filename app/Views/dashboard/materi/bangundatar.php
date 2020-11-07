@@ -8,7 +8,7 @@
             <h2>Materi #1</h2>
             <h2 class="r-fit-text">Bangun Datar</h2>
             <h2>SIPEMA</h2>
-            <small>Jika menggunakan ponsel, </small>
+            <small>Jika menggunakan ponsel, mohon gunakan/aktifkan fitur landscape</small>
 
         </section>
         <section>
