@@ -4,25 +4,16 @@
 
 <h1>Materi</h1>
 
-<form action="/materi" style="width: 300px;">
-  <div class="form-group">
-    <label for="exampleFormControlSelect1">Pilih Materi</label>
-    <select class="form-control" name="materi">
-      <option>Pilih materi</option>
-      <option name="materi" value="bangundatar" <?php if ($_GET['materi'] == 'bangundatar') {
-                                                  echo "selected";
-                                                } ?>>Bangun Datar</option>
-      <option name="materi" value="himpunan" <?php if ($_GET['materi'] == 'himpunan') {
-                                                echo "selected";
-                                              } ?>>Himpunan</option>
-      <option name="materi" value="persamaan" <?php if ($_GET['materi'] == 'persamaan') {
-                                                echo "selected";
-                                              } ?>>Persamaan dan Persamaan</option>
-    </select>
+<div class="dropdown">
+  <button class="btn btn-mulai dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Pilih materi
+  </button>
+  <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
+    <a class="dropdown-item" href="/materi/bangundatar" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Bangun Datar</a>
+    <a class="dropdown-item" href="/materi/himpunan" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Himpunan</a>
+    <a class="dropdown-item" href="/materi/persamaa" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Something else here</a>
   </div>
-  <button type="submit" class="btn btn-mulai">Pilih</button>
-
-</form>
+</div>
 
 
 <?= $this->endSection(); ?>

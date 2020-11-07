@@ -1,26 +1,28 @@
-<?= $this->section('content'); ?>
+<?= $this->include('dashboard/materi/head'); ?>
 
 
-<div id="carouselExampleInterval" class="carousel slide" data-ride="carousel" data-pause="true">
-    <div class="carousel-inner">
-        <div class="carousel-item active" data-interval="10000">
-            <p>Lorem ipsum, dolor sit amet consectetur adipisicing elit. Non voluptate perferendis beatae soluta error labore harum facere blanditiis cumque veniam repudiandae illo, magnam quae modi! Amet magni non aspernatur earum!</p>
-        </div>
-        <div class="carousel-item" data-interval="2000">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus libero exercitationem unde, incidunt quos, cumque itaque distinctio eos voluptatem voluptates natus saepe, perspiciatis error quod molestiae ipsa enim. Cumque?</p>
-        </div>
-        <div class="carousel-item">
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Odio possimus libero exercitationem unde, incidunt quos, cumque itaque distinctio eos voluptatem voluptates natus saepe, perspiciatis error quod molestiae ipsa enim. Cumque?</p>
-        </div>
+<div class="reveal">
+    <div class="slides">
+        <section>
+            <div class="row">
+                <div class="col-sm-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptatibus obcaecati cupiditate optio hic illum aperiam libero mollitia nisi, maiores minima dicta. Quaerat, ducimus est iure nesciunt tempora quia eaque.</div>
+                <div class="col-sm-6">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ullam voluptatibus obcaecati cupiditate optio hic illum aperiam libero mollitia nisi, maiores minima dicta. Quaerat, ducimus est iure nesciunt tempora quia eaque.</div>
+            </div>
+        </section>
+        <section>
+            <section>
+
+                <h2>Vertical 2</h2>
+            </section>
+            <section>2.1</section>
+            <section>2.2</section>
+        </section>
+        <section>Slide 3</section>
+        <section>
+            <a href="#/0">Kembali ke halaman awal</a> <br>
+            <a href="/materi">Kembali ke Materi</a>
+        </section>
     </div>
-    <a class="carousel-control-prev" href="#carouselExampleInterval" role="button" data-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-    </a>
-    <a class="carousel-control-next" href="#carouselExampleInterval" role="button" data-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-    </a>
 </div>
 
-<?= $this->endSection(); ?>
+<?= $this->include('dashboard/materi/footer'); ?>

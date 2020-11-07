@@ -44,7 +44,7 @@
                     <a href="/profile" id="profile">Profile</a>
                 </li>
                 <li>
-                    <a href="/materi?materi=" id="materi">Materi</a>
+                    <a href="/materi" id="materi">Materi</a>
                 </li>
                 <li>
                     <a href="/kuis" id="kuis">Kuis</a>
