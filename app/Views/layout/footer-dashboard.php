@@ -18,6 +18,7 @@
 <script type="text/javascript" src="js/dashboard.js"></script>
 <script type="text/javascript" src="js/materi.js"></script>
 
+
 <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
 
 <script src="/vendor/wow/wow.min.js"></script>

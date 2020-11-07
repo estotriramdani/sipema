@@ -17,7 +17,7 @@
                                               } ?>>Himpunan</option>
       <option name="materi" value="persamaan" <?php if ($_GET['materi'] == 'persamaan') {
                                                 echo "selected";
-                                              } ?>>Persamaan dan Pertidaksamaan</option>
+                                              } ?>>Persamaan dan Persamaan</option>
     </select>
   </div>
   <button type="submit" class="btn btn-mulai">Pilih</button>
