@@ -10,6 +10,10 @@ class Filters extends BaseConfig
 		'csrf'     => \CodeIgniter\Filters\CSRF::class,
 		'toolbar'  => \CodeIgniter\Filters\DebugToolbar::class,
 		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
+		'auth' 	   => \App\Filters\Auth::class,
+		'noauth'   => \App\Filters\NoAuth::class,
+		'authadmin'=> \App\Filters\AuthAdmin::class,
+		'authguru' => \App\Filters\AuthGuru::class,
 	];
 
 	// Always applied before every request
@@ -32,5 +36,10 @@ class Filters extends BaseConfig
 	// List filter aliases and any before/after uri patterns
 	// that they should run on, like:
 	//    'isLoggedIn' => ['before' => ['account/*', 'profiles/*']],
-	public $filters = [];
+	public $filters = [
+		'auth' => ['before' => ['dashboard', '/auth/logout'  ]],
+		'noauth' => ['before' => ['auth/registration',  '/auth/login']],
+		//'authadmin' => ['before' => []],
+		//'authguru' => ['before' => []],
+	];
 }

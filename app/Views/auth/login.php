@@ -23,10 +23,12 @@
               </button>
             </div>
           <?php endif; ?>
+          <?= $validation->listErrors() ?>
         </div>
 
         <form action="/auth/loginAction" method="post">
           <div class="form-group">
+          
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" autofocus placeholder="admin@mail.com">
           </div>
