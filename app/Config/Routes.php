@@ -37,9 +37,9 @@ $routes->get('/', 'Pages::index');
 $routes->get('/auth/registration/guru', 'Auth::guru');
 
 //router materi
-$routes->get('/profile', 'Dashboard::profile');
-$routes->get('/materi', 'Dashboard::materi');
-$routes->get('/kuis', 'Dashboard::kuis');
+$routes->get('/profile', 'Dashboard::profile', ['filter' => 'auth']);
+$routes->get('/materi', 'Dashboard::materi', ['filter' => 'auth']);
+$routes->get('/kuis', 'Dashboard::kuis', ['filter' => 'auth']);
 
 
 

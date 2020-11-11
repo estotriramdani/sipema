@@ -18,7 +18,7 @@
             </ul>
             <ul class="navbar-nav ml-auto">
                 <li class="nav-item">
-                    <a class="nav-link auth login buton" href="auth/login.php">Login</a>
+                    <a class="nav-link auth login buton" href="auth/login">Login</a>
                 </li>
                 <li class="nav-item">
                     <a href="/auth/registration" class="nav-link auth daftar buton">Daftar</a>

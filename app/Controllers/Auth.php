@@ -22,13 +22,18 @@ class Auth extends BaseController
 
     public function login()
     {
+        $validation =  \Config\Services::validation();
         $data = [
-            'tittle' => 'Laman Masuk'
+            'tittle' => 'Laman Masuk',
+            'validation' => \Config\Services::validation()
         ];
+
+        
         return view('auth/login', $data);
     }
     public function loginAction()
     {
+        $validation =  \Config\Services::validation();
         $db      = \Config\Database::connect();
         $session = session();
         //$builder = $db->table('users');
@@ -36,38 +41,66 @@ class Auth extends BaseController
         $email = $this->request->getPost('email');
         $password = $this->request->getPost('password');
 
-        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
-        $user   = $query->getRow();
+        $data = $this->request->getPost();
 
-        // jika usernya ada
-        if ($user) {
-            // cek password
-            if (password_verify($password, $user->password)) {
-                $newdata = [
-                    'email' => $user->email,
-                    'role_id' => $user->role_id
-                ];
-                $session->set($newdata);
-                session()->setFlashdata('pesan', 'Login sukses.');
-                return redirect()->to('/dashboard');
-            } else {
-                return redirect()->to('/auth');
-            }
+        $validation->setRules([
+            'email'            => 'required|valid_email',
+            'password'      => 'required',
+        ],    [   // Errors
+            'email'    => [
+                'required'    => 'Mohon masukkan alamat email.',
+                'valid_email' => 'Email yang dimasukkan tidak valid.'
+            ],
+            'password' => [
+                'required'    => 'Mohon masukkan password anda.',
+            ],
+        ]);
+
+        if ($validation->run($data) == false) {
+            $data = [
+                'tittle' => 'Registrasi',
+            ];
+            
+            return redirect()->to(base_url('auth/login'))->withInput();
         } else {
-            return redirect()->to('/auth');
+
+            $query = $db->query("SELECT * FROM users WHERE email='$email' ");
+            $user   = $query->getRow();
+
+            // jika usernya ada
+            if ($user) {
+                // cek password
+                if (password_verify($password, $user->password)) {
+                    $newdata = [
+                        'email' => $user->email,
+                        'role_id' => $user->role_id
+                    ];
+                    $session->set($newdata);
+                    session()->setFlashdata('pesan', 'Login sukses.');
+                    return redirect()->to('/dashboard');
+                } else {
+                    session()->setFlashdata('message', 'Password Salah');
+                    return redirect()->to('/auth/login');
+                }
+            } else {
+                session()->setFlashdata('message', 'Email tidak terdaftar');
+                return redirect()->to('/auth/login');
+            }
         }
+
     }
 
     public function logout()
     {
         $session = session();
+        //dd(session()->get('email'));
 
         $session->remove('email');
         $session->remove('role_id');
 
         session()->setFlashdata('pesan', 'Anda Berhasil Logout.');
 
-        return redirect()->to('/auth');
+        return redirect()->to('/');
     }
 
     public function registration()
@@ -103,6 +136,9 @@ class Auth extends BaseController
                 'required'    => 'Mohon masukkan alamat email.',
                 'valid_email' => 'Email yang dimasukkan tidak valid.'
             ],
+            'password' => [
+                'required'    => 'Mohon masukkan Password',
+            ],
             'kode_identitas' => [
                 'required'    => 'Mohon masukkan NIS/NIP.',
             ],
@@ -132,7 +168,6 @@ class Auth extends BaseController
         if ($validation->run($data) == false) {
             $data = [
                 'tittle' => 'Registrasi',
-
             ];
 
             //$dataerr = $validation->getErrors();
@@ -154,6 +189,8 @@ class Auth extends BaseController
                 'updated_at'    => Time::now(),
             ];
             $db->table('users')->insert($data);
+
+            //tambahan ngisi nilai
 
             session()->setFlashdata('message', 'Pendaftaran sukses, silakan login');
             return redirect()->to(base_url('auth/login')); 
