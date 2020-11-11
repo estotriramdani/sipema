@@ -15,20 +15,20 @@ class Auth extends BaseController
     public function index()
     {
         $data = [
-            'tittle' => 'Laman Masuk'
+            'tittle' => 'Laman Masuk',
+            'validation' => \Config\Services::validation()
         ];
         return view('auth/login', $data);
     }
 
     public function login()
     {
-        $validation =  \Config\Services::validation();
+        
         $data = [
             'tittle' => 'Laman Masuk',
             'validation' => \Config\Services::validation()
         ];
-
-        
+  
         return view('auth/login', $data);
     }
     public function loginAction()
@@ -105,7 +105,7 @@ class Auth extends BaseController
 
     public function registration()
     {
-        $validation =  \Config\Services::validation();
+
         $data = [
             'tittle' => 'Registrasi',
             'validation' => \Config\Services::validation()
