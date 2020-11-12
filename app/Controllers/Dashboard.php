@@ -7,16 +7,41 @@ class Dashboard extends BaseController
     public function __construct()
     {
         $this->session = \Config\Services::session();
+
+        $db      = \Config\Database::connect();
+
+        $email = $this->session->get('email');
+
+        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
+        $user   = $query->getRow();
+
+        if ($user->foto == 'default.jpg')
+        {
+            session()->setFlashdata('alert', 'Harap atur foto profil');;
+        }
     }
 
     public function index()
     {
-        $user = $this->session->get('newdata');
 
+        $db      = \Config\Database::connect();
+
+        $email = $this->session->get('email');
+
+        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
+        $user   = $query->getRow();
+
+        $query = $db->query("SELECT * FROM roles WHERE role_id='$user->role_id' ");
+        $roles = $query->getRow();
+
+        //HARUS DI OPTIMASI ANJRIT WKWKW
+        //Perlu dibikin model nya nih 
+
+        
         $data = [
-            'role' => 3,
-            'name' => 'Esto',
-            'rolename' => 'Siswa',
+            'role' => $user->role_id,
+            'name' => $user->nama,
+            'rolename' => $roles->role_name,
             'title' => 'Dashboard',
             'user' => [
                 // 'email' => $user['email']
@@ -28,10 +53,27 @@ class Dashboard extends BaseController
 
     public function profile()
     {
+
+        $db      = \Config\Database::connect();
+
+        $email = $this->session->get('email');
+
+        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
+        $user   = $query->getRow();
+
+        $query = $db->query("SELECT * FROM roles WHERE role_id='$user->role_id' ");
+        $roles = $query->getRow();
+
+        
         $data = [
-            'role' => 3,
-            'name' => 'Esto',
-            'rolename' => 'Siswa',
+            'role' => $user->role_id,
+            'name' => $user->nama,
+            'rolename' => $roles->role_name,
+            'id' => $user->kode_identitas, 
+            'gender' => $user->jenis_kelamin,
+            'ttl' => $user->tanggal_lahir,
+            'email' => $user->email, 
+            'address' => $user->alamat,
             'title' => 'Profile'
         ];
         return view('dashboard/profile', $data);
@@ -39,9 +81,17 @@ class Dashboard extends BaseController
 
     public function materi()
     {
+
+        $db      = \Config\Database::connect();
+
+        $email = $this->session->get('email');
+
+        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
+        $user   = $query->getRow();
+        
         $data = [
-            'role' => 3,
-            'name' => 'Esto',
+            'role' => $user->role_id,
+            'name' => $user->nama,
             'title' => 'Materi'
         ];
         return view('dashboard/materi', $data);
@@ -49,9 +99,17 @@ class Dashboard extends BaseController
 
     public function kuis()
     {
+
+        $db      = \Config\Database::connect();
+
+        $email = $this->session->get('email');
+
+        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
+        $user   = $query->getRow();
+        
         $data = [
-            'role' => 3,
-            'name' => 'Esto',
+            'role' => $user->role_id,
+            'name' => $user->nama,
             'title' => 'Kuis'
         ];
         return view('dashboard/kuis', $data);

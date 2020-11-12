@@ -18,27 +18,27 @@
       <tbody>
         <tr>
           <td>Kode Identitas</td>
-          <td>007010292</td>
+          <td><?= $id; ?></td>
         </tr>
         <tr>
           <td>Nama Lengkap</td>
-          <td>Esto Triramdani Nurlustiawan</td>
+          <td><?= $name; ?></td>
         </tr>
         <tr>
           <td>Jenis Kelamin</td>
-          <td>Laki-laki</td>
+          <td><?= $gender; ?></td>
         </tr>
         <tr>
           <td>Tanggal Lahir</td>
-          <td>02 Januari 2000</td>
+          <td><?= $ttl; ?></td>
         </tr>
         <tr>
           <td>Alamat email</td>
-          <td>mail@estotriramdani.com</td>
+          <td><?= $email; ?></td>
         </tr>
         <tr>
           <td>Alamat lengkap</td>
-          <td>Jalan Langonsari No. 10, Kec. Pameungpeuk, Kab. Bandung</td>
+          <td><?= $address; ?></td>
         </tr>
 
       </tbody>
