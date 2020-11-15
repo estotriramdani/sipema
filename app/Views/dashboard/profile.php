@@ -42,7 +42,7 @@
       <div class="form-group row">
         <label for="tanggal_lahir" class="col-sm-4 col-form-label">Tanggal Lahir</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="<?= $tanggal_lahir; ?>">
+          <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="<?= $tanggal_lahir; ?>" disabled>
         </div>
       </div>
       <div class="form-group row">

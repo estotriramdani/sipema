@@ -9,7 +9,7 @@
 
       <div class="col-sm-4 mb-3">
         <a class="tambahmateri">
-          <div class="card">
+          <div class="card card-tambahmateri">
             <div class="card-body">
               <div class="row text-center">
                 <div class="col-12">
@@ -23,7 +23,7 @@
       </div>
       <div class="col-sm-4 mb-3">
         <a class="tambahsoal">
-          <div class="card">
+          <div class="card card-tambahsoal">
             <div class="card-body">
               <div class="row text-center">
                 <div class="col-12">

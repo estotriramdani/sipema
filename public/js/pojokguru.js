@@ -32,6 +32,8 @@ const tambahmateri = `
 $('.konten-tambahmateri').fadeOut();
 
 $('.tambahmateri').click(function(){
+  $('.card-tambahmateri').addClass('active');
+  $('.card-tambahsoal').removeClass('active');
   $('.konten-tambahmateri').fadeIn();
   $('.konten-tambahsoal').fadeOut();
 });
@@ -39,6 +41,8 @@ $('.tambahmateri').click(function(){
 $('.konten-tambahsoal').fadeOut();
 
 $('.tambahsoal').click(function(){
+  $('.card-tambahsoal').addClass('active');
+  $('.card-tambahmateri').removeClass('active');
   $('.konten-tambahsoal').fadeIn();
   $('.konten-tambahmateri').fadeOut();
 });

@@ -46,12 +46,16 @@
                 <li>
                     <a href="/materi" id="materi">Materi</a>
                 </li>
-                <li>
-                    <a href="/kuis" id="kuis">Kuis</a>
-                </li>
+                <?php
+                if ($role == 3) {
+                    echo '<li><a href="/kuis" id="kuis">Kuis</a></li>';
+                }
+                ?>
                 <?php
                 if (($role == 2)) {
                     echo '<li><a href="/pojokguru" class="pojok-guru">Pojok Guru</a></li>';
+                } else if ($role == 1) {
+                    echo '<li><a href="/pojokadmin" id="kuis">Pojok Admin</a></li>';
                 }
                 ?>
                 <li>
