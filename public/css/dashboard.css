@@ -129,6 +129,11 @@ h3::after {
   margin-bottom: -8px;
 }
 
+.tambahmateri,
+.tambahsoal:hover {
+  cursor: pointer;
+}
+
 /* index dashboard */
 
 .navbar-brand {

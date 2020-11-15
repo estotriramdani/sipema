@@ -91,7 +91,7 @@
         <div class="form-group row">
           <label for="pertanyaan" class="col-sm-2 col-form-label">Pertanyaan</label>
           <div class="col-sm-10">
-            <textarea name="pertanyaan" class="form-control editor-tambahsoal"></textarea>
+            <textarea name="pertanyaan" class="form-control editor"></textarea>
           </div>
         </div>
 
@@ -130,29 +130,5 @@
         </div>
       </form>
     </div>
-
-
-
-    <script>
-      ClassicEditor
-        .create(document.querySelectorAll('.editor')[0])
-        .then(editor => {
-          console.log(editor);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-
-      ClassicEditor
-        .create(document.querySelector('.editor-tambahsoal'))
-        .then(editor => {
-          console.log(editor);
-        })
-        .catch(error => {
-          console.error(error);
-        });
-    </script>
-
-
 
     <?= $this->endSection(); ?>
