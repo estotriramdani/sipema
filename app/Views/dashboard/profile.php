@@ -12,7 +12,7 @@
 </div>
 
 <h4>Profil lengkap</h4>
-<div class="row">
+<div class="row mb-4">
   <div class="col-sm-6">
     <form action="#" method="post">
       <div class="form-group row">
