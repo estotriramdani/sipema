@@ -13,7 +13,6 @@
     </section>
     <section>
       <section>
-
         <h2>Vertical 2</h2>
       </section>
       <section>2.1</section>
