@@ -17,8 +17,23 @@
 <!-- custom js -->
 <script type="text/javascript" src="js/dashboard.js"></script>
 <script type="text/javascript" src="js/materi.js"></script>
+<script type="text/javascript" src="js/pojokguru.js"></script>
 
 <script src="/vendor/wow/wow.min.js"></script>
+
+<script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
+
+<script>
+    ClassicEditor
+        .create(document.querySelectorAll('.editor')[0])
+        .then(editor => {
+            console.log(editor);
+        })
+        .catch(error => {
+            console.error(error);
+        });
+</script>
+
 
 <script>
     $(".buton").on('click', function(event) {

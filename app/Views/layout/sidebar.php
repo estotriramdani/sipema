@@ -51,13 +51,11 @@
                 </li>
                 <?php
                 if (($role == 2)) {
-                    echo '<li><a href="#" class="pojok-guru">Pojok Guru</a></li>';
-                } else if (($role == 3)) {
-                    echo '<li><a href="#" class="pojok-guru">Pojok Siswa</a></li>';
+                    echo '<li><a href="/pojokguru" class="pojok-guru">Pojok Guru</a></li>';
                 }
                 ?>
                 <li>
-                    <a href="/auth/logout" onClick="confirm('Yakin keluar?')">Keluar</a>
+                    <a href="/auth/logout" onClick="return confirm('Yakin keluar?')">Keluar</a>
                 </li>
             </ul>
         </div>
@@ -70,11 +68,11 @@
                 <ul class="navbar-nav ml-auto">
                     <li class="nav-item dropleft  ">
                         <a class="nav-link " href="#" id="navbarDropdownMenuLink" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                            <?= $name; ?>
+                            <?= $nama; ?>
                         </a>
                         <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
-                            <a class="dropdown-item" href="#">Ubah Profil</a>
-                            <a class="dropdown-item" href="#">Keluar</a>
+                            <a class="dropdown-item" href="/profile">Ubah Profil</a>
+                            <a class="dropdown-item" href="/auth/logout" onClick="return confirm('Yakin keluar?')">Keluar</a>
                         </div>
                     </li>
                 </ul>

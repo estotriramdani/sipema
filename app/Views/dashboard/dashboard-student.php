@@ -1,6 +1,6 @@
 <?= $this->section('content'); ?>
 
-<p> Halo, <?= $name; ?>! Kamu dikenali sebagai <?= $rolename; ?> di SIPEMA</p>
+<p> Halo, <?= $nama; ?>! Kamu dikenali sebagai <?= $role_name; ?> di SIPEMA</p>
 <div class="row">
   <div class="col-sm-7">
     <p>Di bawah merupakan daftar nilai kamu. </p>
