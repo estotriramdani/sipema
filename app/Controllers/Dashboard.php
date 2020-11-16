@@ -15,8 +15,7 @@ class Dashboard extends BaseController
         $query = $db->query("SELECT * FROM users WHERE email='$email' ");
         $user   = $query->getRow();
 
-        if ($user->foto == 'default.jpg')
-        {
+        if ($user->foto == 'default.jpg') {
             session()->setFlashdata('alert', 'Harap atur foto profil');;
         }
     }
@@ -37,11 +36,17 @@ class Dashboard extends BaseController
         //HARUS DI OPTIMASI ANJRIT WKWKW
         //Perlu dibikin model nya nih 
 
-        
+
         $data = [
             'role' => $user->role_id,
-            'name' => $user->nama,
-            'rolename' => $roles->role_name,
+            'nama' => $user->nama,
+            'role_name' => $roles->role_name,
+            'kode_identitas' => $user->kode_identitas,
+            'jenis_kelamin' => $user->jenis_kelamin,
+            'tanggal_lahir' => $user->tanggal_lahir,
+            'tempat_lahir' => $user->tempat_lahir,
+            'email' => $user->email,
+            'alamat' => $user->alamat,
             'title' => 'Dashboard',
             'user' => [
                 // 'email' => $user['email']
@@ -64,16 +69,17 @@ class Dashboard extends BaseController
         $query = $db->query("SELECT * FROM roles WHERE role_id='$user->role_id' ");
         $roles = $query->getRow();
 
-        
+
         $data = [
             'role' => $user->role_id,
-            'name' => $user->nama,
-            'rolename' => $roles->role_name,
-            'id' => $user->kode_identitas, 
-            'gender' => $user->jenis_kelamin,
-            'ttl' => $user->tanggal_lahir,
-            'email' => $user->email, 
-            'address' => $user->alamat,
+            'nama' => $user->nama,
+            'role_name' => $roles->role_name,
+            'kode_identitas' => $user->kode_identitas,
+            'jenis_kelamin' => $user->jenis_kelamin,
+            'tanggal_lahir' => $user->tanggal_lahir,
+            'tempat_lahir' => $user->tempat_lahir,
+            'email' => $user->email,
+            'alamat' => $user->alamat,
             'title' => 'Profile'
         ];
         return view('dashboard/profile', $data);
@@ -88,10 +94,10 @@ class Dashboard extends BaseController
 
         $query = $db->query("SELECT * FROM users WHERE email='$email' ");
         $user   = $query->getRow();
-        
+
         $data = [
             'role' => $user->role_id,
-            'name' => $user->nama,
+            'nama' => $user->nama,
             'title' => 'Materi'
         ];
         return view('dashboard/materi', $data);
@@ -106,13 +112,41 @@ class Dashboard extends BaseController
 
         $query = $db->query("SELECT * FROM users WHERE email='$email' ");
         $user   = $query->getRow();
-        
+
         $data = [
             'role' => $user->role_id,
-            'name' => $user->nama,
+            'nama' => $user->nama,
             'title' => 'Kuis'
         ];
         return view('dashboard/kuis', $data);
+    }
+
+    public function pojokGuru()
+    {
+        $db      = \Config\Database::connect();
+
+        $email = $this->session->get('email');
+
+        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
+        $user   = $query->getRow();
+
+        $query = $db->query("SELECT * FROM roles WHERE role_id='$user->role_id' ");
+        $roles = $query->getRow();
+
+
+        $data = [
+            'role' => $user->role_id,
+            'nama' => $user->nama,
+            'role_name' => $roles->role_name,
+            'kode_identitas' => $user->kode_identitas,
+            'jenis_kelamin' => $user->jenis_kelamin,
+            'tanggal_lahir' => $user->tanggal_lahir,
+            'tempat_lahir' => $user->tempat_lahir,
+            'email' => $user->email,
+            'alamat' => $user->alamat,
+            'title' => 'Pojok Guru'
+        ];
+        return view('dashboard/pojokguru/index', $data);
     }
 
     //--------------------------------------------------------------------

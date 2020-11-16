@@ -59,9 +59,13 @@
             <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio3" value="Laki-laki">
             <label class="form-check-label" for="inlineRadio3">Laki-laki</label>
           </div>
-          <div class="form-check form-check-inline mb-2">
-            <input class="form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio4" value="Perempuan">
+          <div class="form-check form-check-inline mb-3">
+            <input class=" form-check-input" type="radio" name="jenis_kelamin" id="inlineRadio4" value="Perempuan">
             <label class="form-check-label" for="inlineRadio4">Perempuan</label>
+          </div>
+          <div class="form-group">
+            <label for="">Tempat Lahir</label>
+            <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir">
           </div>
           <div class="form-group">
             <label for="">Tanggal Lahir</label>
