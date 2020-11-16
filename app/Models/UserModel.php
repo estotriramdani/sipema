@@ -8,16 +8,15 @@ class UserModel extends Model
     protected $primaryKey = 'user_id';
 
     protected $returnType     = 'object';
-    protected $useSoftDeletes = true;
+    protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['password, kode_identitas', 'nama', 'jenis_kelamin', 'alamat', 'foto', 'tempat_lahir', 'tanggal_lahir', 'created_at', 'updated_at'];
+    protected $allowedFields = ['password, kode_identitas', 'nama', 'jenis_kelamin', 'alamat', 'foto', 'tanggal_lahir'];
 
     protected $useTimestamps = true;
     protected $createdField  = 'created_at';
     protected $updatedField  = 'updated_at';
-    protected $deletedField  = 'deleted_at';
 
-    protected $validationRules    = [];
-    protected $validationMessages = [];
-    protected $skipValidation     = false;
+    // protected $validationRules    = [];
+    // protected $validationMessages = [];
+    // protected $skipValidation     = false;
 }

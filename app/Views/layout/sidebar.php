@@ -52,8 +52,6 @@
                 <?php
                 if (($role == 2)) {
                     echo '<li><a href="#" class="pojok-guru">Pojok Guru</a></li>';
-                } else if (($role == 3)) {
-                    echo '<li><a href="#" class="pojok-guru">Pojok Siswa</a></li>';
                 }
                 ?>
                 <li>
