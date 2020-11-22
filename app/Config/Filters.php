@@ -1,4 +1,6 @@
-<?php namespace Config;
+<?php
+
+namespace Config;
 
 use CodeIgniter\Config\BaseConfig;
 
@@ -12,7 +14,7 @@ class Filters extends BaseConfig
 		'honeypot' => \CodeIgniter\Filters\Honeypot::class,
 		'auth' 	   => \App\Filters\Auth::class,
 		'noauth'   => \App\Filters\NoAuth::class,
-		'authadmin'=> \App\Filters\AuthAdmin::class,
+		'authadmin' => \App\Filters\AuthAdmin::class,
 		'authguru' => \App\Filters\AuthGuru::class,
 	];
 
@@ -37,7 +39,7 @@ class Filters extends BaseConfig
 	// that they should run on, like:
 	//    'isLoggedIn' => ['before' => ['account/*', 'profiles/*']],
 	public $filters = [
-		'auth' => ['before' => ['dashboard', '/auth/logout'  ]],
+		'auth' => ['before' => ['dashboard', '/auth/logout']],
 		'noauth' => ['before' => ['auth/registration',  '/auth/login']],
 		//'authadmin' => ['before' => []],
 		//'authguru' => ['before' => []],

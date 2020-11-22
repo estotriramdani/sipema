@@ -1,4 +1,6 @@
-<?php namespace App\Filters;
+<?php
+
+namespace App\Filters;
 
 use CodeIgniter\HTTP\RequestInterface;
 use CodeIgniter\HTTP\ResponseInterface;
@@ -8,8 +10,7 @@ class NoAuth implements FilterInterface
 {
     public function before(RequestInterface $request, $arguments = null)
     {
-        if (session()->get('email'))
-        {
+        if (session()->get('email')) {
             return redirect()->to('/dashboard');
         }
         // Do something here

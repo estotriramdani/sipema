@@ -1,4 +1,6 @@
-<?php namespace App\Database\Migrations;
+<?php
+
+namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
@@ -22,32 +24,32 @@ class Users extends Migration
 			'password'		 => [
 				'type'			=> 'VARCHAR',
 				'constraint'	=> '255',
-			],		
-			'kode_identitas' => [ 
-					'type'           => 'VARCHAR',
-					'constraint'     => '10', 
+			],
+			'kode_identitas' => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '10',
 			],
 			'nama' => [
-					'type'           => 'VARCHAR',
-					'constraint'     => '100',
+				'type'           => 'VARCHAR',
+				'constraint'     => '100',
 			],
 			'jenis_kelamin' => [
-					'type'           => 'ENUM',
-					'constraint'     => ['Laki-laki', 'Perempuan'],
-					'default'		 => 'Laki-laki',
+				'type'           => 'ENUM',
+				'constraint'     => ['Laki-laki', 'Perempuan'],
+				'default'		 => 'Laki-laki',
 			],
 			'alamat' => [
-					'type'			 => 'TEXT',
+				'type'			 => 'TEXT',
 			],
 			'foto' => [
-					'type'			 => 'TEXT',
+				'type'			 => 'TEXT',
 			],
 			'tempat_lahir' => [
-					'type'			 => 'VARCHAR',
-					'constraint'	 => '100',
+				'type'			 => 'VARCHAR',
+				'constraint'	 => '100',
 			],
 			'tanggal_lahir' => [
-					'type'			 => 'DATE'
+				'type'			 => 'DATE'
 			],
 			'role_id' => [
 				'type'           	=> 'INT',
@@ -58,12 +60,11 @@ class Users extends Migration
 				'null'				=> TRUE,
 			],
 			'updated_at' => [
-					'type'			=> 'DATETIME',
-					'null'			=> TRUE,
+				'type'			=> 'DATETIME',
+				'null'			=> TRUE,
 			],
 		]);
 		$this->forge->addKey('user_id', true);
-		$this->forge->addForeignKey('role_id', 'roles', 'role_id', 'CASCADE', 'CASCADE');
 		$this->forge->createTable($this->table);
 	}
 

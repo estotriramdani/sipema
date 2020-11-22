@@ -1,4 +1,6 @@
-<?php namespace App\Models;
+<?php
+
+namespace App\Models;
 
 use CodeIgniter\Model;
 
@@ -10,11 +12,11 @@ class UserModel extends Model
     protected $returnType     = 'object';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['password, kode_identitas', 'nama', 'jenis_kelamin', 'alamat', 'foto', 'tanggal_lahir'];
+    protected $allowedFields = ['email', 'password', 'kode_identitas', 'nama', 'jenis_kelamin', 'alamat', 'foto', 'tempat_lahir', 'tanggal_lahir', 'role_id',];
 
     protected $useTimestamps = true;
-    protected $createdField  = 'created_at';
-    protected $updatedField  = 'updated_at';
+    // protected $createdField  = 'created_at';
+    // protected $updatedField  = 'updated_at';
 
     // protected $validationRules    = [];
     // protected $validationMessages = [];

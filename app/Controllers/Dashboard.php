@@ -2,45 +2,44 @@
 
 namespace App\Controllers;
 
+use App\Models\UserModel;
+
 class Dashboard extends BaseController
 {
     public function __construct()
     {
         $this->session = \Config\Services::session();
-
-        $db      = \Config\Database::connect();
+        $this->userModel = new UserModel();
 
         $email = $this->session->get('email');
 
-        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
-        $user   = $query->getRow();
+        $this->user = $this->userModel->Where('email', $email)
+            ->first();
 
-        if ($user->foto == 'default.jpg') {
+        if ($this->user->foto == 'default.jpg') {
             session()->setFlashdata('alert', 'Harap atur foto profil');;
+        }
+
+        if ($this->user->role_id == 1) {
+            $this->user->roles = 'Admin';
+        } elseif ($this->user->role_id == 2) {
+            $this->user->roles = 'Guru';
+        } else {
+            $this->user->roles = 'Siswa';
         }
     }
 
     public function index()
     {
+        $user = $this->user;
 
         $db      = \Config\Database::connect();
-
-        $email = $this->session->get('email');
-
-        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
-        $user   = $query->getRow();
-
-        $query = $db->query("SELECT * FROM roles WHERE role_id='$user->role_id' ");
-        $roles = $query->getRow();
-
-        //HARUS DI OPTIMASI ANJRIT WKWKW
-        //Perlu dibikin model nya nih 
 
 
         $data = [
             'role' => $user->role_id,
             'nama' => $user->nama,
-            'role_name' => $roles->role_name,
+            'role_name' => $user->roles,
             'kode_identitas' => $user->kode_identitas,
             'jenis_kelamin' => $user->jenis_kelamin,
             'tanggal_lahir' => $user->tanggal_lahir,
@@ -61,39 +60,143 @@ class Dashboard extends BaseController
 
         $db      = \Config\Database::connect();
 
-        $email = $this->session->get('email');
-
-        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
-        $user   = $query->getRow();
-
-        $query = $db->query("SELECT * FROM roles WHERE role_id='$user->role_id' ");
-        $roles = $query->getRow();
-
+        $user   = $this->user;
 
         $data = [
             'role' => $user->role_id,
             'nama' => $user->nama,
-            'role_name' => $roles->role_name,
+            'role_name' => $user->roles,
             'kode_identitas' => $user->kode_identitas,
             'jenis_kelamin' => $user->jenis_kelamin,
             'tanggal_lahir' => $user->tanggal_lahir,
             'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
             'alamat' => $user->alamat,
-            'title' => 'Profile'
+            'title' => 'Profile',
+            'validation' => \Config\Services::validation()
         ];
         return view('dashboard/profile', $data);
+    }
+
+    public function updateprofil()
+    {
+        $validation =  \Config\Services::validation();
+        $db = \Config\Database::connect();
+
+        $user   = $this->user;
+
+        $data = $this->request->getPost();
+
+        $validation->setRules([
+            'nama'          => 'required',
+            'jenis_kelamin' => 'required',
+            'alamat'        => 'required',
+            //'foto'          => '',
+            'tempat_lahir'  => 'required',
+        ],    [   // Errors
+            'nama' => [
+                'required'    => 'Mohon masukkan nama anda.',
+            ],
+            'jenis_kelamin' => [
+                'required'    => 'Mohon masukkan jenis kelamin.',
+            ],
+            'alamat' => [
+                'required'    => 'Mohon masukkan alamat anda.',
+            ],
+            'tempat_lahir' => [
+                'required'    => 'Mohon masukkan tempat lahir.',
+            ],
+        ]);
+        //  var_dump($validation->run($data));
+        //  var_dump($validation->getErrors());
+        //  dd($validation->getErrors());
+
+        if ($validation->run($data) == false) {
+            $data = [
+                'tittle' => 'Profil',
+            ];
+
+            //$dataerr = $validation->getErrors();
+
+            return redirect()->to(base_url('dashboard/profile'))->withInput();
+        } else {
+            $data = [
+                'user_id'      => $user->user_id,
+                'nama'          => $this->request->getPost('nama'),
+                'jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
+                'alamat'        => $this->request->getPost('alamat'),
+                // 'foto'          => 'default.jpg',
+                'tempat_lahir'  => $this->request->getPost('tempat_lahir'),
+            ];
+            $this->userModel->save($data);
+
+            //tambahan ngisi nilai
+
+            session()->setFlashdata('pesan', 'Update profil sukses');
+            return redirect()->to(base_url('dashboard/index'));
+        }
+    }
+
+    public function updatepassword()
+    {
+        $validation =  \Config\Services::validation();
+        $db = \Config\Database::connect();
+
+        $user   = $this->user;
+        $password = $this->request->getPost('oldpassword');
+
+        $data = $this->request->getPost();
+
+        $validation->setRules([
+            'oldpassword'        => 'required',
+            'newpassword'        => 'required',
+            'newpasswordconfirm' => 'required|matches[newpassword]',
+        ],    [   // Errors
+            'oldpassword' => [
+                'required'    => 'Mohon masukkan password lama anda.',
+            ],
+            'newpassword' => [
+                'required'    => 'Mohon masukkan password baru anda.',
+            ],
+            'newpasswordconfirm' => [
+                'required'    => 'Mohon konfirmasi password baru anda.',
+                'matches'     => 'Passord tidak cocok'
+            ],
+        ]);
+        // var_dump($validation->run($data));
+        // var_dump($validation->getErrors());
+        // dd($validation->getErrors());
+
+        if ($validation->run($data) == false) {
+            $data = [
+                'tittle' => 'Profil',
+            ];
+
+            //$dataerr = $validation->getErrors();
+
+            return redirect()->to(base_url('dashboard/profile'))->withInput();
+        } else {
+
+            if (password_verify($password, $user->password)) {
+                $data = [
+                    'user_id'      => $user->user_id,
+                    'password'     => password_hash($this->request->getPost('newpassword'), PASSWORD_DEFAULT),
+                ];
+                $this->userModel->save($data);
+
+                session()->setFlashdata('pesan', 'Update password sukses');
+                return redirect()->to(base_url('dashboard/index'));
+            } else {
+                session()->setFlashdata('pesan', 'Update password gagal, password lama anda salah');
+                return redirect()->to(base_url('dashboard/index'));
+            }
+        }
     }
 
     public function materi()
     {
 
-        $db      = \Config\Database::connect();
-
-        $email = $this->session->get('email');
-
-        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
-        $user   = $query->getRow();
+        $user   = $this->user;
 
         $data = [
             'role' => $user->role_id,
@@ -108,10 +211,7 @@ class Dashboard extends BaseController
 
         $db      = \Config\Database::connect();
 
-        $email = $this->session->get('email');
-
-        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
-        $user   = $query->getRow();
+        $user   = $this->user;
 
         $data = [
             'role' => $user->role_id,
@@ -125,19 +225,12 @@ class Dashboard extends BaseController
     {
         $db      = \Config\Database::connect();
 
-        $email = $this->session->get('email');
-
-        $query = $db->query("SELECT * FROM users WHERE email='$email' ");
-        $user   = $query->getRow();
-
-        $query = $db->query("SELECT * FROM roles WHERE role_id='$user->role_id' ");
-        $roles = $query->getRow();
-
+        $user   = $this->user;
 
         $data = [
             'role' => $user->role_id,
             'nama' => $user->nama,
-            'role_name' => $roles->role_name,
+            'role_name' => $user->roles,
             'kode_identitas' => $user->kode_identitas,
             'jenis_kelamin' => $user->jenis_kelamin,
             'tanggal_lahir' => $user->tanggal_lahir,

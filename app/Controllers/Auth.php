@@ -4,12 +4,14 @@ namespace App\Controllers;
 
 use CodeIgniter\I18n\Time;
 use config\Validation;
+use App\Models\UserModel;
 
 class Auth extends BaseController
 {
     public function __construct()
     {
         $this->session = \Config\Services::session();
+        $this->userModel = new UserModel();
     }
 
     public function index()
@@ -23,12 +25,12 @@ class Auth extends BaseController
 
     public function login()
     {
-        
+
         $data = [
             'tittle' => 'Laman Masuk',
             'validation' => \Config\Services::validation()
         ];
-  
+
         return view('auth/login', $data);
     }
     public function loginAction()
@@ -60,7 +62,7 @@ class Auth extends BaseController
             $data = [
                 'tittle' => 'Registrasi',
             ];
-            
+
             return redirect()->to(base_url('auth/login'))->withInput();
         } else {
 
@@ -87,7 +89,6 @@ class Auth extends BaseController
                 return redirect()->to('/auth/login');
             }
         }
-
     }
 
     public function logout()
@@ -121,20 +122,21 @@ class Auth extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'email'            => 'required|valid_email',
+            'email'            => 'required|valid_email|is_unique[users.email]',
             'password'      => 'required',
             'kode_identitas' => 'required',
             'nama'          => 'required',
             'jenis_kelamin' => 'required',
             'alamat'        => 'required',
             //'foto'          => '',
-            //'tempat_lahir'  => 'required',
+            'tempat_lahir'  => 'required',
             'tanggal_lahir' => 'required',
             'role_id'       => 'required',
         ],    [   // Errors
             'email'    => [
                 'required'    => 'Mohon masukkan alamat email.',
-                'valid_email' => 'Email yang dimasukkan tidak valid.'
+                'valid_email' => 'Email yang dimasukkan tidak valid.',
+                'is_unique'   => 'Email sudah terdaftar, silahkan gunakan email lain'
             ],
             'password' => [
                 'required'    => 'Mohon masukkan Password',
@@ -151,9 +153,9 @@ class Auth extends BaseController
             'alamat' => [
                 'required'    => 'Mohon masukkan alamat anda.',
             ],
-            // 'tempat_lahir' => [
-            //     'required'    => 'Mohon masukkan tempat lahir.',
-            // ],
+            'tempat_lahir' => [
+                'required'    => 'Mohon masukkan tempat lahir.',
+            ],
             'tanggal_lahir' => [
                 'required'    => 'Mohon masukkan tanggal lahir.',
             ],
@@ -171,7 +173,7 @@ class Auth extends BaseController
             ];
 
             //$dataerr = $validation->getErrors();
-            
+
             return redirect()->to(base_url('auth/registration'))->withInput();
         } else {
             $data = [
@@ -181,19 +183,19 @@ class Auth extends BaseController
                 'nama'          => $this->request->getPost('nama'),
                 'jenis_kelamin' => $this->request->getPost('jenis_kelamin'),
                 'alamat'        => $this->request->getPost('alamat'),
-                'foto'          => 'default.jpg',
-                //'tempat_lahir'  => $this->request->getPost('tempat_lahir'),
+                // 'foto'          => 'default.jpg',
+                'tempat_lahir'  => $this->request->getPost('tempat_lahir'),
                 'tanggal_lahir' => $this->request->getPost('tanggal_lahir'),
                 'role_id'       => $this->request->getPost('role_id'),
                 'created_at'    => Time::now(),
                 'updated_at'    => Time::now(),
             ];
-            $db->table('users')->insert($data);
+            $this->userModel->save($data);
 
             //tambahan ngisi nilai
 
             session()->setFlashdata('message', 'Pendaftaran sukses, silakan login');
-            return redirect()->to(base_url('auth/login')); 
+            return redirect()->to(base_url('auth/login'));
         }
     }
 }

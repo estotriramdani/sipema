@@ -14,7 +14,7 @@
 <h4>Profil lengkap</h4>
 <div class="row mb-4">
   <div class="col-sm-6">
-    <form action="#" method="post">
+    <form action="/dashboard/updateprofil" method="post">
       <div class="form-group row">
         <label for="kode_identitas" class="col-sm-4 col-form-label">Kode Identitas</label>
         <div class="col-sm-8">
@@ -24,37 +24,52 @@
       <div class="form-group row">
         <label for="nama" class="col-sm-4 col-form-label">Nama Lengkap</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="nama" name="nama" value="<?= $nama; ?>">
+          <input type="text" class="form-control <?= ($validation->HasError('nama')) ? 'is-invalid' : '' ?>" id="nama" name="nama" value="<?= (old('nama')) ? old('nama') : $nama; ?>">
+          <div class="invalid-feedback">
+            <?= $validation->getError('nama') ?>
+          </div>
         </div>
       </div>
       <div class="form-group row">
+
+        <!-- Harusnya Radio -->
+
         <label for="jenis_kelamin" class="col-sm-4 col-form-label">Jenis Kelamin</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="jenis_kelamin" name="jenis_kelamin" value="<?= $jenis_kelamin; ?>">
+          <input type="text" class="form-control <?= ($validation->HasError('jenis_kelamin')) ? 'is-invalid' : '' ?>" id="jenis_kelamin" name="jenis_kelamin" value="<?= (old('jenis_kelamin')) ? old('jenis_kelamin') : $jenis_kelamin; ?>">
         </div>
       </div>
       <div class="form-group row">
         <label for="tempat_lahir" class="col-sm-4 col-form-label">Tempat Lahir</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="tempat_lahir" name="tempat_lahir" value="<?= $tempat_lahir; ?>">
+          <input type="text" class="form-control <?= ($validation->HasError('tempat_lahir')) ? 'is-invalid' : '' ?>" id="tempat_lahir" name="tempat_lahir" value="<?= (old('tempat_lahir')) ? old('tempat_lahir') : $tempat_lahir; ?>">
+          <div class="invalid-feedback">
+            <?= $validation->getError('tempat_lahir') ?>
+          </div>
         </div>
       </div>
       <div class="form-group row">
         <label for="tanggal_lahir" class="col-sm-4 col-form-label">Tanggal Lahir</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="<?= $tanggal_lahir; ?>" disabled>
+          <input type="text" class="form-control" id="tanggal_lahir" name="tanggal_lahir" value="<?= (old('tanggal_lahir')) ? old('tanggal_lahir') : $tanggal_lahir; ?>" disabled>
+          <div class="invalid-feedback">
+            <?= $validation->getError('tanggal_lahir') ?>
+          </div>
         </div>
       </div>
       <div class="form-group row">
         <label for="email" class="col-sm-4 col-form-label">Email</label>
         <div class="col-sm-8">
-          <input type="text" class="form-control" id="email" name="email" value="<?= $email; ?>" disabled>
+          <input type="text" class="form-control" id="email" name="email" value="<?= (old('email')) ? old('email') : $email; ?>" disabled>
         </div>
       </div>
       <div class="form-group row">
         <label for="alamat" class="col-sm-4 col-form-label">Alamat Lengkap</label>
         <div class="col-sm-8">
-          <textarea name="alamat" class="form-control"><?= $alamat; ?></textarea>
+          <textarea name="alamat" class="form-control <?= ($validation->HasError('alamat')) ? 'is-invalid' : '' ?>"><?= (old('alamat')) ? old('alamat') : $alamat; ?> </textarea>
+          <div class="invalid-feedback">
+            <?= $validation->getError('alamat') ?>
+          </div>
         </div>
       </div>
 
@@ -73,23 +88,32 @@
 <h4>Ganti password</h4>
 <div class="row">
   <div class="col-sm-6">
-    <form>
+    <form action="/dashboard/updatepassword" method="post">
       <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-4 col-form-label">Password Lama</label>
+        <label for="oldpassword" class="col-sm-4 col-form-label">Password Lama</label>
         <div class="col-sm-8">
-          <input type="password" class="form-control" id="inputPassword3">
+          <input type="password" class="form-control <?= ($validation->HasError('oldpassword')) ? 'is-invalid' : '' ?>  " id="oldpassword" name="oldpassword">
+          <div class="invalid-feedback">
+            <?= $validation->getError('oldpassword') ?>
+          </div>
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-4 col-form-label">Password Baru</label>
+        <label for="newpassword" class="col-sm-4 col-form-label">Password Baru</label>
         <div class="col-sm-8">
-          <input type="password" class="form-control" id="inputPassword3">
+          <input type="password" class="form-control <?= ($validation->HasError('newpassword')) ? 'is-invalid' : '' ?>" id="newpassword" name="newpassword">
+          <div class="invalid-feedback">
+            <?= $validation->getError('newpassword') ?>
+          </div>
         </div>
       </div>
       <div class="form-group row">
-        <label for="inputPassword3" class="col-sm-4 col-form-label">Ulangi Password Baru</label>
+        <label for="newpasswordconfirm" class="col-sm-4 col-form-label">Ulangi Password Baru</label>
         <div class="col-sm-8">
-          <input type="password" class="form-control" id="inputPassword3">
+          <input type="password" class="form-control <?= ($validation->HasError('newpasswordconfirm')) ? 'is-invalid' : '' ?>" id="newpasswordconfirm" name="newpasswordconfirm">
+          <div class="invalid-feedback">
+            <?= $validation->getError('newpasswordconfirm') ?>
+          </div>
         </div>
       </div>
       <div class="form-group row">
