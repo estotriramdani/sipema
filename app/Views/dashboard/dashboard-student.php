@@ -20,7 +20,7 @@
                 <h6 class="card-subtitle mb-2">Materi #1</h6>
               </div>
               <div class="col-3">
-                <h2 class="card-text text-right nilai">90</h2>
+                <h2 class="card-text text-right nilai"><?= $quiz1; ?></h2>
               </div>
             </div>
             <small>Niai maksimal 100</small>
@@ -36,7 +36,7 @@
                 <h6 class="card-subtitle mb-2">Materi #2</h6>
               </div>
               <div class="col-3">
-                <h2 class="card-text text-right nilai">90</h2>
+                <h2 class="card-text text-right nilai"><?= $quiz2; ?></h2>
               </div>
             </div>
             <small>Niai maksimal 100</small>
@@ -52,7 +52,7 @@
                 <h6 class="card-subtitle mb-2">Materi #3</h6>
               </div>
               <div class="col-3">
-                <h2 class="card-text text-right nilai">90</h2>
+                <h2 class="card-text text-right nilai"><?= $quiz3; ?></h2>
               </div>
             </div>
             <small>Niai maksimal 100</small>

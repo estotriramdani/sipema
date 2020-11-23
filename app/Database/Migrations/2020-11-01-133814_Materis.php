@@ -1,4 +1,6 @@
-<?php namespace App\Database\Migrations;
+<?php
+
+namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
@@ -10,16 +12,16 @@ class Materis extends Migration
 	{
 		$this->forge->addField([
 			'kode_materi' => [
-					'type'           => 'VARCHAR',
-					'constraint'     => '6',
+				'type'           => 'VARCHAR',
+				'constraint'     => '6',
 			],
 			'nama_materi' => [
-					'type'           => 'VARCHAR',
-					'constraint'     => '30',
+				'type'           => 'VARCHAR',
+				'constraint'     => '30',
 			],
 			'deskripsi' => [
-					'type'           => 'TEXT',
-					'null'           => true,
+				'type'           => 'TEXT',
+				'null'           => true,
 			],
 		]);
 		$this->forge->addKey('kode_materi', true);

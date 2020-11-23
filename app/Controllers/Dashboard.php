@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\NilaiModel;
 use App\Models\UserModel;
 
 class Dashboard extends BaseController
@@ -10,10 +11,13 @@ class Dashboard extends BaseController
     {
         $this->session = \Config\Services::session();
         $this->userModel = new UserModel();
+        $this->nilaiModel = new NilaiModel();
 
         $email = $this->session->get('email');
 
         $this->user = $this->userModel->Where('email', $email)
+            ->first();
+        $this->nilai = $this->nilaiModel->Where('email', $email)
             ->first();
 
         if ($this->user->foto == 'default.jpg') {
@@ -32,34 +36,54 @@ class Dashboard extends BaseController
     public function index()
     {
         $user = $this->user;
+        $nilai = $this->nilai;
 
-        $db      = \Config\Database::connect();
-
-
-        $data = [
-            'role' => $user->role_id,
-            'nama' => $user->nama,
-            'role_name' => $user->roles,
-            'kode_identitas' => $user->kode_identitas,
-            'jenis_kelamin' => $user->jenis_kelamin,
-            'tanggal_lahir' => $user->tanggal_lahir,
-            'tempat_lahir' => $user->tempat_lahir,
-            'email' => $user->email,
-            'alamat' => $user->alamat,
-            'title' => 'Dashboard',
-            'user' => [
-                // 'email' => $user['email']
-                //nah nanti masukin ke sini data-data usernya. Cukup sekali aja, nanti aing copy ke method yang lainnya
-            ]
-        ];
-        return view('dashboard/index', $data);
+        if ($user->role_id == 3) {
+            $data = [
+                'role' => $user->role_id,
+                'nama' => $user->nama,
+                'role_name' => $user->roles,
+                'kode_identitas' => $user->kode_identitas,
+                'jenis_kelamin' => $user->jenis_kelamin,
+                'tanggal_lahir' => $user->tanggal_lahir,
+                'tempat_lahir' => $user->tempat_lahir,
+                'email' => $user->email,
+                'alamat' => $user->alamat,
+                'quiz1' => $nilai->quiz1,
+                'quiz2' => $nilai->quiz2,
+                'quiz3' => $nilai->quiz3,
+                'uts' => $nilai->uts,
+                'uas' => $nilai->uas,
+                'title' => 'Dashboard',
+                'user' => [
+                    // 'email' => $user['email']
+                    //nah nanti masukin ke sini data-data usernya. Cukup sekali aja, nanti aing copy ke method yang lainnya
+                ]
+            ];
+            return view('dashboard/index', $data);
+        } else {
+            $data = [
+                'role' => $user->role_id,
+                'nama' => $user->nama,
+                'role_name' => $user->roles,
+                'kode_identitas' => $user->kode_identitas,
+                'jenis_kelamin' => $user->jenis_kelamin,
+                'tanggal_lahir' => $user->tanggal_lahir,
+                'tempat_lahir' => $user->tempat_lahir,
+                'email' => $user->email,
+                'alamat' => $user->alamat,
+                'title' => 'Dashboard',
+                'user' => [
+                    // 'email' => $user['email']
+                    //nah nanti masukin ke sini data-data usernya. Cukup sekali aja, nanti aing copy ke method yang lainnya
+                ]
+            ];
+            return view('dashboard/index', $data);
+        }
     }
 
     public function profile()
     {
-
-        $db      = \Config\Database::connect();
-
         $user   = $this->user;
 
         $data = [
@@ -81,7 +105,6 @@ class Dashboard extends BaseController
     public function updateprofil()
     {
         $validation =  \Config\Services::validation();
-        $db = \Config\Database::connect();
 
         $user   = $this->user;
 

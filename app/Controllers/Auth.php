@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\NilaiModel;
 use CodeIgniter\I18n\Time;
 use config\Validation;
 use App\Models\UserModel;
@@ -12,6 +13,7 @@ class Auth extends BaseController
     {
         $this->session = \Config\Services::session();
         $this->userModel = new UserModel();
+        $this->nilaiModel = new NilaiModel();
     }
 
     public function index()
@@ -192,7 +194,14 @@ class Auth extends BaseController
             ];
             $this->userModel->save($data);
 
-            //tambahan ngisi nilai
+
+            //Masukan nilai jika user adalah siswa
+            if ($this->request->getPost('role_id') == 3) {
+                $data = [
+                    'email'         => $this->request->getPost('email'),
+                ];
+                $this->nilaiModel->save($data);
+            }
 
             session()->setFlashdata('message', 'Pendaftaran sukses, silakan login');
             return redirect()->to(base_url('auth/login'));
