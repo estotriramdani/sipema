@@ -29,7 +29,7 @@ class Nilais extends Migration
 				'constraint'     => '3',
 				'default'        => 0,
 			],
-			'quiz3' => [
+			'quiz2' => [
 				'type'           => 'INT',
 				'constraint'     => '3',
 				'default'        => 0,

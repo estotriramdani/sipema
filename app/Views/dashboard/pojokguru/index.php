@@ -44,17 +44,17 @@
 
     <div class="konten-tambahmateri">
       <h3>Tambah Materi</h3>
-      <form>
+      <form action="/materi/create" method="post">
         <div class="form-group row">
           <label for="nama_materi" class="col-sm-2 col-form-label">Nama Materi</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="nama_materi" name="nama_materi">
+            <input type="text" class="form-control" id="nama_materi" name="nama_materi">
           </div>
         </div>
         <div class="form-group row">
           <label for="deskripsi_materi" class="col-sm-2 col-form-label">Deskripsi Materi</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="deskripsi_materi" name="deskripsi_materi">
+            <input type="text" class="form-control" id="deskripsi_materi" name="deskripsi_materi">
           </div>
         </div>
         <div class="form-group row">

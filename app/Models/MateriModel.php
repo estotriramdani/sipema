@@ -4,6 +4,7 @@ namespace App\Models;
 
 use CodeIgniter\Model;
 
+
 class MateriModel extends Model
 {
     protected $table      = 'materis';
