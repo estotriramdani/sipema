@@ -16,7 +16,25 @@ class UsersSeeder extends Seeder
 			'password'		 => password_hash('admin', PASSWORD_DEFAULT),
 			'foto'			 => 'default.jpg',
 			'tanggal_lahir'  => Time::today(),
-			'role_id' 		 => 1,
+			'role_id' 		 => 2,
+			'created_at'     => Time::now(),
+			'updated_at'     => Time::today(),
+		];
+
+		// Simple Queries
+		$this->db->query(
+			"INSERT INTO users (kode_identitas, nama, email, password, foto, tanggal_lahir, role_id, created_at, updated_at) 
+						  VALUES(:kode_identitas:, :nama:, :email:, :password:, :foto:, :tanggal_lahir:,:role_id:, :created_at:, :updated_at:)",
+			$data
+		);
+		$data = [
+			'kode_identitas' => 'SiswaTest',
+			'nama'    		 => 'Siswa Test',
+			'email'			 => 'test@test.com',
+			'password'		 => password_hash('123', PASSWORD_DEFAULT),
+			'foto'			 => 'default.jpg',
+			'tanggal_lahir'  => Time::today(),
+			'role_id' 		 => 3,
 			'created_at'     => Time::now(),
 			'updated_at'     => Time::today(),
 		];

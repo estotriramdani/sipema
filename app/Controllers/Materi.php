@@ -23,17 +23,21 @@ class Materi extends BaseController
 
         $validation->setRules([
             'nama_materi'       => 'required|is_unique[materis.nama_materi]',
-            'deskripsi_materi'  => 'required',
-            'isimateri'         => 'required',
+            'deskripsi'  => 'required',
+            'judul_materi'  => 'required',
+            'isi_materi'         => 'required',
         ],    [   // Errors
             'nama_materi'    => [
                 'required'    => 'Mohon masukkan Nama Materi.',
                 'is_unique'   => 'Nama Materi tidak bisa sama dengan yang sudah ada'
             ],
-            'deskripsi_materi' => [
+            'deskripsi' => [
                 'required'    => 'Mohon masukkan Deskripsi Materi',
             ],
-            'isimateri' => [
+            'judul_materi' => [
+                'required'    => 'Mohon masukkan Judul Materi',
+            ],
+            'isi_materi' => [
                 'required'    => 'Mohon masukkan Isi Materi.',
             ],
         ]);
@@ -46,23 +50,31 @@ class Materi extends BaseController
                 'tittle' => 'Pojok Guru',
             ];
 
-            //$dataerr = $validation->getErrors();
+            // $dataerr = $validation->getErrors();
+            // dd($dataerr);
 
             return redirect()->to(base_url('dashboard/pojokguru/index'))->withInput();
         } else {
             $data = [
+                'kode_materi'       => $this->request->getPost('kode_materi'),
+                'email'             => $this->email,
                 'nama_materi'       => $this->request->getPost('nama_materi'),
-                'deskripsi_materi'  => $this->request->getPost('deskripsi_materi'),
-                'isimateri'         => $this->request->getPost('isimateri'),
-                //'email'          => $this->email,
-                'created_at'    => Time::now(),
-                'updated_at'    => Time::now(),
+                'deskripsi'         => $this->request->getPost('deskripsi'),
+                'judul_materi'      => $this->request->getPost('judul_materi'),
+                'isi_materi'        => $this->request->getPost('isi_materi'),
+                'created_at'        => Time::now(),
+                'updated_at'        => Time::now(),
             ];
             $this->materiModel->save($data);
 
             session()->setFlashdata('message', 'Materi telah ditambahkan');
-            return redirect()->to(base_url('dashboard/pojokguru/index'));
+            return redirect()->to(base_url('dashboard/index'));
         }
+    }
+
+    public function edit($id)
+    {
+        # View Edit Materi
     }
 
     public function editAction($id)
@@ -73,17 +85,21 @@ class Materi extends BaseController
 
         $validation->setRules([
             'nama_materi'       => 'required',
-            'deskripsi_materi'  => 'required',
+            'deskripsi'  => 'required',
+            'judul_materi'  => 'required',
             'isimateri'         => 'required',
         ],    [   // Errors
             'nama_materi'    => [
                 'required'    => 'Mohon masukkan Nama Materi.',
-                //'is_unique'   => 'Nama Materi tidak bisa sama dengan yang sudah ada'
+                'is_unique'   => 'Nama Materi tidak bisa sama dengan yang sudah ada'
             ],
-            'deskripsi_materi' => [
+            'deskripsi' => [
                 'required'    => 'Mohon masukkan Deskripsi Materi',
             ],
-            'isimateri' => [
+            'judul_materi' => [
+                'required'    => 'Mohon masukkan Judul Materi',
+            ],
+            'isi_materi' => [
                 'required'    => 'Mohon masukkan Isi Materi.',
             ],
         ]);
@@ -101,12 +117,12 @@ class Materi extends BaseController
             return redirect()->to(base_url('materi/edit'))->withInput();
         } else {
             $data = [
-                'kode_materi'       => $id,
+                'id_materi'         => $id,
+                'kode_materi'       => $this->request->getPost('kode_materi'),
                 'nama_materi'       => $this->request->getPost('nama_materi'),
                 'deskripsi_materi'  => $this->request->getPost('deskripsi_materi'),
-                'isimateri'         => $this->request->getPost('isimateri'),
-                //'email'           => $this->email,
-                'created_at'        => Time::now(),
+                'isi_materi'         => $this->request->getPost('isi_materi'),
+                'email'             => $this->email,
                 'updated_at'        => Time::now(),
             ];
             $this->materiModel->save($data);

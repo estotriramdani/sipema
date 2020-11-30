@@ -5,21 +5,23 @@ namespace App\Models;
 use CodeIgniter\Model;
 
 
-class MateriModel extends Model
+class SoalModel extends Model
 {
-    protected $table      = 'materis';
-    protected $primaryKey = 'id_materi';
+    protected $table      = 'soals';
+    protected $primaryKey = 'id_soal';
 
     protected $returnType     = 'object';
     protected $useSoftDeletes = false;
 
     protected $allowedFields = [
         'kode_materi',
-        'email',
-        'nama_materi',
-        'deskripsi',
-        'judul_materi',
-        'isi_materi'
+        'pertanyaan',
+        'pilihan_a',
+        'pilihan_b',
+        'pilihan_c',
+        'pilihan_d',
+        'jawaban',
+        'nilai_soal',
     ];
 
     protected $useTimestamps = true;

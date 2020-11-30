@@ -1,4 +1,6 @@
-<?php namespace App\Database\Migrations;
+<?php
+
+namespace App\Database\Migrations;
 
 use CodeIgniter\Database\Migration;
 
@@ -10,9 +12,9 @@ class Soals extends Migration
 	{
 		$this->forge->addField([
 			'id_soal' => [
-					'type'           => 'INT',
-					'constraint'     => '5',
-					'auto_increment' => TRUE,
+				'type'           => 'INT',
+				'constraint'     => '5',
+				'auto_increment' => TRUE,
 			],
 			'kode_materi' => [
 				'type'           => 'VARCHAR',
@@ -21,46 +23,42 @@ class Soals extends Migration
 			'pertanyaan' => [
 				'type'           => 'TEXT',
 			],
-			'pilihan1' => [
-					'type'           => 'VARCHAR',
-					'constraint'     => '200',
+			'pilihan_a' => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '200',
 			],
-			'pilihan2' => [
-					'type'           => 'VARCHAR',
-					'constraint'     => '200',
+			'pilihan_b' => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '200',
 			],
-			'pilihan3' => [
-					'type'           => 'VARCHAR',
-					'constraint'     => '200',
+			'pilihan_c' => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '200',
 			],
-			'pilihan4' => [
-					'type'           => 'VARCHAR',
-					'constraint'     => '200',
-			],
-			'jawaban_user' => [
-					'type'           => 'TEXT',
+			'pilihan_d' => [
+				'type'           => 'VARCHAR',
+				'constraint'     => '200',
 			],
 			'jawaban' => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '200',
 			],
 			'nilai_soal' => [
-					'type'           => 'INT',
-					'constraint'	 => '2',
+				'type'           => 'INT',
+				'constraint'	 => '2',
 			],
 			'created_at' => [
 				'type'			=> 'DATETIME',
 				'null'			=> TRUE,
 			],
 			'updated_at' => [
-					'type'			=> 'DATETIME',
-					'null'			=> TRUE,
+				'type'			=> 'DATETIME',
+				'null'			=> TRUE,
 			],
 		]);
 		$this->forge->addKey('id_soal', true);
-		$this->forge->addForeignKey('kode_materi', 'materis', 'kode_materi', 'CASCADE', 'CASCADE');
+		//$this->forge->addForeignKey('kode_materi', 'materis', 'kode_materi');
 		$this->forge->createTable($this->table);
-
 	}
 
 	//--------------------------------------------------------------------

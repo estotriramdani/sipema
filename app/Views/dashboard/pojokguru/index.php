@@ -46,25 +46,37 @@
       <h3>Tambah Materi</h3>
       <form action="/materi/create" method="post">
         <div class="form-group row">
+          <label for="kode_materi" class="col-sm-2 col-form-label">Kode Materi</label>
+          <div class="col-sm-10">
+            <input type="text" class="form-control" id="kode_materi" name="kode_materi">
+          </div>
+        </div>
+        <div class="form-group row">
           <label for="nama_materi" class="col-sm-2 col-form-label">Nama Materi</label>
           <div class="col-sm-10">
             <input type="text" class="form-control" id="nama_materi" name="nama_materi">
           </div>
         </div>
         <div class="form-group row">
-          <label for="deskripsi_materi" class="col-sm-2 col-form-label">Deskripsi Materi</label>
+          <label for="deskripsi" class="col-sm-2 col-form-label">Deskripsi Materi</label>
           <div class="col-sm-10">
-            <input type="text" class="form-control" id="deskripsi_materi" name="deskripsi_materi">
+            <input type="text" class="form-control" id="deskripsi" name="deskripsi">
           </div>
         </div>
         <div class="form-group row">
-          <label for="isimateri" class="col-sm-2 col-form-label">Isi Materi</label>
+          <label for="judul_materi" class="col-sm-2 col-form-label">Judul Materi</label>
           <div class="col-sm-10">
-            <textarea name="isimateri" class="form-control editor"></textarea>
+            <input type="text" class="form-control" id="judul_materi" name="judul_materi">
+          </div>
+        </div>
+        <div class="form-group row">
+          <label for="isi_materi" class="col-sm-2 col-form-label">Isi Materi</label>
+          <div class="col-sm-10">
+            <textarea name="isi_materi" class="form-control editor"></textarea>
           </div>
         </div>
 
-        <input type="hidden" value="<?= $email; ?>">
+        <input type="hidden" name=email value="<?= $email; ?>">
 
         <div class="form-group row">
           <div class="col-sm-10">
@@ -76,16 +88,16 @@
 
     <div class="konten-tambahsoal">
       <h3>Tambah Soal</h3>
-      <form>
+      <form action="/soal/create" method="post">
         <div class="form-group row">
-          <label for="inputEmail3" class="col-sm-2 col-form-label">Nama Materi</label>
+          <label for="nama_materi" class="col-sm-2 col-form-label">Nama Materi</label>
           <div class="col-sm-10">
-            <select class="form-control" id="exampleFormControlSelect1">
+            <select class="form-control" id="nama_materi" name="nama_materi">
               <option>Pilih materi</option>
               <option>Nanti ini dilooping dari tabel materi</option>
               <option>3</option>
-              <option>4</option>
-              <option>5</option>
+              <option>Materi 1</option>
+              <option>MTK011</option>
             </select> </div>
         </div>
         <div class="form-group row">
@@ -97,31 +109,31 @@
 
         <div class="form-row">
           <div class="form-group col-md-3">
-            <label for="pilihan_1">Pilihan 1</label>
-            <input type="text" class="form-control" id="pilihan_1" name="pilihan_1">
+            <label for="pilihan_a">Pilihan A</label>
+            <input type="text" class="form-control" id="pilihan_a" name="pilihan_a">
           </div>
           <div class="form-group col-md-3">
-            <label for="pilihan_2">Pilihan 2</label>
-            <input type="text" class="form-control" id="pilihan_2" name="pilihan_2">
+            <label for="pilihan_b">Pilihan B</label>
+            <input type="text" class="form-control" id="pilihan_b" name="pilihan_b">
           </div>
           <div class="form-group col-md-3">
-            <label for="pilihan_3">Pilihan 3</label>
-            <input type="text" class="form-control" id="pilihan_3" name="pilihan_3">
+            <label for="pilihan_c">Pilihan C</label>
+            <input type="text" class="form-control" id="pilihan_c" name="pilihan_c">
           </div>
           <div class="form-group col-md-3">
-            <label for="pilihan_4">Pilihan 4</label>
-            <input type="text" class="form-control" id="pilihan_4" name="pilihan_4">
+            <label for="pilihan_d">Pilihan D</label>
+            <input type="text" class="form-control" id="pilihan_d" name="pilihan_d">
           </div>
         </div>
 
         <div class="form-group row">
           <label for="jawaban" class="col-sm-2 col-form-label">Kunci</label>
           <div class="col-sm-10">
-            <input type="email" class="form-control" id="jawaban" name="jawaban">
+            <input type="text" class="form-control" id="jawaban" name="jawaban">
           </div>
         </div>
 
-        <input type="hidden" value="<?= $email; ?>">
+        <input type="hidden" name="email" value="<?= $email; ?>">
 
         <div class="form-group row">
           <div class="col-sm-10">
