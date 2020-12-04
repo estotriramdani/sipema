@@ -265,6 +265,70 @@ class Dashboard extends BaseController
         return view('dashboard/pojokguru/index', $data);
     }
 
+    public function daftarMateri()
+    {
+        $db      = \Config\Database::connect();
+
+        $user   = $this->user;
+
+        $data = [
+            'role' => $user->role_id,
+            'nama' => $user->nama,
+            'role_name' => $user->roles,
+            'kode_identitas' => $user->kode_identitas,
+            'jenis_kelamin' => $user->jenis_kelamin,
+            'tanggal_lahir' => $user->tanggal_lahir,
+            'tempat_lahir' => $user->tempat_lahir,
+            'email' => $user->email,
+            'alamat' => $user->alamat,
+            'title' => 'Daftar Materi'
+        ];
+        return view('dashboard/pojokguru/daftarmateri', $data);
+    }
+
+    public function editMateri($kode_materi)
+    {
+        $db      = \Config\Database::connect();
+
+        $user   = $this->user;
+
+        $data = [
+            'role' => $user->role_id,
+            'nama' => $user->nama,
+            'role_name' => $user->roles,
+            'kode_identitas' => $user->kode_identitas,
+            'jenis_kelamin' => $user->jenis_kelamin,
+            'tanggal_lahir' => $user->tanggal_lahir,
+            'tempat_lahir' => $user->tempat_lahir,
+            'email' => $user->email,
+            'alamat' => $user->alamat,
+            'title' => 'Daftar Materi',
+            'kode_materi' => $kode_materi
+        ];
+        return view('dashboard/pojokguru/editmateri', $data);
+    }
+
+    public function daftarSoal()
+    {
+        $db      = \Config\Database::connect();
+
+        $user   = $this->user;
+
+        $data = [
+            'role' => $user->role_id,
+            'nama' => $user->nama,
+            'role_name' => $user->roles,
+            'kode_identitas' => $user->kode_identitas,
+            'jenis_kelamin' => $user->jenis_kelamin,
+            'tanggal_lahir' => $user->tanggal_lahir,
+            'tempat_lahir' => $user->tempat_lahir,
+            'email' => $user->email,
+            'alamat' => $user->alamat,
+            'title' => 'Daftar Materi'
+        ];
+        return view('dashboard/pojokguru/daftarsoal', $data);
+    }
     //--------------------------------------------------------------------
+
 
 }

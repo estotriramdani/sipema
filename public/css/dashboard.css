@@ -182,6 +182,10 @@ h3::after {
   top: 20px;
 }
 
+.dropdown-item {
+  color: #FF55BF!important;
+}
+
 /* profile */
 
 .profile-img-dashboard {
@@ -191,9 +195,10 @@ h3::after {
   border-color: #f53eaf;
 }
 
-td {
+.table > thead > tr > * {
   vertical-align: middle;
 }
+
 
 /* materi */
 

@@ -51,13 +51,21 @@
                     echo '<li><a href="/kuis" id="kuis">Kuis</a></li>';
                 }
                 ?>
-                <?php
-                if (($role == 2)) {
-                    echo '<li><a href="/pojokguru" class="pojok-guru">Pojok Guru</a></li>';
-                } else if ($role == 1) {
-                    echo '<li><a href="/pojokadmin" id="kuis">Pojok Admin</a></li>';
-                }
-                ?>
+                <?php if ($role == 2) { ?>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Pojok Guru
+                            </a>
+
+                            <div class="dropdown-menu" style="color: black!important;" aria-labelledby="dropdownMenuLink">
+                                <a class="dropdown-item" href="/pojokguru">Buat Soal/Materi</a>
+                                <a class="dropdown-item" href="/pojokguru/daftarmateri">Daftar Materi</a>
+                                <a class="dropdown-item" href="/pojokguru/daftarsoal">Daftar Soal</a>
+                            </div>
+                        </div>
+                    </li>
+                <?php } ?>
                 <li>
                     <a href="/auth/logout" onClick="return confirm('Yakin keluar?')">Keluar</a>
                 </li>
