@@ -44,6 +44,7 @@ $routes->get('/pojokguru', 'Dashboard::pojokGuru', ['filter' => 'auth']);
 $routes->get('/pojokguru/daftarmateri', 'Dashboard::daftarmateri', ['filter' => 'auth']);
 $routes->get('/pojokguru/editmateri/(:segment)', 'Dashboard::editmateri/$1', ['filter' => 'auth']);
 $routes->get('/pojokguru/daftarsoal', 'Dashboard::daftarsoal', ['filter' => 'auth']);
+$routes->get('/pojokguru/editsoal/(:segment)', 'Dashboard::editsoal/$1', ['filter' => 'auth']);
 
 
 

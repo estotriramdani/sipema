@@ -21,7 +21,7 @@
       <td style="width: 40%;">Pada suatu hari ada Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam, esse!</td>
       <td>Lilis Suharti, S.Pd.</td>
       <td>
-        <a href="editmateri/51613" class="btn btn-sm btn-success mb-2" style="width: 100%;">Ubah </a>
+        <a href="editsoal/51613" class="btn btn-sm btn-success mb-2" style="width: 100%;">Ubah </a>
         <form action="pojokguru/hapusmateri" class="">
           <input type="submit" value="Hapus" class="btn btn-sm btn-danger" style="width: 100%;">
         </form>

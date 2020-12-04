@@ -328,6 +328,28 @@ class Dashboard extends BaseController
         ];
         return view('dashboard/pojokguru/daftarsoal', $data);
     }
+
+    public function editSoal($kode_soal)
+    {
+        $db      = \Config\Database::connect();
+
+        $user   = $this->user;
+
+        $data = [
+            'role' => $user->role_id,
+            'nama' => $user->nama,
+            'role_name' => $user->roles,
+            'kode_identitas' => $user->kode_identitas,
+            'jenis_kelamin' => $user->jenis_kelamin,
+            'tanggal_lahir' => $user->tanggal_lahir,
+            'tempat_lahir' => $user->tempat_lahir,
+            'email' => $user->email,
+            'alamat' => $user->alamat,
+            'title' => 'Daftar Materi',
+            'kode_soal' => $kode_soal
+        ];
+        return view('dashboard/pojokguru/editsoal', $data);
+    }
     //--------------------------------------------------------------------
 
 
