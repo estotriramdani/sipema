@@ -19,7 +19,7 @@
 <script type="text/javascript" src="js/materi.js"></script>
 <script type="text/javascript" src="js/pojokguru.js"></script>
 
-<script src="/vendor/wow/wow.min.js"></script>
+<script src="/sumber/wow/wow.min.js"></script>
 
 <script src="https://cdn.ckeditor.com/ckeditor5/23.1.0/classic/ckeditor.js"></script>
 
