@@ -4,14 +4,20 @@ namespace App\Controllers;
 
 use App\Models\NilaiModel;
 use App\Models\UserModel;
+use App\Models\MateriModel;
 
 class Dashboard extends BaseController
 {
     public function __construct()
     {
+        $db = \Config\Database::connect();
+
         $this->session = \Config\Services::session();
         $this->userModel = new UserModel();
         $this->nilaiModel = new NilaiModel();
+
+
+        $this->materi = $db->query("SELECT * from `materis`");
 
         $email = $this->session->get('email');
 
@@ -220,11 +226,13 @@ class Dashboard extends BaseController
     {
 
         $user   = $this->user;
+        $materi = $this->materi;
 
         $data = [
             'role' => $user->role_id,
             'nama' => $user->nama,
-            'title' => 'Materi'
+            'title' => 'Materi',
+            'materi' => $materi
         ];
         return view('dashboard/materi', $data);
     }
@@ -246,9 +254,10 @@ class Dashboard extends BaseController
 
     public function pojokGuru()
     {
-        $db      = \Config\Database::connect();
 
         $user   = $this->user;
+
+        $materi = $this->materi;
 
         $data = [
             'role' => $user->role_id,
@@ -260,7 +269,8 @@ class Dashboard extends BaseController
             'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
             'alamat' => $user->alamat,
-            'title' => 'Pojok Guru'
+            'title' => 'Pojok Guru',
+            'materi' => $materi
         ];
         return view('dashboard/pojokguru/index', $data);
     }

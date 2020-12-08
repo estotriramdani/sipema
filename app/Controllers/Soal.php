@@ -22,7 +22,7 @@ class Soal extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'nama_materi' => 'required',
+            'kode_materi' => 'required',
             'pertanyaan'  => 'required',
             'pilihan_a'   => 'required',
             'pilihan_b'   => 'required',
@@ -31,7 +31,7 @@ class Soal extends BaseController
             'jawaban'     => 'required',
             // 'nilai_soal'  => 'nilai_soal'
         ],    [   // Errors
-            'nama_materi'    => [
+            'kode_materi'    => [
                 'required'    => 'Mohon pilih Nama Materi.',
             ],
             'pertanyaan' => [
@@ -70,12 +70,12 @@ class Soal extends BaseController
 
             return redirect()->to(base_url('dashboard/pojokguru/index'))->withInput();
         } else {
-            $nama_materi = $this->request->getPost('nama_materi');
-            $query = $this->db->query("SELECT kode_materi FROM materis WHERE nama_materi='$nama_materi'");
+            $kode_materi = $this->request->getPost('kode_materi');
+            $query = $this->db->query("SELECT kode_materi FROM materis WHERE kode_materi='$kode_materi'");
             $result   = $query->getRow();
 
             $data = [
-                'kode_materi'     => $result->kode_materi,
+                'kode_materi'     => $this->request->getPost('kode_materi'),
                 'pertanyaan'      => $this->request->getPost('pertanyaan'),
                 'pilihan_a'       => $this->request->getPost('pilihan_a'),
                 'pilihan_b'       => $this->request->getPost('pilihan_b'),
@@ -105,7 +105,7 @@ class Soal extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'nama_materi' => 'required',
+            'kode_materi' => 'required',
             'pertanyaan'  => 'required',
             'pilihan_a'   => 'required',
             'pilihan_b'   => 'required',
@@ -114,7 +114,7 @@ class Soal extends BaseController
             'jawaban'     => 'required',
             'nilai_soal'  => 'nilai_soal'
         ],    [   // Errors
-            'nama_materi'    => [
+            'kode_materi'    => [
                 'required'    => 'Mohon pilih Nama Materi.',
             ],
             'pertanyaan' => [
@@ -155,7 +155,7 @@ class Soal extends BaseController
             $data = [
                 'id_materi'         => $id,
                 'kode_materi'       => $this->request->getPost('kode_materi'),
-                'nama_materi'       => $this->request->getPost('nama_materi'),
+                'kode_materi'       => $this->request->getPost('kode_materi'),
                 'deskripsi_materi'  => $this->request->getPost('deskripsi_materi'),
                 'isi_materi'         => $this->request->getPost('isi_materi'),
                 'email'             => $this->email,

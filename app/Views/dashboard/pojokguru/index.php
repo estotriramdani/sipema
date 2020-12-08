@@ -3,6 +3,15 @@
 <?= $this->section('content'); ?>
 <h1>Pojok Guru</h1>
 
+<?php if (session()->getFlashdata('message')) : ?>
+  <div class="alert alert-warning alert-dismissible fade show" role="alert">
+    <?= session()->getFlashdata('message'); ?>
+    <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+      <span aria-hidden="true">&times;</span>
+    </button>
+  </div>
+<?php endif; ?>
+
 <div class="row">
   <div class="col-sm-12">
     <div class="row">
@@ -92,13 +101,13 @@
         <div class="form-group row">
           <label for="nama_materi" class="col-sm-2 col-form-label">Nama Materi</label>
           <div class="col-sm-10">
-            <select class="form-control" id="nama_materi" name="nama_materi">
+            <select class="form-control" id="nama_materi" name="kode_materi">
               <option>Pilih materi</option>
-              <option>Nanti ini dilooping dari tabel materi</option>
-              <option>3</option>
-              <option>Materi 1</option>
-              <option>MTK011</option>
-            </select> </div>
+              <?php foreach ($materi->getResult() as $m) : ?>
+                <option value="<?= $m->kode_materi; ?>" name="kode_materi"><?= $m->nama_materi; ?></option>
+              <?php endforeach; ?>
+            </select>
+          </div>
         </div>
         <div class="form-group row">
           <label for="pertanyaan" class="col-sm-2 col-form-label">Pertanyaan</label>
