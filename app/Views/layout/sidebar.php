@@ -44,10 +44,10 @@
                     <a href="/profile" id="profile">Profile</a>
                 </li>
                 <li>
-                    <a href="/materi" id="materi">Materi</a>
+                    <a href="/materi?kode_materi=&nama_materi=" id="materi">Materi</a>
                 </li>
                 <?php
-                if ($role == 3) {
+                if ($role == 3 | $role == 2) {
                     echo '<li><a href="/kuis" id="kuis">Kuis</a></li>';
                 }
                 ?>

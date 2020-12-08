@@ -4,7 +4,6 @@ namespace App\Controllers;
 
 use App\Models\NilaiModel;
 use App\Models\UserModel;
-use App\Models\MateriModel;
 
 class Dashboard extends BaseController
 {
@@ -18,6 +17,7 @@ class Dashboard extends BaseController
 
 
         $this->materi = $db->query("SELECT * from `materis`");
+        $this->soal = $db->query("SELECT * from `soals`");
 
         $email = $this->session->get('email');
 
@@ -41,6 +41,7 @@ class Dashboard extends BaseController
 
     public function index()
     {
+        $materi = $this->materi;
         $user = $this->user;
         $nilai = $this->nilai;
 
@@ -61,10 +62,7 @@ class Dashboard extends BaseController
                 'uts' => $nilai->uts,
                 'uas' => $nilai->uas,
                 'title' => 'Dashboard',
-                'user' => [
-                    // 'email' => $user['email']
-                    //nah nanti masukin ke sini data-data usernya. Cukup sekali aja, nanti aing copy ke method yang lainnya
-                ]
+                'materi' => $materi
             ];
             return view('dashboard/index', $data);
         } else {
@@ -277,8 +275,8 @@ class Dashboard extends BaseController
 
     public function daftarMateri()
     {
-        $db      = \Config\Database::connect();
 
+        $materi = $this->materi;
         $user   = $this->user;
 
         $data = [
@@ -291,7 +289,8 @@ class Dashboard extends BaseController
             'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
             'alamat' => $user->alamat,
-            'title' => 'Daftar Materi'
+            'title' => 'Daftar Materi',
+            'materi' => $materi
         ];
         return view('dashboard/pojokguru/daftarmateri', $data);
     }
@@ -323,7 +322,7 @@ class Dashboard extends BaseController
         $db      = \Config\Database::connect();
 
         $user   = $this->user;
-
+        $soal = $this->soal;
         $data = [
             'role' => $user->role_id,
             'nama' => $user->nama,
@@ -334,7 +333,8 @@ class Dashboard extends BaseController
             'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
             'alamat' => $user->alamat,
-            'title' => 'Daftar Materi'
+            'title' => 'Daftar Soal',
+            'soal' => $soal
         ];
         return view('dashboard/pojokguru/daftarsoal', $data);
     }
