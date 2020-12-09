@@ -1,6 +1,15 @@
 <?= $this->extend('layout/template-dashboard'); ?>
 
+
+
 <?= $this->section('content'); ?>
+
+<?php
+
+// $db = \Config\Database::connect();
+
+// $materi = $db->query("SELECT * from `materis`");
+?>
 
 <h1>Materi</h1>
 
@@ -9,22 +18,32 @@
     Pilih materi
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-    <a class="dropdown-item" href="/materi/bangundatar" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Bangun Datar</a>
-    <a class="dropdown-item" href="/materi/himpunan" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Himpunan</a>
-    <a class="dropdown-item" href="/materi/persamaan" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')">Persamaan</a>
+    <?php
+    foreach ($materi->getResult() as $m) : ?>
+      <a class="dropdown-item" href="/materi?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')"><?= $m->nama_materi; ?></a>
+    <?php endforeach; ?>
   </div>
 </div>
 
+<div>
+  <?php
+  $kodeMateri = $_GET['kode_materi'];
+  $namaMateri = $_GET['nama_materi'];
+
+  $db = \Config\Database::connect();
+
+  $query = $db->query("SELECT * FROM materis WHERE kode_materi='$kodeMateri'");
+
+  foreach ($query->getResult() as $row) {
+    echo "<h3>Materi: $namaMateri</h3>";
+    echo $row->isi_materi;
+  }
+
+  ?>
+</div>
+
+
+
+
 
 <?= $this->endSection(); ?>
-
-<?php
-
-
-// if ($_GET['materi'] == 'bangundatar') {
-//   echo $this->include('dashboard/materi/bangundatar');
-// }
-// echo $this->include('dashboard/materi/himpunan');
-
-
-?>

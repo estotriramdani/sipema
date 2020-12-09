@@ -10,23 +10,27 @@
       <th scope="col">No</th>
       <th scope="col">Kode Materi</th>
       <th scope="col">Nama Materi</th>
-      <th scope="col">Pembuat Materi</th>
+      <th scope="col">Email Pemateri</th>
       <th scope="col">AKSI</th>
     </tr>
   </thead>
   <tbody>
-    <tr>
-      <td>1</td>
-      <td>SPM21</td>
-      <td>Bangun Datar</td>
-      <td>Lilis Suharti, S.Pd.</td>
-      <td>
-        <a href="editmateri/51613" class="btn btn-sm btn-success">Ubah </a>
-        <form action="pojokguru/hapusmateri" class="d-inline">
-          <input type="submit" value="hapus" class="btn btn-sm btn-danger">
-        </form>
-      </td>
-    </tr>
+    <?php $i = 1; ?>
+    <?php foreach ($materi->getResult() as $m) : ?>
+      <tr>
+        <td><?= $i; ?></td>
+        <td><?= $m->kode_materi; ?></td>
+        <td><?= $m->nama_materi; ?></td>
+        <td><?= $m->email; ?></td>
+        <td>
+          <a href="editmateri/51613" class="btn btn-sm btn-success">Ubah </a>
+          <form action="pojokguru/hapusmateri" class="d-inline">
+            <input type="submit" value="hapus" class="btn btn-sm btn-danger">
+          </form>
+        </td>
+      </tr>
+      <?php $i++; ?>
+    <?php endforeach; ?>
   </tbody>
 </table>
 

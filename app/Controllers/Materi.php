@@ -68,7 +68,7 @@ class Materi extends BaseController
             $this->materiModel->save($data);
 
             session()->setFlashdata('message', 'Materi telah ditambahkan');
-            return redirect()->to(base_url('dashboard/index'));
+            return redirect()->to(base_url('pojokguru'));
         }
     }
 

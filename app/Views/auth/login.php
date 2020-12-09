@@ -28,7 +28,7 @@
 
         <form action="/auth/loginAction" method="post">
           <div class="form-group">
-          
+
             <label for="exampleInputEmail1">Email address</label>
             <input type="email" class="form-control" name="email" id="exampleInputEmail1" aria-describedby="emailHelp" autofocus placeholder="admin@mail.com">
           </div>
@@ -45,6 +45,7 @@
       </div>
       <div class="mt-3" style="text-align: center;">
         <a href="../" class="btn-mulai shadow-sm posisi-tombol">Beranda</a>
+        <a href="../auth/registration" class="btn-mulai shadow-sm posisi-tombol">Mendaftar</a>
       </div>
     </div>
   </div>

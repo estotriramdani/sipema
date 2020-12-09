@@ -5,15 +5,15 @@
 <h1 class="tittle-dashboard">Laman Profile</h1>
 
 <div class="row">
-  <div class="col-sm-6 ">
+  <div class="col-sm-12 ">
     <!-- <img src="/img/default.jpg" class="align-self-start mr-3 profile-img-dashboard rounded-circle mx-auto d-block" alt="..."> -->
-    <h4 class="text-center mt-3 mb-3">Halo, <?= $nama; ?>!</h4>
+    <h4 class="mt-3 mb-5">Halo, <?= $nama; ?>!</h4>
   </div>
 </div>
 
-<h4>Profil lengkap</h4>
 <div class="row mb-4">
   <div class="col-sm-6">
+    <h4 class="mb-3">Profil lengkap</h4>
     <form action="/dashboard/updateprofil" method="post">
       <div class="form-group row">
         <label for="kode_identitas" class="col-sm-4 col-form-label">Kode Identitas</label>
@@ -80,14 +80,8 @@
       </div>
     </form>
   </div>
-</div>
-
-
-
-
-<h4>Ganti password</h4>
-<div class="row">
   <div class="col-sm-6">
+    <h4 class="mb-3">Ganti password</h4>
     <form action="/dashboard/updatepassword" method="post">
       <div class="form-group row">
         <label for="oldpassword" class="col-sm-4 col-form-label">Password Lama</label>
@@ -122,6 +116,16 @@
         </div>
       </div>
     </form>
+  </div>
+</div>
+
+
+
+
+
+<div class="row">
+  <div class="col-sm-6">
+
   </div>
 </div>
 

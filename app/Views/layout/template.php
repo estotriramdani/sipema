@@ -11,8 +11,8 @@
     <!-- My CSS -->
     <link rel="stylesheet" href="/css/style.css">
 
-    <link href="/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/sumber/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/sumber/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/owl.theme.default.min.css">
@@ -44,7 +44,7 @@
     <script type="text/javascript" src="js/script.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/simple-parallax-js@5.5.1/dist/simpleParallax.min.js"></script>
 
-    <script src="/vendor/wow/wow.min.js"></script>
+    <script src="/sumber/wow/wow.min.js"></script>
 
     <script>
         $(".buton").on('click', function(event) {

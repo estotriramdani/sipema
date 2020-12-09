@@ -1,5 +1,6 @@
 <?= $this->section('content'); ?>
 
+
 <p> Halo, <?= $nama; ?>! Kamu dikenali sebagai <?= $role_name; ?> di SIPEMA</p>
 <div class="row">
   <div class="col-sm-7">
@@ -17,7 +18,7 @@
               <div class="row">
                 <div class="col-9">
                   <h5 class="card-title">Jumlah Materi Dibuat</h5>
-                  <h6 class="card-subtitle mb-2">Terakhir diperbarui 31/1/2020</h6>
+                  <h6 class="card-subtitle mb-2">Terakhir diperbarui hari ini (<?= date("d/m/Y"); ?>).</h6>
                 </div>
                 <div class="col-3">
                   <h2 class="card-text text-right nilai">3</h2>
@@ -33,7 +34,7 @@
             <div class="row">
               <div class="col-9">
                 <h5 class="card-title">Jumlah Soal Dibuat</h5>
-                <h6 class="card-subtitle mb-2">Terakhir diperbarui 31/1/2020</h6>
+                <h6 class="card-subtitle mb-2">Terakhir diperbarui hari ini (<?= date("d/m/Y"); ?>)</h6>
               </div>
               <div class="col-3">
                 <h2 class="card-text text-right nilai">30</h2>

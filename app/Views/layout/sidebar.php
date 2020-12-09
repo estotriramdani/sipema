@@ -15,8 +15,8 @@
     <link rel="stylesheet" href="/css/owl.carousel.min.css">
     <link rel="stylesheet" href="/css/owl.theme.default.min.css">
 
-    <link href="/vendor/animate.css/animate.min.css" rel="stylesheet">
-    <link href="/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet">
+    <link href="/sumber/animate.css/animate.min.css" rel="stylesheet">
+    <link href="/sumber/font-awesome/css/font-awesome.min.css" rel="stylesheet">
 
 
     <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,400;0,600;1,500&display=swap" rel="stylesheet">
@@ -44,13 +44,22 @@
                     <a href="/profile" id="profile">Profile</a>
                 </li>
                 <li>
-                    <a href="/materi" id="materi">Materi</a>
+                    <a href="/materi?kode_materi=&nama_materi=" id="materi">Materi</a>
                 </li>
-                <?php
-                if ($role == 3) {
-                    echo '<li><a href="/kuis" id="kuis">Kuis</a></li>';
-                }
-                ?>
+                <?php if ($role == 2 | $role == 3) { ?>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kuis
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby=" dropdownMenuLink">
+                                <?php foreach ($materi->getResult() as $m) : ?>
+                                    <a class="dropdown-item" href="/kuis?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>"><?= $m->nama_materi; ?></a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </li>
+                <?php } ?>
                 <?php if ($role == 2) { ?>
                     <li>
                         <div class="dropdown">
