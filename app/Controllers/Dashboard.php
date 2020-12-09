@@ -2,6 +2,7 @@
 
 namespace App\Controllers;
 
+use App\Models\MateriModel;
 use App\Models\NilaiModel;
 use App\Models\UserModel;
 
@@ -12,6 +13,7 @@ class Dashboard extends BaseController
         $this->session = \Config\Services::session();
         $this->userModel = new UserModel();
         $this->nilaiModel = new NilaiModel();
+        $this->materiModel = new MateriModel();
 
         $email = $this->session->get('email');
 
@@ -269,6 +271,8 @@ class Dashboard extends BaseController
     {
         $db      = \Config\Database::connect();
 
+        $materi  = $this->materiModel->findAll();
+
         $user   = $this->user;
 
         $data = [
@@ -281,8 +285,10 @@ class Dashboard extends BaseController
             'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
             'alamat' => $user->alamat,
+            'materi' => $materi,
             'title' => 'Daftar Materi'
         ];
+
         return view('dashboard/pojokguru/daftarmateri', $data);
     }
 
