@@ -2,27 +2,80 @@
 
 <?= $this->section('content'); ?>
 
-<h1>Kuis {materi}</h1>
+<h1>Kuis <?= $_GET['nama_materi']; ?></h1>
 
-<p>Pertanyaan 1</p>
 
-<div class="input-group">
-  <div class="input-group-prepend">
-    <div class="input-group-text">
-      <input type="radio" name="pilihan" id="jawaban1" aria-label="Radio button for following text input">
-    </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with radio button">
+<?php
+$db = \Config\Database::connect();
+
+$quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_materi'] . "'");
+
+?>
+
+<div id="question-wrapper">
+
+  <?php $i = 1; ?>
+  <?php foreach ($quiz->getResult() as $q) : ?>
+    <form action="">
+      <p class="pertanyaan"><?= $q->pertanyaan; ?></p>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'a') {
+                                                                                                echo "true";
+                                                                                              } else {
+                                                                                                echo "false";
+                                                                                              } ?>" onclick="displayResult(this.value)">
+        <label class="form-check-label"><?= $q->pilihan_a; ?></label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'b') {
+                                                                                                echo "true";
+                                                                                              } else {
+                                                                                                echo "false";
+                                                                                              } ?>" onclick="displayResult(this.value)">
+        <label class="form-check-label"><?= $q->pilihan_b; ?></label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'c') {
+                                                                                                echo "true";
+                                                                                              } else {
+                                                                                                echo "false";
+                                                                                              } ?>" onclick="displayResult(this.value)">
+        <label class="form-check-label"><?= $q->pilihan_c; ?></label>
+      </div>
+      <div class="form-check form-check-inline">
+        <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'd') {
+                                                                                                echo "true";
+                                                                                              } else {
+                                                                                                echo "false";
+                                                                                              } ?>" onclick="displayResult(this.value)">
+        <label class="form-check-label"><?= $q->pilihan_d; ?></label>
+      </div>
+
+    </form>
+    <hr>
+    <?php $i++; ?>
+  <?php endforeach; ?>
+
+  <button class="btn btn-mulai" id="hitungSkor">Selesai kuis</button>
+
 </div>
-<div class="input-group">
-  <div class="input-group-prepend">
-    <div class="input-group-text">
-      <input type="radio" name="pilihan" id="jawaban2" aria-label="Radio button for following text input">
-    </div>
-  </div>
-  <input type="text" class="form-control" aria-label="Text input with radio button">
-</div>
 
+<div id="nilai-card">
+  <div class="card"">
+    <div class=" card-body">
+    <div class="row">
+      <div class="col-9">
+        <h6 class="card-subtitle mb-2">Hasil Kuis</h6>
+        <h5 class="card-title"><?= $_GET['nama_materi']; ?></h5>
+      </div>
+      <div class="col-3">
+        <h2 class="card-text text-right nilai" id="nilai-kuis">nilai</h2>
+      </div>
+    </div>
+    <small>Niai maksimal 100</small>
+  </div>
+</div>
+</div>
 
 <script src="/js/kuis.js"></script>
 

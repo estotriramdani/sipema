@@ -186,6 +186,10 @@ h3::after {
   color: #FF55BF!important;
 }
 
+.dropdown-item:hover{
+  color: black;
+}
+
 /* profile */
 
 .profile-img-dashboard {
@@ -205,6 +209,10 @@ h3::after {
 .materi-wrapper {
   width: 100vw;
   height: 100vh;
+}
+
+#nilai-akhir{
+  width: 100%;
 }
 
 @media (min-width: 992px) {
@@ -232,5 +240,9 @@ h3::after {
   #wrapper.toggled #page-content-wrapper {
     position: relative;
     margin-right: 0;
+  }
+
+  #nilai-akhir{
+    width: 70%;
   }
 }

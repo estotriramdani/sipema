@@ -3,6 +3,16 @@
 <?= $this->section('content'); ?>
 
 <h1>Daftar Soal</h1>
+<div class="dropdown">
+  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Kuis
+  </a>
+  <div class="dropdown-menu" aria-labelledby=" dropdownMenuLink">
+    <?php foreach ($materi->getResult() as $m) : ?>
+      <a class="dropdown-item" href="/kuis?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>"><?= $m->nama_materi; ?></a>
+    <?php endforeach; ?>
+  </div>
+</div>
 
 <table class="table w-100">
   <thead>

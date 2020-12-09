@@ -46,11 +46,20 @@
                 <li>
                     <a href="/materi?kode_materi=&nama_materi=" id="materi">Materi</a>
                 </li>
-                <?php
-                if ($role == 3 | $role == 2) {
-                    echo '<li><a href="/kuis" id="kuis">Kuis</a></li>';
-                }
-                ?>
+                <?php if ($role == 2 | $role == 3) { ?>
+                    <li>
+                        <div class="dropdown">
+                            <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Kuis
+                            </a>
+                            <div class="dropdown-menu" aria-labelledby=" dropdownMenuLink">
+                                <?php foreach ($materi->getResult() as $m) : ?>
+                                    <a class="dropdown-item" href="/kuis?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>"><?= $m->nama_materi; ?></a>
+                                <?php endforeach; ?>
+                            </div>
+                        </div>
+                    </li>
+                <?php } ?>
                 <?php if ($role == 2) { ?>
                     <li>
                         <div class="dropdown">

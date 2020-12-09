@@ -94,6 +94,7 @@
         </div>
         <div class="mt-3" style="text-align: center;">
           <a href="../../" class="btn-mulai shadow-sm posisi-tombol">Beranda</a>
+          <a href="../auth/login" class="btn-mulai shadow-sm posisi-tombol">Login</a>
         </div>
       </div>
     </div>

@@ -19,6 +19,7 @@ class Dashboard extends BaseController
         $this->materi = $db->query("SELECT * from `materis`");
         $this->soal = $db->query("SELECT * from `soals`");
 
+
         $email = $this->session->get('email');
 
         $this->user = $this->userModel->Where('email', $email)
@@ -62,7 +63,8 @@ class Dashboard extends BaseController
                 'uts' => $nilai->uts,
                 'uas' => $nilai->uas,
                 'title' => 'Dashboard',
-                'materi' => $materi
+                'materi' => $this->materi,
+                'soal' => $this->soal
             ];
             return view('dashboard/index', $data);
         } else {
@@ -77,10 +79,8 @@ class Dashboard extends BaseController
                 'email' => $user->email,
                 'alamat' => $user->alamat,
                 'title' => 'Dashboard',
-                'user' => [
-                    // 'email' => $user['email']
-                    //nah nanti masukin ke sini data-data usernya. Cukup sekali aja, nanti aing copy ke method yang lainnya
-                ]
+                'materi' => $this->materi,
+                'soal' => $this->soal
             ];
             return view('dashboard/index', $data);
         }
@@ -101,6 +101,8 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'title' => 'Profile',
+            'materi' => $this->materi,
+            'soal' => $this->soal,
             'validation' => \Config\Services::validation()
         ];
         return view('dashboard/profile', $data);
@@ -230,7 +232,8 @@ class Dashboard extends BaseController
             'role' => $user->role_id,
             'nama' => $user->nama,
             'title' => 'Materi',
-            'materi' => $materi
+            'materi' => $materi,
+            'soal' => $this->soal
         ];
         return view('dashboard/materi', $data);
     }
@@ -245,7 +248,9 @@ class Dashboard extends BaseController
         $data = [
             'role' => $user->role_id,
             'nama' => $user->nama,
-            'title' => 'Kuis'
+            'title' => 'Kuis',
+            'materi' => $this->materi,
+            'soal' => $this->soal
         ];
         return view('dashboard/kuis', $data);
     }
@@ -268,7 +273,8 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'title' => 'Pojok Guru',
-            'materi' => $materi
+            'materi' => $materi,
+            'soal' => $this->soal
         ];
         return view('dashboard/pojokguru/index', $data);
     }
@@ -290,7 +296,8 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'title' => 'Daftar Materi',
-            'materi' => $materi
+            'materi' => $materi,
+            'soal' => $this->soal
         ];
         return view('dashboard/pojokguru/daftarmateri', $data);
     }
@@ -312,7 +319,9 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'title' => 'Daftar Materi',
-            'kode_materi' => $kode_materi
+            'kode_materi' => $kode_materi,
+            'materi' => $this->materi,
+            'soal' => $this->soal
         ];
         return view('dashboard/pojokguru/editmateri', $data);
     }
@@ -334,7 +343,8 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'title' => 'Daftar Soal',
-            'soal' => $soal
+            'materi' => $this->materi,
+            'soal' => $this->soal
         ];
         return view('dashboard/pojokguru/daftarsoal', $data);
     }
@@ -356,7 +366,9 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'title' => 'Daftar Materi',
-            'kode_soal' => $kode_soal
+            'kode_soal' => $kode_soal,
+            'materi' => $this->materi,
+            'soal' => $this->soal
         ];
         return view('dashboard/pojokguru/editsoal', $data);
     }
