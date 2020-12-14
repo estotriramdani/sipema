@@ -193,6 +193,7 @@ class Auth extends BaseController
                 'updated_at'    => Time::now(),
             ];
             $this->userModel->save($data);
+            
 
 
             //Masukan nilai jika user adalah siswa

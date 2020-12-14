@@ -59,11 +59,8 @@ class Dashboard extends BaseController
                 'tempat_lahir' => $user->tempat_lahir,
                 'email' => $user->email,
                 'alamat' => $user->alamat,
-                'quiz1' => $nilai->quiz1,
-                'quiz2' => $nilai->quiz2,
-                'quiz3' => $nilai->quiz3,
-                'uts' => $nilai->uts,
-                'uas' => $nilai->uas,
+                // 'kode_materi' => $nilai->kode_materi,
+                // 'nilai' => $nilai->nilai,
                 'title' => 'Dashboard',
                 'materi' => $this->materi,
                 'soal' => $this->soal

@@ -75,9 +75,19 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
     <small>Niai maksimal 100</small>
   </div>
 </div>
-</div>
 
 <script src="/js/kuis.js"></script>
+
+<form action="/kuis/action" class="mt-3" method="post">
+<input type="hidden" value="<?= $_GET['nama_materi']; ?>" name="nilai">
+<input type="hidden" value="<?= $_GET['nama_materi']; ?>" name="nama_materi">
+<input type="hidden" value="<?= $_GET['kode_materi']; ?>" name="kode_materi">
+<input type="submit" value="selesai" class="btn btn-mulai">
+</form>
+
+</div>
+
+
 
 
 <?= $this->endSection(); ?>
