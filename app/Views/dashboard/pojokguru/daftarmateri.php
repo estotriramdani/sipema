@@ -16,15 +16,16 @@
   </thead>
   <tbody>
     <?php $i = 1; ?>
-    <?php foreach ($materi->getResult() as $m) : ?>
+    <?php foreach ($materi as $m) : ?>
       <tr>
         <td><?= $i; ?></td>
         <td><?= $m->kode_materi; ?></td>
         <td><?= $m->nama_materi; ?></td>
         <td><?= $m->email; ?></td>
         <td>
-          <a href="editmateri/51613" class="btn btn-sm btn-success">Ubah </a>
-          <form action="pojokguru/hapusmateri" class="d-inline">
+          <a href="editmateri/<?= $m->kode_materi ?>" class="btn btn-sm btn-success">Ubah </a>
+          <form action=<?= base_url("materi/delete/$m->kode_materi"); ?> class="d-inline">
+
             <input type="submit" value="hapus" class="btn btn-sm btn-danger">
           </form>
         </td>

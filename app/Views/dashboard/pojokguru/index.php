@@ -103,7 +103,7 @@
           <div class="col-sm-10">
             <select class="form-control" id="nama_materi" name="kode_materi">
               <option>Pilih materi</option>
-              <?php foreach ($materi->getResult() as $m) : ?>
+              <?php foreach ($materi as $m) : ?>
                 <option value="<?= $m->kode_materi; ?>" name="kode_materi"><?= $m->nama_materi; ?></option>
               <?php endforeach; ?>
             </select>

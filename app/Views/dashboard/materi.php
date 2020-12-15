@@ -19,7 +19,7 @@
   </button>
   <div class="dropdown-menu" aria-labelledby="dropdownMenuButton">
     <?php
-    foreach ($materi->getResult() as $m) : ?>
+    foreach ($materi as $m) : ?>
       <a class="dropdown-item" href="/materi?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>" onclick="alert('Kamu akan memasuki halaman materi. Klik OK untuk melanjutkan.')"><?= $m->nama_materi; ?></a>
     <?php endforeach; ?>
   </div>

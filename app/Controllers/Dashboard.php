@@ -4,6 +4,7 @@ namespace App\Controllers;
 
 use App\Models\MateriModel;
 use App\Models\NilaiModel;
+use App\Models\SoalModel;
 use App\Models\UserModel;
 
 class Dashboard extends BaseController
@@ -16,10 +17,14 @@ class Dashboard extends BaseController
         $this->userModel = new UserModel();
         $this->nilaiModel = new NilaiModel();
         $this->materiModel = new MateriModel();
+        $this->soalModel = new SoalModel();
 
 
-        $this->materi = $db->query("SELECT * from `materis`");
-        $this->soal = $db->query("SELECT * from `soals`");
+        // $this->materi = $db->query("SELECT * from `materis`");
+        $this->materi  = $this->materiModel->findAll();
+        // $this->soal = $db->query("SELECT * from `soals`");
+        $this->soal = $this->soalModel->findAll();
+
 
 
         $email = $this->session->get('email');
@@ -283,9 +288,6 @@ class Dashboard extends BaseController
 
     public function daftarMateri()
     {
-
-        $materi  = $this->materiModel->findAll();
-
         $user   = $this->user;
 
         $data = [
@@ -299,7 +301,7 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'title' => 'Daftar Materi',
-            'materi' => $materi,
+            'materi' => $this->materi,
             'soal' => $this->soal
         ];
 
@@ -308,7 +310,8 @@ class Dashboard extends BaseController
 
     public function editMateri($kode_materi)
     {
-        $db      = \Config\Database::connect();
+        // $materi  = $this->materiModel->findAll();
+        $materiedit = $this->materiModel->where('kode_materi', $kode_materi)->first();
 
         $user   = $this->user;
 
@@ -316,15 +319,15 @@ class Dashboard extends BaseController
             'role' => $user->role_id,
             'nama' => $user->nama,
             'role_name' => $user->roles,
-            'kode_identitas' => $user->kode_identitas,
-            'jenis_kelamin' => $user->jenis_kelamin,
-            'tanggal_lahir' => $user->tanggal_lahir,
-            'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
-            'alamat' => $user->alamat,
             'title' => 'Daftar Materi',
             'kode_materi' => $kode_materi,
             'materi' => $this->materi,
+            // 'materiedit' => $materiedit,
+            'nama_materi' => $materiedit->nama_materi,
+            'deskripsi' => $materiedit->deskripsi,
+            'judul_materi' => $materiedit->judul_materi,
+            'isi_materi' => $materiedit->isi_materi,
             'soal' => $this->soal
         ];
         return view('dashboard/pojokguru/editmateri', $data);
@@ -332,10 +335,7 @@ class Dashboard extends BaseController
 
     public function daftarSoal()
     {
-        $db      = \Config\Database::connect();
-
         $user   = $this->user;
-        $soal = $this->soal;
         $data = [
             'role' => $user->role_id,
             'nama' => $user->nama,
@@ -353,9 +353,9 @@ class Dashboard extends BaseController
         return view('dashboard/pojokguru/daftarsoal', $data);
     }
 
-    public function editSoal($kode_soal)
+    public function editSoal($id_soal)
     {
-        $db      = \Config\Database::connect();
+        $soaledit = $this->soalModel->find($id_soal);
 
         $user   = $this->user;
 
@@ -370,7 +370,13 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'title' => 'Daftar Materi',
-            'kode_soal' => $kode_soal,
+            'kode_soal' => $id_soal,
+            'pertanyaan' => $soaledit->pertanyaan,
+            'pilihan_a' => $soaledit->pilihan_a,
+            'pilihan_b' => $soaledit->pilihan_b,
+            'pilihan_c' => $soaledit->pilihan_c,
+            'pilihan_d' => $soaledit->pilihan_d,
+            'jawaban' => $soaledit->jawaban,
             'materi' => $this->materi,
             'soal' => $this->soal
         ];

@@ -53,7 +53,7 @@
                                 Kuis
                             </a>
                             <div class="dropdown-menu" aria-labelledby=" dropdownMenuLink">
-                                <?php foreach ($materi->getResult() as $m) : ?>
+                                <?php foreach ($materi as $m) : ?>
                                     <a class="dropdown-item" href="/kuis?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>"><?= $m->nama_materi; ?></a>
                                 <?php endforeach; ?>
                             </div>

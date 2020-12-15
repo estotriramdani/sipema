@@ -72,22 +72,31 @@ class Materi extends BaseController
         }
     }
 
-    public function edit($id)
-    {
-        # View Edit Materi
-    }
+    // public function edit($id)
+    // {
+    //     # View Edit Materi
+    // }
 
-    public function editAction($id)
+    public function save($kode_materi)
     {
         $validation =  \Config\Services::validation();
+        $materiedit = $this->materiModel->where('kode_materi', $kode_materi)->first();
+        dd($materiedit);
+        $id_materi = $materiedit->id_materi;
+
+        if ($materiedit->judul_materi == $this->request->getPost('judul_materi')) {
+            $rule_judul = 'required';
+        } else {
+            $rule_judul = 'required|is_unique[materis.judul_materi]';
+        }
 
         $data = $this->request->getPost();
 
         $validation->setRules([
             'nama_materi'       => 'required',
             'deskripsi'  => 'required',
-            'judul_materi'  => 'required',
-            'isimateri'         => 'required',
+            'judul_materi'  => $rule_judul,
+            'isi_materi'         => 'required',
         ],    [   // Errors
             'nama_materi'    => [
                 'required'    => 'Mohon masukkan Nama Materi.',
@@ -112,26 +121,35 @@ class Materi extends BaseController
                 'tittle' => 'Edit Materi',
             ];
 
-            //$dataerr = $validation->getErrors();
+            $dataerr = $validation->getErrors();
+            dd($dataerr);
 
-            return redirect()->to(base_url('materi/edit'))->withInput();
+            return redirect()->to(base_url("pojokguru/editmateri/$kode_materi"))->withInput();
         } else {
             $data = [
-                'id_materi'         => $id,
-                'kode_materi'       => $this->request->getPost('kode_materi'),
-                'nama_materi'       => $this->request->getPost('nama_materi'),
-                'deskripsi_materi'  => $this->request->getPost('deskripsi_materi'),
+                'id_materi'          => $id_materi,
+                'kode_materi'        => $this->request->getPost('kode_materi'),
+                'nama_materi'        => $this->request->getPost('nama_materi'),
+                'deskripsi'          => $this->request->getPost('deskripsi'),
+                'judul_materi'       => $this->request->getPost('judul_materi'),
                 'isi_materi'         => $this->request->getPost('isi_materi'),
-                'email'             => $this->email,
-                'updated_at'        => Time::now(),
+                'email'              => $this->email,
+                'updated_at'         => Time::now(),
             ];
             $this->materiModel->save($data);
 
-            //tambahan ngisi nilai
-
             session()->setFlashdata('pesan', 'Update materi sukses');
-            return redirect()->to(base_url('dashboard/index'));
+            return redirect()->to(base_url('pojokguru/daftarmateri'));
         }
+    }
+
+    public function delete($kode_materi)
+    {
+        $materidelete = $this->materiModel->where('kode_materi', $kode_materi)->first();
+        $id_materi = $materidelete->id_materi;
+        $this->materiModel->delete($id_materi);
+        session()->setFlashdata('pesan', 'Hapus materi sukses');
+        return redirect()->to(base_url('pojokguru/daftarmateri'));
     }
 
 
