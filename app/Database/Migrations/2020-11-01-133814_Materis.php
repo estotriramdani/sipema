@@ -31,10 +31,14 @@ class Materis extends Migration
 			'deskripsi' => [
 				'type'           => 'TEXT',
 			],
+			// 'judul_materi' => [
+			// 	'type'           => 'INT',
+			// 	'constraint'	 => '1',
+			// 	'default'        => '1',
+			// ],
 			'judul_materi' => [
-				'type'           => 'INT',
-				'constraint'	 => '1',
-				'default'        => '1',
+				'type'			=> 'VARCHAR',
+				'constraint'	=> '100',
 			],
 			'isi_materi' => [
 				'type'           => 'TEXT',

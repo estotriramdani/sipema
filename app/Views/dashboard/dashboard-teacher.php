@@ -21,7 +21,7 @@
                   <h6 class="card-subtitle mb-2">Terakhir diperbarui hari ini (<?= date("d/m/Y"); ?>).</h6>
                 </div>
                 <div class="col-3">
-                  <h2 class="card-text text-right nilai">3</h2>
+                  <h2 class="card-text text-right nilai"><?= $jumlahmaterianda ?></h2>
                 </div>
               </div>
             </div>
@@ -37,7 +37,7 @@
                 <h6 class="card-subtitle mb-2">Terakhir diperbarui hari ini (<?= date("d/m/Y"); ?>)</h6>
               </div>
               <div class="col-3">
-                <h2 class="card-text text-right nilai">30</h2>
+                <h2 class="card-text text-right nilai"><?= $jumlahsoal ?></h2>
               </div>
             </div>
           </div>

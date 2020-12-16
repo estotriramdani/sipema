@@ -34,9 +34,12 @@
         <td><?= $s->jawaban; ?></td>
         <td>
           <a href="editsoal/<?= $s->id_soal; ?>" class="btn btn-sm btn-success mb-2" style="width: 100%;">Ubah </a>
-          <form action="hapussoal/<?= $s->id_soal; ?>" class="">
-            <input type="submit" value="Hapus" class="btn btn-sm btn-danger" style="width: 100%;">
+          <form action=<?= base_url("soal/delete/$s->id_soal"); ?> class="d-inline">
+            <input type="submit" value="hapus" class="btn btn-sm btn-danger" style="width: 100%;">
           </form>
+          <!-- <form action=<?= base_url("soal/delete/<?= $s->id_soal"); ?> class="">
+            <input type="submit" value="Hapus" class="btn btn-sm btn-danger" style="width: 100%;">
+          </form> -->
         </td>
       </tr>
       <?php $i++; ?>

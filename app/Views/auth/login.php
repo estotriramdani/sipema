@@ -26,7 +26,7 @@
           <?= $validation->listErrors() ?>
         </div>
 
-        <form action="/auth/loginAction" method="post">
+        <form action="/auth/loginAction" method="POST">
           <div class="form-group">
 
             <label for="exampleInputEmail1">Email address</label>

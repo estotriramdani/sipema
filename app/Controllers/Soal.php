@@ -66,9 +66,6 @@ class Soal extends BaseController
                 'tittle' => 'Pojok Guru',
             ];
 
-            $dataerr = $validation->getErrors();
-            dd($dataerr);
-
             return redirect()->to(base_url('dashboard/pojokguru/index'))->withInput();
         } else {
             $kode_materi = $this->request->getPost('kode_materi');
@@ -84,9 +81,6 @@ class Soal extends BaseController
                 'pilihan_c'       => $this->request->getPost('pilihan_c'),
                 'pilihan_d'       => $this->request->getPost('pilihan_d'),
                 'jawaban'         => $this->request->getPost('jawaban'),
-                // 'nilai_soal'      => $this->request->getPost('nilai_soal'),
-                // 'created_at'        => Time::now(),
-                // 'updated_at'        => Time::now(),
             ];
             $this->soalModel->save($data);
 
@@ -171,6 +165,13 @@ class Soal extends BaseController
             session()->setFlashdata('pesan', 'Update Soal sukses');
             return redirect()->to(base_url('pojokguru/daftarsoal'));
         }
+    }
+
+    public function delete($id_soal)
+    {
+        $this->soalModel->delete($id_soal);
+        session()->setFlashdata('pesan', 'Hapus soal sukses');
+        return redirect()->to(base_url('pojokguru/daftarsoal'));
     }
 
 

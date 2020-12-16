@@ -21,4 +21,11 @@ class UserModel extends Model
     // protected $validationRules    = [];
     // protected $validationMessages = [];
     // protected $skipValidation     = false;
+
+    public function getUser($email)
+    {
+        $user = $this->Where('email', $email)
+            ->first();
+        return $user;
+    }
 }

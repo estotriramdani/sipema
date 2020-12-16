@@ -7,40 +7,39 @@ use App\Models\NilaiModel;
 use App\Models\SoalModel;
 use App\Models\UserModel;
 
+
+
 class Dashboard extends BaseController
 {
     public function __construct()
     {
-        $db = \Config\Database::connect();
-
         $this->session = \Config\Services::session();
+        $email = $this->session->get('email');
+        $this->db = \Config\Database::connect();
+
         $this->userModel = new UserModel();
         $this->nilaiModel = new NilaiModel();
         $this->materiModel = new MateriModel();
         $this->soalModel = new SoalModel();
-
 
         // $this->materi = $db->query("SELECT * from `materis`");
         $this->materi  = $this->materiModel->findAll();
         // $this->soal = $db->query("SELECT * from `soals`");
         $this->soal = $this->soalModel->findAll();
 
+        $this->user = $this->userModel->getUser($email);
 
-
-        $email = $this->session->get('email');
-
-        $this->user = $this->userModel->Where('email', $email)
-            ->first();
         $this->nilai = $this->nilaiModel->Where('email', $email)
             ->first();
 
-        if ($this->user->foto == 'default.jpg') {
-            session()->setFlashdata('alert', 'Harap atur foto profil');;
-        }
+        // if ($this->user->foto == 'default.jpg') {
+        //     session()->setFlashdata('alert', 'Harap atur foto profil');;
+        // }
 
-        if ($this->user->role_id == 1) {
-            $this->user->roles = 'Admin';
-        } elseif ($this->user->role_id == 2) {
+        // if ($this->user->role_id == 1) {
+        //     $this->user->roles = 'Admin';
+        // } 
+        if ($this->user->role_id == 2) {
             $this->user->roles = 'Guru';
         } else {
             $this->user->roles = 'Siswa';
@@ -49,9 +48,7 @@ class Dashboard extends BaseController
 
     public function index()
     {
-        $materi = $this->materi;
         $user = $this->user;
-        $nilai = $this->nilai;
 
         if ($user->role_id == 3) {
             $data = [
@@ -72,6 +69,14 @@ class Dashboard extends BaseController
             ];
             return view('dashboard/index', $data);
         } else {
+            $query = $this->db->query("SELECT COUNT(*) as total FROM `materis` where email='$this->email'");
+            $result = $query->getRow();
+            $jumlahmaterianda = $result->total;
+
+            $query = $this->db->query("SELECT COUNT(*) as total FROM `soals` ");
+            $result = $query->getRow();
+            $jumlahsoal = $result->total;
+
             $data = [
                 'role' => $user->role_id,
                 'nama' => $user->nama,
@@ -84,7 +89,9 @@ class Dashboard extends BaseController
                 'alamat' => $user->alamat,
                 'title' => 'Dashboard',
                 'materi' => $this->materi,
-                'soal' => $this->soal
+                'soal' => $this->soal,
+                'jumlahmaterianda' => $jumlahmaterianda,
+                'jumlahsoal' => $jumlahsoal,
             ];
             return view('dashboard/index', $data);
         }
@@ -209,7 +216,6 @@ class Dashboard extends BaseController
 
             return redirect()->to(base_url('dashboard/profile'))->withInput();
         } else {
-
             if (password_verify($password, $user->password)) {
                 $data = [
                     'user_id'      => $user->user_id,
@@ -228,15 +234,12 @@ class Dashboard extends BaseController
 
     public function materi()
     {
-
         $user   = $this->user;
-        $materi = $this->materi;
-
         $data = [
+            'title' => 'Materi',
             'role' => $user->role_id,
             'nama' => $user->nama,
-            'title' => 'Materi',
-            'materi' => $materi,
+            'materi' => $this->materi,
             'soal' => $this->soal
         ];
         return view('dashboard/materi', $data);
@@ -244,15 +247,12 @@ class Dashboard extends BaseController
 
     public function kuis()
     {
-
-        $db      = \Config\Database::connect();
-
         $user   = $this->user;
 
         $data = [
+            'title' => 'Kuis',
             'role' => $user->role_id,
             'nama' => $user->nama,
-            'title' => 'Kuis',
             'materi' => $this->materi,
             'soal' => $this->soal
         ];
@@ -267,6 +267,7 @@ class Dashboard extends BaseController
         $materi = $this->materi;
 
         $data = [
+            'title' => 'Pojok Guru',
             'role' => $user->role_id,
             'nama' => $user->nama,
             'role_name' => $user->roles,
@@ -276,9 +277,9 @@ class Dashboard extends BaseController
             'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
             'alamat' => $user->alamat,
-            'title' => 'Pojok Guru',
             'materi' => $materi,
-            'soal' => $this->soal
+            'soal' => $this->soal,
+            'validation' => \Config\Services::validation()
         ];
         return view('dashboard/pojokguru/index', $data);
     }
@@ -288,6 +289,7 @@ class Dashboard extends BaseController
         $user   = $this->user;
 
         $data = [
+            'title' => 'Daftar Materi',
             'role' => $user->role_id,
             'nama' => $user->nama,
             'role_name' => $user->roles,
@@ -297,7 +299,6 @@ class Dashboard extends BaseController
             'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
             'alamat' => $user->alamat,
-            'title' => 'Daftar Materi',
             'materi' => $this->materi,
             'soal' => $this->soal
         ];
@@ -313,19 +314,21 @@ class Dashboard extends BaseController
         $user   = $this->user;
 
         $data = [
+            'title' => 'Daftar Materi',
             'role' => $user->role_id,
             'nama' => $user->nama,
             'role_name' => $user->roles,
             'email' => $user->email,
-            'title' => 'Daftar Materi',
             'kode_materi' => $kode_materi,
             'materi' => $this->materi,
             // 'materiedit' => $materiedit,
+            'id_materi' => $materiedit->id_materi,
             'nama_materi' => $materiedit->nama_materi,
             'deskripsi' => $materiedit->deskripsi,
             'judul_materi' => $materiedit->judul_materi,
             'isi_materi' => $materiedit->isi_materi,
-            'soal' => $this->soal
+            'soal' => $this->soal,
+            'validation' => \Config\Services::validation()
         ];
         return view('dashboard/pojokguru/editmateri', $data);
     }
@@ -334,6 +337,7 @@ class Dashboard extends BaseController
     {
         $user   = $this->user;
         $data = [
+            'title' => 'Daftar Soal',
             'role' => $user->role_id,
             'nama' => $user->nama,
             'role_name' => $user->roles,
@@ -343,7 +347,6 @@ class Dashboard extends BaseController
             'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
             'alamat' => $user->alamat,
-            'title' => 'Daftar Soal',
             'materi' => $this->materi,
             'soal' => $this->soal
         ];
@@ -357,6 +360,7 @@ class Dashboard extends BaseController
         $user   = $this->user;
 
         $data = [
+            'title' => 'Daftar Materi',
             'role' => $user->role_id,
             'nama' => $user->nama,
             'role_name' => $user->roles,
@@ -366,7 +370,6 @@ class Dashboard extends BaseController
             'tempat_lahir' => $user->tempat_lahir,
             'email' => $user->email,
             'alamat' => $user->alamat,
-            'title' => 'Daftar Materi',
             'kode_soal' => $id_soal,
             'pertanyaan' => $soaledit->pertanyaan,
             'pilihan_a' => $soaledit->pilihan_a,
@@ -375,7 +378,8 @@ class Dashboard extends BaseController
             'pilihan_d' => $soaledit->pilihan_d,
             'jawaban' => $soaledit->jawaban,
             'materi' => $this->materi,
-            'soal' => $this->soal
+            'soal' => $this->soal,
+            'validation' => \Config\Services::validation()
         ];
         return view('dashboard/pojokguru/editsoal', $data);
     }

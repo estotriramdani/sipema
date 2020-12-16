@@ -160,7 +160,7 @@
 
             </p>
             <p>Juniawati Wahyu Lestari <br> J3D118069</p>
-            <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+            <p style="font-style: italic;">"Masa Muda bekerja keras, Santai di masa tua."</p>
           </div>
         </div>
       </div>
@@ -189,7 +189,7 @@
 
           </p>
           <p>M. Agung Zuhdi <br> J3D118098</p>
-          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+          <p style="font-style: italic;">"Banyak belajar, biar bisa jadi orang."</p>
         </div>
       </div>
       <!-- end agung -->
@@ -204,7 +204,7 @@
 
           </p>
           <p>Naufal Alif Falah <br> J3D118131</p>
-          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+          <p style="font-style: italic;">"Stop wishing. Start doing."</p>
         </div>
       </div>
       <!-- end alif -->
@@ -219,7 +219,7 @@
 
           </p>
           <p>Andre Alghifari C <br> J3D218184</p>
-          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+          <p style="font-style: italic;">"Kalah tampang gak masalah, yang penting menang saldo."</p>
         </div>
       </div>
       <!-- end andre -->
@@ -235,7 +235,7 @@
           </p>
           <p>Muhammad Faris Rahthin R
             <br> J3D118123</p>
-          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+          <p style="font-style: italic;">"Kalau berani jangan takut-takut, kalau takut jangan berani berani."</p>
         </div>
       </div>
       <!-- end faris -->
@@ -250,7 +250,7 @@
 
           </p>
           <p>Fajar Mujiiban Achmad <br> J3D118073</p>
-          <p style="font-style: italic;">"Lorem, ipsum dolor sit amet consectetur adipisicing elit. Cumque, vero."</p>
+          <p style="font-style: italic;">"Do the best aja, soal hasil biar tuhan yang nentuin!!!"</p>
         </div>
       </div>
       <!-- end jiban -->

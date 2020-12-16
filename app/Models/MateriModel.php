@@ -15,11 +15,11 @@ class MateriModel extends Model
 
     protected $allowedFields = [
         'kode_materi',
-        'email',
         'nama_materi',
         'deskripsi',
         'judul_materi',
-        'isi_materi'
+        'isi_materi',
+        'email',
     ];
 
     protected $useTimestamps = true;

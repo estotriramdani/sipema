@@ -42,7 +42,7 @@ class BaseController extends Controller
 		//--------------------------------------------------------------------
 		// E.g.:
 		// $this->session = \Config\Services::session();
-		$this->nama = 'Esto';
-		session();
+		$this->session = \Config\Services::session();
+		$this->email = $this->session->get('email');
 	}
 }

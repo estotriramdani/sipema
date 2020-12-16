@@ -25,7 +25,6 @@
         <td>
           <a href="editmateri/<?= $m->kode_materi ?>" class="btn btn-sm btn-success">Ubah </a>
           <form action=<?= base_url("materi/delete/$m->kode_materi"); ?> class="d-inline">
-
             <input type="submit" value="hapus" class="btn btn-sm btn-danger">
           </form>
         </td>

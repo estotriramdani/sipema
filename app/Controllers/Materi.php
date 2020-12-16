@@ -22,11 +22,15 @@ class Materi extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
+            'kode_materi'       => 'required',
             'nama_materi'       => 'required|is_unique[materis.nama_materi]',
             'deskripsi'  => 'required',
             'judul_materi'  => 'required',
             'isi_materi'         => 'required',
         ],    [   // Errors
+            'kode_materi'    => [
+                'required'    => 'Mohon masukkan Kode Materi.',
+            ],
             'nama_materi'    => [
                 'required'    => 'Mohon masukkan Nama Materi.',
                 'is_unique'   => 'Nama Materi tidak bisa sama dengan yang sudah ada'
@@ -62,8 +66,6 @@ class Materi extends BaseController
                 'deskripsi'         => $this->request->getPost('deskripsi'),
                 'judul_materi'      => $this->request->getPost('judul_materi'),
                 'isi_materi'        => $this->request->getPost('isi_materi'),
-                'created_at'        => Time::now(),
-                'updated_at'        => Time::now(),
             ];
             $this->materiModel->save($data);
 
@@ -80,22 +82,22 @@ class Materi extends BaseController
     public function save($kode_materi)
     {
         $validation =  \Config\Services::validation();
-        $materiedit = $this->materiModel->where('kode_materi', $kode_materi)->first();
-        dd($materiedit);
-        $id_materi = $materiedit->id_materi;
+        //Konvesional tidak duplikat judul / unik judul
+        // $materiedit = $this->materiModel->where('kode_materi', $kode_materi)->first();
+        // $id_materi = $materiedit->id_materi;
 
-        if ($materiedit->judul_materi == $this->request->getPost('judul_materi')) {
-            $rule_judul = 'required';
-        } else {
-            $rule_judul = 'required|is_unique[materis.judul_materi]';
-        }
+        // if ($materiedit->judul_materi == $this->request->getPost('judul_materi')) {
+        //     $rule_judul = 'required';
+        // } else {
+        //     $rule_judul = 'required|is_unique[materis.judul_materi]';
+        // }
 
         $data = $this->request->getPost();
 
         $validation->setRules([
             'nama_materi'       => 'required',
             'deskripsi'  => 'required',
-            'judul_materi'  => $rule_judul,
+            'judul_materi'  => 'required|is_unique[materis.judul_materi,id_materi,{id_materi}]',
             'isi_materi'         => 'required',
         ],    [   // Errors
             'nama_materi'    => [
@@ -112,29 +114,29 @@ class Materi extends BaseController
                 'required'    => 'Mohon masukkan Isi Materi.',
             ],
         ]);
-        //  var_dump($validation->run($data));
-        //  var_dump($validation->getErrors());
-        //  dd($validation->getErrors());
+        // var_dump($validation->run($data));
+        // var_dump($validation->getErrors());
+        // dd($validation->getErrors());
 
         if ($validation->run($data) == false) {
             $data = [
                 'tittle' => 'Edit Materi',
             ];
 
-            $dataerr = $validation->getErrors();
-            dd($dataerr);
+            // $dataerr = $validation->getErrors();
+            // dd($dataerr);
 
             return redirect()->to(base_url("pojokguru/editmateri/$kode_materi"))->withInput();
         } else {
+
             $data = [
-                'id_materi'          => $id_materi,
+                'id_materi'          => $this->request->getPost('id_materi'),
                 'kode_materi'        => $this->request->getPost('kode_materi'),
                 'nama_materi'        => $this->request->getPost('nama_materi'),
                 'deskripsi'          => $this->request->getPost('deskripsi'),
                 'judul_materi'       => $this->request->getPost('judul_materi'),
                 'isi_materi'         => $this->request->getPost('isi_materi'),
                 'email'              => $this->email,
-                'updated_at'         => Time::now(),
             ];
             $this->materiModel->save($data);
 

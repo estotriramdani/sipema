@@ -13,7 +13,7 @@ class Kuis extends BaseController
   {
     $db = \Config\Database::connect();
 
-    $nilai = $db->query("SELECT * from `nilais` where email='$email'");
+    $nilai = $db->query("SELECT * from `nilais` where email='$this->email'");
 
     $nama_materi = $this->request->getVar('nama_materi');
     $kode_materi = $this->request->getVar('kode_materi');
