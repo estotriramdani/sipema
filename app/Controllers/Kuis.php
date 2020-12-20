@@ -2,6 +2,8 @@
 
 namespace App\Controllers;
 
+use App\Models\NilaiModel;
+
 class Kuis extends BaseController
 {
   public function index()
@@ -11,15 +13,31 @@ class Kuis extends BaseController
 
   public function action()
   {
-    $db = \Config\Database::connect();
-
-    $nilai = $db->query("SELECT * from `nilais` where email='$this->email'");
-
-    $nama_materi = $this->request->getVar('nama_materi');
+    $nilaiModel = new NilaiModel();
+    $email = session()->get('email');
     $kode_materi = $this->request->getVar('kode_materi');
 
-    echo "test";
-    echo "$kode_materi";
-    echo "$nama_materi";
+    $find = $nilaiModel->where('kode_materi', $kode_materi)
+      ->where('email', $email)
+      ->first();
+
+    if ($find == null) {
+      $data = [
+        'email'         => $email,
+        'kode_materi'   => $kode_materi
+      ];
+      $nilaiModel->save($data);
+      session()->setFlashdata('pesan', 'Nilai Kuis Berhasil tersimpan.');
+      return redirect()->to('/dashboard');
+    } else {
+      $data = [
+        'id_nilai'       => $find->id_nilai,
+        'email'         => $email,
+        'kode_materi'   => $kode_materi
+      ];
+      $nilaiModel->save($data);
+      session()->setFlashdata('pesan', 'Nilai Kuis Berhasil terupdate.');
+      return redirect()->to('/dashboard');
+    }
   }
 }

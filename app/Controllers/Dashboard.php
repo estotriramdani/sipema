@@ -49,8 +49,10 @@ class Dashboard extends BaseController
     public function index()
     {
         $user = $this->user;
-
         if ($user->role_id == 3) {
+            $query = $this->db->query("SELECT id_nilai, nilais.email, nilais.kode_materi, nama_materi, nilai, nilais.created_at, nilais.updated_at from nilais left join materis on nilais.kode_materi=materis.kode_materi where nilais.email='$user->email'");
+            $nilai = $query->getResult();
+
             $data = [
                 'role' => $user->role_id,
                 'nama' => $user->nama,
@@ -65,7 +67,8 @@ class Dashboard extends BaseController
                 // 'nilai' => $nilai->nilai,
                 'title' => 'Dashboard',
                 'materi' => $this->materi,
-                'soal' => $this->soal
+                'soal' => $this->soal,
+                'nilai' => $nilai,
             ];
             return view('dashboard/index', $data);
         } else {

@@ -193,16 +193,14 @@ class Auth extends BaseController
                 'updated_at'    => Time::now(),
             ];
             $this->userModel->save($data);
-            
 
-
-            //Masukan nilai jika user adalah siswa
-            if ($this->request->getPost('role_id') == 3) {
-                $data = [
-                    'email'         => $this->request->getPost('email'),
-                ];
-                $this->nilaiModel->save($data);
-            }
+            // //Masukan nilai jika user adalah siswa
+            // if ($this->request->getPost('role_id') == 3) {
+            //     $data = [
+            //         'email'         => $this->request->getPost('email'),
+            //     ];
+            //     $this->nilaiModel->save($data);
+            // }
 
             session()->setFlashdata('message', 'Pendaftaran sukses, silakan login');
             return redirect()->to(base_url('auth/login'));

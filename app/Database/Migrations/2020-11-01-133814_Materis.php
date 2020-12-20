@@ -26,16 +26,11 @@ class Materis extends Migration
 			],
 			'nama_materi' => [
 				'type'           => 'VARCHAR',
-				'constraint'     => '30',
+				'constraint'     => '50',
 			],
 			'deskripsi' => [
 				'type'           => 'TEXT',
 			],
-			// 'judul_materi' => [
-			// 	'type'           => 'INT',
-			// 	'constraint'	 => '1',
-			// 	'default'        => '1',
-			// ],
 			'judul_materi' => [
 				'type'			=> 'VARCHAR',
 				'constraint'	=> '100',

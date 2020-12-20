@@ -20,31 +20,11 @@ class Nilais extends Migration
 				'type'			=> 'VARCHAR',
 				'constraint'	=> '40',
 			],
-			// 'kode_materi' => [
-			// 	'type'           => 'VARCHAR',
-			// 	'constraint'	 => '6',
-			// ],
-			'quiz1' => [
-				'type'           => 'INT',
-				'constraint'     => '3',
-				'default'        => 0,
+			'kode_materi' => [
+				'type'           => 'VARCHAR',
+				'constraint'	 => '6',
 			],
-			'quiz2' => [
-				'type'           => 'INT',
-				'constraint'     => '3',
-				'default'        => 0,
-			],
-			'quiz3' => [
-				'type'           => 'INT',
-				'constraint'     => '3',
-				'default'        => 0,
-			],
-			'uts' => [
-				'type'           => 'INT',
-				'constraint'     => '3',
-				'default'        => 0,
-			],
-			'uas' => [
+			'nilai' => [
 				'type'           => 'INT',
 				'constraint'     => '3',
 				'default'        => 0,

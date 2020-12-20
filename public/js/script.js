@@ -103,7 +103,7 @@ $(document).ready(function () {
   });
 
   const loginForm = `
-    <form action="/auth/loginAction" style="text-align: left;">
+    <form action="/auth/loginAction" method=POST style="text-align: left;">
         <div class="form-group">
             <label for="email">Email</label>
             <input type="email" class="form-control" id="email" aria-describedby="emailHelp" name="email">
