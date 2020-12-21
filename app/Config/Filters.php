@@ -42,6 +42,6 @@ class Filters extends BaseConfig
 		'auth' => ['before' => ['dashboard', '/auth/logout']],
 		'noauth' => ['before' => ['auth/registration',  '/auth/login']],
 		//'authadmin' => ['before' => []],
-		//'authguru' => ['before' => []],
+		'authguru' => ['before' => ['pojokguru/*', 'materi/create', 'materi/edit', 'materi/save', 'soal/create', 'soal/edit']],
 	];
 }
