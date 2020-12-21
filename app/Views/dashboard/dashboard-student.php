@@ -19,7 +19,7 @@
                 <div class="row">
                   <div class="col-9">
                     <h5 class="card-title"><?= $n->kode_materi; ?></h5>
-                    <h6 class="card-subtitle mb-2"><?= $n->nama_materi; ?></h6>
+                    <h6 class="card-subtitle mb-2"><?= $n->kode_materi; ?></h6>
                   </div>
                   <div class="col-3">
                     <h2 class="card-text text-right nilai"><?= $n->nilai; ?></h2>
@@ -30,15 +30,26 @@
             </div>
           </div>
       <?php endforeach;
-      } else {
-        echo "Kamu belum punya nilai";
-      } ?>
+      } else { ?>
+        <div class="col-sm-3">
+        <div class="card">
+              <div class="card-body">
+                <div class="row">
+                  <div class="col-9">
+                    <h5 class="card-title">Oops!</h5>
+                    <h6 class="card-subtitle mb-2">Kamu belum ikut kuis!</h6>
+                  </div>
+                  <div class="col-3">
+                    <h2 class="card-text text-right nilai"></h2>
+                  </div>
+                </div>
+                <small>Yuk ikut kuisnya dulu!</small>
+              </div>
+            </div>
+        </div>
+      <?php } ?>
     </div>
   </div>
-  <div class="col-sm-3">
-
-  </div>
-
 </div>
 
 <!-- ambil ujian -->

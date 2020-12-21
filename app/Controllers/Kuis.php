@@ -16,6 +16,7 @@ class Kuis extends BaseController
     $nilaiModel = new NilaiModel();
     $email = session()->get('email');
     $kode_materi = $this->request->getVar('kode_materi');
+    $nilai = $this->request->getVar('nilai');
 
     $find = $nilaiModel->where('kode_materi', $kode_materi)
       ->where('email', $email)
