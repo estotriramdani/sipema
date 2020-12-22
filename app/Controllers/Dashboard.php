@@ -257,6 +257,10 @@ class Dashboard extends BaseController
             'materi' => $this->materi,
             'soal' => $this->soal
         ];
+
+        if (empty($_GET)) {
+            return redirect()->to('/');
+        }
         return view('dashboard/kuis', $data);
     }
 
