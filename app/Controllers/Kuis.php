@@ -25,7 +25,8 @@ class Kuis extends BaseController
     if ($find == null) {
       $data = [
         'email'         => $email,
-        'kode_materi'   => $kode_materi
+        'kode_materi'   => $kode_materi,
+        'nilai'         => $nilai
       ];
       $nilaiModel->save($data);
       session()->setFlashdata('pesan', 'Nilai Kuis Berhasil tersimpan.');
@@ -34,7 +35,8 @@ class Kuis extends BaseController
       $data = [
         'id_nilai'       => $find->id_nilai,
         'email'         => $email,
-        'kode_materi'   => $kode_materi
+        'kode_materi'   => $kode_materi,
+        'nilai'         => $nilai
       ];
       $nilaiModel->save($data);
       session()->setFlashdata('pesan', 'Nilai Kuis Berhasil terupdate.');
