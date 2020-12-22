@@ -29,7 +29,7 @@ class Soal extends BaseController
             'pilihan_b'   => 'required|max_length[200]',
             'pilihan_c'   => 'required|max_length[200]',
             'pilihan_d'   => 'required|max_length[200]',
-            'jawaban'     => 'required',
+            'jawaban'     => 'required|max_length[1]',
             // 'nilai_soal'  => 'nilai_soal'
         ],    [   // Errors
             'kode_materi'    => [
@@ -57,10 +57,8 @@ class Soal extends BaseController
             ],
             'jawaban' => [
                 'required'    => 'Mohon masukkan Jawaban.',
+                'max_length'  => 'Hanya masukkan huruf a/b/c/d',
             ],
-            // 'isi_materi' => [
-            //     'required'    => 'Mohon masukkan Isi Materi.',
-            // ],
         ]);
         // var_dump($validation->run($data));
         // var_dump($validation->getErrors());
@@ -85,7 +83,7 @@ class Soal extends BaseController
                 'pilihan_b'       => $this->request->getPost('pilihan_b'),
                 'pilihan_c'       => $this->request->getPost('pilihan_c'),
                 'pilihan_d'       => $this->request->getPost('pilihan_d'),
-                'jawaban'         => $this->request->getPost('jawaban'),
+                'jawaban'         => strtolower($this->request->getPost('jawaban')),
             ];
             $this->soalModel->save($data);
 
@@ -112,7 +110,7 @@ class Soal extends BaseController
             'pilihan_b'   => 'required|max_length[200]',
             'pilihan_c'   => 'required|max_length[200]',
             'pilihan_d'   => 'required|max_length[200]',
-            'jawaban'     => 'required',
+            'jawaban'     => 'required|max_length[1]',
         ],    [   // Errors
             'nama_materi'    => [
                 'required'    => 'Mohon pilih Nama Materi.',
@@ -138,6 +136,7 @@ class Soal extends BaseController
             ],
             'jawaban' => [
                 'required'    => 'Mohon masukkan Jawaban.',
+                'max_length'  => 'Hanya masukkan huruf a/b/c/d',
             ],
             // 'isi_materi' => [
             //     'required'    => 'Mohon masukkan Isi Materi.',
@@ -165,7 +164,7 @@ class Soal extends BaseController
                 'pilihan_b'       => $this->request->getPost('pilihan_b'),
                 'pilihan_c'       => $this->request->getPost('pilihan_c'),
                 'pilihan_d'       => $this->request->getPost('pilihan_d'),
-                'jawaban'         => $this->request->getPost('jawaban'),
+                'jawaban'         => strtolower($this->request->getPost('jawaban')),
                 'email'           => $this->email,
                 'updated_at'      => Time::now(),
             ];

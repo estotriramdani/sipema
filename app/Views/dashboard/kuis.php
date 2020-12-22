@@ -18,7 +18,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
   <?php foreach ($quiz->getResult() as $q) : ?>
     <div id="pertanyaan-<?= $i; ?>" class="pertanyaan">
       <form action="">
-        <p ><?= $q->pertanyaan; ?></p>
+        <p><?= $q->pertanyaan; ?></p>
         <div class="form-check form-check-inline">
           <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'a') {
                                                                                                   echo "true";
