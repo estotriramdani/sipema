@@ -1,10 +1,15 @@
 <?= $this->section('content'); ?>
 
+<?php 
+  $db = \Config\Database::connect();
+  $quiz = $db->query("SELECT * from `materis`");
+?>
+
 <p> Halo, <?= $nama; ?>! Kamu dikenali sebagai <?= $role_name; ?> di SIPEMA</p>
 <div class="row">
   <div class="col-sm-7">
     <p>Di bawah merupakan daftar nilai kamu. </p>
-    <p> Tenang, jika nilai kamu masih 0 (nol), ambil kuis sekarang juga dan jangan lupa dipelajari materinya terlebih dahulu, ya!</p>
+    <p>Tenang, jika nilai kamu belum muncul, ambil kuis sekarang juga dan jangan lupa dipelajari materinya terlebih dahulu, ya!</p>
   </div>
 </div>
 
@@ -17,11 +22,11 @@
             <div class="card">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-9">
+                  <div class="col-8">
                     <h5 class="card-title"><?= $n->kode_materi; ?></h5>
                     <h6 class="card-subtitle mb-2"><?= $n->kode_materi; ?></h6>
                   </div>
-                  <div class="col-3">
+                  <div class="col-4">
                     <h2 class="card-text text-right nilai"><?= $n->nilai; ?></h2>
                   </div>
                 </div>
@@ -35,11 +40,11 @@
         <div class="card">
               <div class="card-body">
                 <div class="row">
-                  <div class="col-9">
+                  <div class="col-8">
                     <h5 class="card-title">Oops!</h5>
                     <h6 class="card-subtitle mb-2">Kamu belum ikut kuis!</h6>
                   </div>
-                  <div class="col-3">
+                  <div class="col-4">
                     <h2 class="card-text text-right nilai"></h2>
                   </div>
                 </div>
