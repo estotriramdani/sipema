@@ -41,9 +41,6 @@ class Users extends Migration
 			'alamat' => [
 				'type'			 => 'TEXT',
 			],
-			'foto' => [
-				'type'			 => 'TEXT',
-			],
 			'tempat_lahir' => [
 				'type'			 => 'VARCHAR',
 				'constraint'	 => '100',

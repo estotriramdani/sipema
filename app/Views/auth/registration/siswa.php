@@ -21,7 +21,7 @@
       </div>
     </div>
     <div class="row">
-      
+
       <div class="col-sm-6 ">
         <!-- buat form processing lakukannya di controller siswaAction() terus nanti dikasih redirect 
         langsung ke halaman login kalo pendaftaran berhasil -->
@@ -36,13 +36,12 @@
           </div>
           <div class="form-group">
             <label for="">Tanggal Lahir</label>
-            <input type="date" class="form-control" type="date" id="start" name="trip-start"
-        min="1970-01-01" max="2020-12-31">
+            <input type="date" class="form-control" type="date" id="start" name="trip-start" min="1970-01-01" max="2020-12-31">
           </div>
           <div class="form-group">
             <label for="">Email address</label>
             <input type="email" class="form-control" id="" aria-describedby="emailHelp">
-          </div> 
+          </div>
           <div class="form-group">
             <label for="exampleInputPassword1">Password</label>
             <input type="password" class="form-control" id="exampleInputPassword1">

@@ -25,12 +25,6 @@
       </div>
     </div>
     <div class="form-group row">
-      <label for="judul_materi" class="col-sm-2 col-form-label">Judul Materi</label>
-      <div class="col-sm-10">
-        <input type="text" class="form-control" id="judul_materi" name="judul_materi" value="<?= (old('judul_materi')) ? old('judul_materi') : $judul_materi; ?>">
-      </div>
-    </div>
-    <div class="form-group row">
       <label for="isi_materi" class="col-sm-2 col-form-label">Isi Materi</label>
       <div class="col-sm-10">
         <textarea name="isi_materi" class="form-control editor"><?= (old('isi_materi')) ? old('isi_materi') : $isi_materi; ?></textarea>

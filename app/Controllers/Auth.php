@@ -48,7 +48,7 @@ class Auth extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'email'            => 'required|valid_email',
+            'email'            => 'required|valid_email|max_length[40]',
             'password'      => 'required',
         ],    [   // Errors
             'email'    => [
@@ -124,14 +124,13 @@ class Auth extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'email'            => 'required|valid_email|is_unique[users.email]',
+            'email'            => 'required|valid_email|is_unique[users.email]|max_length[40]',
             'password'      => 'required',
-            'kode_identitas' => 'required',
+            'kode_identitas' => 'required|max_length[50]',
             'nama'          => 'required',
             'jenis_kelamin' => 'required',
             'alamat'        => 'required',
-            //'foto'          => '',
-            'tempat_lahir'  => 'required',
+            'tempat_lahir'  => 'required|max_length[100]',
             'tanggal_lahir' => 'required',
             'role_id'       => 'required',
         ],    [   // Errors
@@ -145,6 +144,7 @@ class Auth extends BaseController
             ],
             'kode_identitas' => [
                 'required'    => 'Mohon masukkan NIS/NIP.',
+                'max_length'    => 'Tidak bisa lebih dari 10 digit.',
             ],
             'nama' => [
                 'required'    => 'Mohon masukkan nama anda.',

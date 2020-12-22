@@ -82,15 +82,6 @@
           </div>
         </div>
         <div class="form-group row">
-          <label for="judul_materi <?= ($validation->HasError('judul_materi')) ? 'is-invalid' : '' ?>" class="col-sm-2 col-form-label">Judul Materi</label>
-          <div class="col-sm-10">
-            <input type="text" class="form-control" id="judul_materi" name="judul_materi">
-            <div class="invalid-feedback">
-              <?= $validation->getError('judul_materi') ?>
-            </div>
-          </div>
-        </div>
-        <div class="form-group row">
           <label for="isi_materi" class="col-sm-2 col-form-label">Isi Materi</label>
           <div class="col-sm-10">
             <textarea name="isi_materi" class="form-control editor <?= ($validation->HasError('isi_materi')) ? 'is-invalid' : '' ?>"></textarea>

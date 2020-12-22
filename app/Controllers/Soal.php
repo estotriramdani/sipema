@@ -23,32 +23,37 @@ class Soal extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'kode_materi' => 'required',
+            'kode_materi' => 'required|min_length[6]|max_length[6]',
             'pertanyaan'  => 'required',
-            'pilihan_a'   => 'required',
-            'pilihan_b'   => 'required',
-            'pilihan_c'   => 'required',
-            'pilihan_d'   => 'required',
+            'pilihan_a'   => 'required|max_length[200]',
+            'pilihan_b'   => 'required|max_length[200]',
+            'pilihan_c'   => 'required|max_length[200]',
+            'pilihan_d'   => 'required|max_length[200]',
             'jawaban'     => 'required',
             // 'nilai_soal'  => 'nilai_soal'
         ],    [   // Errors
             'kode_materi'    => [
                 'required'    => 'Mohon pilih Nama Materi.',
+                'required'    => 'Mohon pilih Nama Materi yang sesuai.',
             ],
             'pertanyaan' => [
                 'required'    => 'Mohon masukkan Pertanyaan Soal',
             ],
             'pilihan_a' => [
                 'required'    => 'Mohon masukkan Pilihan A',
+                'max_length'  => 'Maksimal 200 digit',
             ],
             'pilihan_b' => [
                 'required'    => 'Mohon masukkan Pilihan B',
+                'max_length'  => 'Maksimal 200 digit',
             ],
             'pilihan_c' => [
                 'required'    => 'Mohon masukkan Pilihan C',
+                'max_length'  => 'Maksimal 200 digit',
             ],
             'pilihan_d' => [
                 'required'    => 'Mohon masukkan Pilihan D',
+                'max_length'  => 'Maksimal 200 digit',
             ],
             'jawaban' => [
                 'required'    => 'Mohon masukkan Jawaban.',
@@ -103,10 +108,10 @@ class Soal extends BaseController
         $validation->setRules([
             'nama_materi' => 'required',
             'pertanyaan'  => 'required',
-            'pilihan_a'   => 'required',
-            'pilihan_b'   => 'required',
-            'pilihan_c'   => 'required',
-            'pilihan_d'   => 'required',
+            'pilihan_a'   => 'required|max_length[200]',
+            'pilihan_b'   => 'required|max_length[200]',
+            'pilihan_c'   => 'required|max_length[200]',
+            'pilihan_d'   => 'required|max_length[200]',
             'jawaban'     => 'required',
         ],    [   // Errors
             'nama_materi'    => [
@@ -117,15 +122,19 @@ class Soal extends BaseController
             ],
             'pilihan_a' => [
                 'required'    => 'Mohon masukkan Pilihan A',
+                'max_length'  => 'Maksimal 200 digit',
             ],
             'pilihan_b' => [
                 'required'    => 'Mohon masukkan Pilihan B',
+                'max_length'  => 'Maksimal 200 digit',
             ],
             'pilihan_c' => [
                 'required'    => 'Mohon masukkan Pilihan C',
+                'max_length'  => 'Maksimal 200 digit',
             ],
             'pilihan_d' => [
                 'required'    => 'Mohon masukkan Pilihan D',
+                'max_length'  => 'Maksimal 200 digit',
             ],
             'jawaban' => [
                 'required'    => 'Mohon masukkan Jawaban.',

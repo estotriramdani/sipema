@@ -22,24 +22,23 @@ class Materi extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'kode_materi'       => 'required',
-            'nama_materi'       => 'required',
-            'deskripsi'  => 'required',
-            'judul_materi'  => 'required|is_unique[materis.judul_materi]',
-            'isi_materi'         => 'required',
+            'kode_materi'       => 'required|exact_length[6]|is_unique[materis.kode_materi]',
+            'deskripsi'         => 'required',
+            'nama_materi'       => 'required|is_unique[materis.judul_materi]|max_length[50]',
+            'isi_materi'        => 'required',
         ],    [   // Errors
             'kode_materi'    => [
                 'required'    => 'Mohon masukkan Kode Materi.',
+                'is_unique'   => 'Kode Materi tidak bisa sama dengan yang sudah ada',
+                'exact_length'   => 'Kode Materi harus berjumlah 6 digit',
             ],
             'nama_materi'    => [
                 'required'    => 'Mohon masukkan Nama Materi.',
-                'is_unique'   => 'Nama Materi tidak bisa sama dengan yang sudah ada'
+                'is_unique'   => 'Nama Materi tidak bisa sama dengan yang sudah ada',
+                'max_length'   => 'Nama Materi tidak bisa lebih dari 50 digit'
             ],
             'deskripsi' => [
                 'required'    => 'Mohon masukkan Deskripsi Materi',
-            ],
-            'judul_materi' => [
-                'required'    => 'Mohon masukkan Judul Materi',
             ],
             'isi_materi' => [
                 'required'    => 'Mohon masukkan Isi Materi.',
@@ -64,7 +63,6 @@ class Materi extends BaseController
                 'email'             => $this->email,
                 'nama_materi'       => $this->request->getPost('nama_materi'),
                 'deskripsi'         => $this->request->getPost('deskripsi'),
-                'judul_materi'      => $this->request->getPost('judul_materi'),
                 'isi_materi'        => $this->request->getPost('isi_materi'),
             ];
             $this->materiModel->save($data);
@@ -95,20 +93,23 @@ class Materi extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'nama_materi'       => 'required',
-            'deskripsi'  => 'required',
-            'judul_materi'  => 'required|is_unique[materis.judul_materi,id_materi,{id_materi}]',
+            'kode_materi'        => 'required|exact_length[6]|is_unique[materis.kode_materi,kode_materi,{kode_materi}]',
+            'nama_materi'        => 'required|max_length[50]|is_unique[materis.nama_materi,id_materi,{id_materi}]',
+            'deskripsi'          => 'required',
             'isi_materi'         => 'required',
         ],    [   // Errors
+            'kode_materi'    => [
+                'required'    => 'Mohon masukkan Kode Materi.',
+                'is_unique'   => 'Kode Materi tidak bisa sama dengan yang sudah ada',
+                'exact_length'   => 'Kode Materi harus berjumlah 6 digit',
+            ],
             'nama_materi'    => [
                 'required'    => 'Mohon masukkan Nama Materi.',
-                'is_unique'   => 'Nama Materi tidak bisa sama dengan yang sudah ada'
+                'is_unique'   => 'Nama Materi tidak bisa sama dengan yang sudah ada',
+                'max_length'   => 'Nama Materi tidak bisa lebih dari 50 digit'
             ],
             'deskripsi' => [
                 'required'    => 'Mohon masukkan Deskripsi Materi',
-            ],
-            'judul_materi' => [
-                'required'    => 'Mohon masukkan Judul Materi',
             ],
             'isi_materi' => [
                 'required'    => 'Mohon masukkan Isi Materi.',
@@ -134,7 +135,6 @@ class Materi extends BaseController
                 'kode_materi'        => $this->request->getPost('kode_materi'),
                 'nama_materi'        => $this->request->getPost('nama_materi'),
                 'deskripsi'          => $this->request->getPost('deskripsi'),
-                'judul_materi'       => $this->request->getPost('judul_materi'),
                 'isi_materi'         => $this->request->getPost('isi_materi'),
                 'email'              => $this->email,
             ];

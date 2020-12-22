@@ -12,7 +12,7 @@ class NilaiModel extends Model
     protected $returnType     = 'object';
     protected $useSoftDeletes = false;
 
-    protected $allowedFields = ['email', 'kode_materi', 'quiz1', 'quiz2', 'quiz3', 'uts', 'uas'];
+    protected $allowedFields = ['email', 'kode_materi', 'nilai'];
 
     protected $useTimestamps = true;
     // protected $createdField  = 'created_at';

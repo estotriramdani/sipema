@@ -63,8 +63,6 @@ class Dashboard extends BaseController
                 'tempat_lahir' => $user->tempat_lahir,
                 'email' => $user->email,
                 'alamat' => $user->alamat,
-                // 'kode_materi' => $nilai->kode_materi,
-                // 'nilai' => $nilai->nilai,
                 'title' => 'Dashboard',
                 'materi' => $this->materi,
                 'soal' => $this->soal,
@@ -131,7 +129,7 @@ class Dashboard extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'nama'          => 'required',
+            'nama'          => 'required|max_length[100]',
             'jenis_kelamin' => 'required',
             'alamat'        => 'required',
             //'foto'          => '',
