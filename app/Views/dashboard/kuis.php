@@ -16,7 +16,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
 
   <?php $i = 1; ?>
   <?php foreach ($quiz->getResult() as $q) : ?>
-    <div id="pertanyaan-<?= $i; ?>">
+    <div id="pertanyaan-<?= $i; ?>" class="pertanyaan">
       <form action="">
         <p ><?= $q->pertanyaan; ?></p>
         <div class="form-check form-check-inline">
