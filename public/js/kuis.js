@@ -21,7 +21,7 @@ function displayResult(value) {
 }
 
 // for (let i = 1; i < pertanyaan.length; i++) {
-//   console.log(document.getElementById("pertanyaan-1"));
+console.log(document.getElementById("pertanyaan-1"));
 // }
 
 let jumlahSoal = document.querySelectorAll(".pertanyaan").length;
