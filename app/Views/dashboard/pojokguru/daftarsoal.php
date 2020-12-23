@@ -2,6 +2,13 @@
 
 <?= $this->section('content'); ?>
 
+<?php
+$db = \Config\Database::connect();
+
+$daftarsoal = $db->query("SELECT * from `materis` where kode_materi='" . $_GET['kode_materi'] . "'");
+
+?>
+
 <h1>Daftar Soal</h1>
 
 <!-- flash message -->
@@ -15,13 +22,13 @@
     </div>
   <?php endif; ?>
 </div>
-<div class="dropdown">
-  <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-    Kuis
+<div class="dropdown mb-3">
+  <a class="dropdown-toggle " href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+    Urutkan berdasarkan materi
   </a>
   <div class="dropdown-menu" aria-labelledby=" dropdownMenuLink">
     <?php foreach ($materi as $m) : ?>
-      <a class="dropdown-item" href="/kuis?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>"><?= $m->nama_materi; ?></a>
+      <a class="dropdown-item" href="/pojokguru/daftarsoal?kode_materi=<?= $m->kode_materi; ?>"><?= $m->nama_materi; ?></a>
     <?php endforeach; ?>
   </div>
 </div>
@@ -39,6 +46,7 @@
   <tbody>
     <?php $i = 1; ?>
     <?php foreach ($soal as $s) : ?>
+    <?php if($s->kode_materi == $_GET['kode_materi'] ) : ?>
       <tr>
         <td><?= $i; ?></td>
         <td><?= $s->kode_materi . "/" . $s->id_soal; ?></td>
@@ -49,12 +57,10 @@
           <form action=<?= base_url("soal/delete/$s->id_soal"); ?> class="d-inline">
             <input type="submit" value="hapus" class="btn btn-sm btn-danger" style="width: 100%;">
           </form>
-          <!-- <form action=<?= base_url("soal/delete/<?= $s->id_soal"); ?> class="">
-            <input type="submit" value="Hapus" class="btn btn-sm btn-danger" style="width: 100%;">
-          </form> -->
         </td>
       </tr>
       <?php $i++; ?>
+      <?php endif; ?>
     <?php endforeach; ?>
   </tbody>
 </table>

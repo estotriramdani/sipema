@@ -183,10 +183,10 @@ h3::after {
 }
 
 .dropdown-item {
-  color: #FF55BF!important;
+  color: #ff55bf !important;
 }
 
-.dropdown-item:hover{
+.dropdown-item:hover {
   color: black;
 }
 
@@ -203,6 +203,12 @@ h3::after {
   vertical-align: middle;
 }
 
+.bungkus-materi {
+  border: 5px #f53eaf solid;
+  box-sizing: border-box;
+  padding: 20px;
+  border-radius: 5px;
+}
 
 /* materi */
 
@@ -211,7 +217,7 @@ h3::after {
   height: 100vh;
 }
 
-#nilai-akhir{
+#nilai-akhir {
   width: 100%;
 }
 
@@ -242,7 +248,7 @@ h3::after {
     margin-right: 0;
   }
 
-  #nilai-akhir{
+  #nilai-akhir {
     width: 70%;
   }
 }

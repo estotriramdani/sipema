@@ -36,7 +36,7 @@
 
   foreach ($query->getResult() as $row) {
     echo "<h3>Materi: $namaMateri</h3>";
-    echo $row->isi_materi;
+    echo "<div class='bungkus-materi shadow'>$row->isi_materi</div>";
   }
 
   ?>

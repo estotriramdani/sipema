@@ -46,15 +46,15 @@
                 <li>
                     <a href="/materi?kode_materi=&nama_materi=" id="materi">Materi</a>
                 </li>
-                <?php if ($role == 2 | $role == 3) { ?>
+                <?php if ($role == 3) { ?>
                     <li>
-                        <div class="dropdown">
+                        <div class="dropright" >
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Kuis
                             </a>
-                            <div class="dropdown-menu" aria-labelledby=" dropdownMenuLink">
+                            <div class="dropdown-menu" aria-labelledby=" dropdownMenuLink" style="z-index: 99!important;">
                                 <?php foreach ($materi as $m) : ?>
-                                    <a class="dropdown-item" href="/kuis?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>"><?= $m->nama_materi; ?></a>
+                                    <a class="dropdown-item" href="/kuis?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>" style="z-index: 100;"><?= $m->nama_materi; ?></a>
                                 <?php endforeach; ?>
                             </div>
                         </div>
@@ -70,7 +70,7 @@
                             <div class="dropdown-menu" style="color: black!important;" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="/pojokguru">Buat Soal/Materi</a>
                                 <a class="dropdown-item" href="/pojokguru/daftarmateri">Daftar Materi</a>
-                                <a class="dropdown-item" href="/pojokguru/daftarsoal">Daftar Soal</a>
+                                <a class="dropdown-item" href="/pojokguru/daftarsoal?kode_materi=">Daftar Soal</a>
                             </div>
                         </div>
                     </li>
