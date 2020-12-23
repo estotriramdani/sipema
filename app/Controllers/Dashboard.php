@@ -26,6 +26,7 @@ class Dashboard extends BaseController
         $this->materi  = $this->materiModel->findAll();
         // $this->soal = $db->query("SELECT * from `soals`");
         $this->soal = $this->soalModel->findAll();
+        $this->tblnilai = $this->nilaiModel->findAll();
 
         $this->user = $this->userModel->getUser($email);
 
@@ -93,6 +94,7 @@ class Dashboard extends BaseController
                 'soal' => $this->soal,
                 'jumlahmaterianda' => $jumlahmaterianda,
                 'jumlahsoal' => $jumlahsoal,
+                'tblnilai' => $this->tblnilai,
             ];
             return view('dashboard/index', $data);
         }
