@@ -37,7 +37,7 @@
       <?php endforeach;
       } else { ?>
         <div class="col-sm-3">
-        <div class="card">
+          <div class="card">
               <div class="card-body">
                 <div class="row">
                   <div class="col-8">
