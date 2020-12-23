@@ -11,7 +11,7 @@
       <select class="form-control" id="nama_materi" name="nama_materi">
         <option>Pilih materi</option>
         <?php foreach ($materi as $m) : ?>
-          <option value="<?= $m->kode_materi; ?>" name="kode_materi"><?= $m->nama_materi; ?></option>
+          <option value="<?= $m->kode_materi; ?>" name="kode_materi" <?= ($m->kode_materi == $kode_materi) ? 'selected' : '' ?>><?= $m->nama_materi; ?></option>
         <?php endforeach; ?>
       </select> </div>
   </div>
@@ -57,9 +57,22 @@
   </div>
 
   <div class="form-group row">
-    <label for="jawaban" class="col-sm-2 col-form-label">Kunci</label>
-    <div class="col-sm-10">
-      <input type="text" class="form-control <?= ($validation->HasError('jawaban')) ? 'is-invalid' : '' ?>" id="jawaban" name="jawaban" value="<?= (old('jawaban')) ? old('jawaban') : $jawaban; ?>">
+    <label for="jawaban" class="col-sm-4 col-form-label">Jawaban</label>
+    <div class="col-sm-8">
+      <select name="jawaban" id="jawaban" class="form-control <?= ($validation->HasError('jawaban')) ? 'is-invalid' : '' ?>">
+        <option value="a" <?php if ($jawaban == 'a') {
+                            echo "selected";
+                          } ?>>A</option>
+        <option value="b" <?php if ($jawaban == 'b') {
+                            echo "selected";
+                          } ?>>B</option>
+        <option value="c" <?php if ($jawaban == 'c') {
+                            echo "selected";
+                          } ?>>C</option>
+        <option value="d" <?php if ($jawaban == 'd') {
+                            echo "selected";
+                          } ?>>D</option>
+      </select>
       <div class="invalid-feedback">
         <?= $validation->getError('jawaban') ?>
       </div>

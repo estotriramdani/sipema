@@ -31,17 +31,17 @@
         </div>
       </div>
       <div class="form-group row">
-
-        <!-- Harusnya Radio -->
-
         <label for="jenis_kelamin" class="col-sm-4 col-form-label">Jenis Kelamin</label>
         <div class="col-sm-8">
-          <select name="jenis_kelamin" id="jenis_kelamin" class="form-control" >
-            <option value="Laki-laki" <?php if ($jenis_kelamin == 'Laki-laki') {echo "selected";} ?>>Laki-laki</option>
-            <option value="Perempuan" <?php if ($jenis_kelamin == 'Perempuan') {echo "selected";} ?>>Perempuan</option>
+          <select name="jenis_kelamin" id="jenis_kelamin" class="form-control">
+            <option value="Laki-laki" <?php if ($jenis_kelamin == 'Laki-laki') {
+                                        echo "selected";
+                                      } ?>>Laki-laki</option>
+            <option value="Perempuan" <?php if ($jenis_kelamin == 'Perempuan') {
+                                        echo "selected";
+                                      } ?>>Perempuan</option>
           </select>
         </div>
-
       </div>
       <div class="form-group row">
         <label for="tempat_lahir" class="col-sm-4 col-form-label">Tempat Lahir</label>
