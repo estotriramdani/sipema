@@ -21,7 +21,6 @@ class SoalModel extends Model
         'pilihan_c',
         'pilihan_d',
         'jawaban',
-        'nilai_soal',
     ];
 
     protected $useTimestamps = true;
