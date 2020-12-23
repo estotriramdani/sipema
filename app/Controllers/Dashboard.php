@@ -244,7 +244,7 @@ class Dashboard extends BaseController
             'soal' => $this->soal
         ];
         if (empty($_GET)) {
-            return redirect()->to('/');
+            return redirect()->to('/materi?kode_materi=&nama_materi=');
         }
         return view('dashboard/materi', $data);
     }
@@ -342,6 +342,9 @@ class Dashboard extends BaseController
 
     public function daftarSoal()
     {
+        if (empty($_GET)) {
+            return redirect()->to('/pojokguru/daftarsoal?kode_materi=');
+        }
         $user   = $this->user;
         $data = [
             'title' => 'Daftar Soal',

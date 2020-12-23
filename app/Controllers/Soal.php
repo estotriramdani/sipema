@@ -103,6 +103,7 @@ class Soal extends BaseController
 
         $data = $this->request->getPost();
 
+        $kode_materi = $this->request->getPost('nama_materi');
         $validation->setRules([
             'nama_materi' => 'required',
             'pertanyaan'  => 'required',
@@ -171,7 +172,7 @@ class Soal extends BaseController
             $this->soalModel->save($data);
 
             session()->setFlashdata('pesan', 'Update Soal sukses');
-            return redirect()->to(base_url('pojokguru/daftarsoal'));
+            return redirect()->to(base_url("pojokguru/daftarsoal?kode_materi=$kode_materi"));
         }
     }
 
@@ -179,7 +180,7 @@ class Soal extends BaseController
     {
         $this->soalModel->delete($id_soal);
         session()->setFlashdata('pesan', 'Hapus soal sukses');
-        return redirect()->to(base_url('pojokguru/daftarsoal'));
+        return redirect()->to(base_url('pojokguru/daftarsoal?kode_materi='));
     }
 
 

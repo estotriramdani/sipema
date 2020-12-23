@@ -56,6 +56,7 @@ $daftarsoal = $db->query("SELECT * from `materis` where kode_materi='" . $_GET['
             <a href="editsoal/<?= $s->id_soal; ?>" class="btn btn-sm btn-success mb-2" style="width: 100%;">Ubah </a>
             <form action=<?= base_url("soal/delete/$s->id_soal"); ?> class="d-inline">
               <input type="submit" value="hapus" class="btn btn-sm btn-danger" style="width: 100%;">
+              <input type="hidden" id="kode-materi" value="<?= $_GET['kode_materi']; ?>" name="nama_materi">
             </form>
           </td>
         </tr>
@@ -63,7 +64,7 @@ $daftarsoal = $db->query("SELECT * from `materis` where kode_materi='" . $_GET['
       <?php endif; ?>
     <?php endforeach; ?>
   </tbody>
-</table>  
+</table>
 <p style="font-size: 10px;">Jika belum muncul silakan pilih materi kembali</p>
 
 <?= $this->endSection();; ?>
