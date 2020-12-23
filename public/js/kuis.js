@@ -10,11 +10,13 @@ function displayResult(value) {
   // console.log(value)
   if (value == "true") {
     score++;
+    alert("Jawaban tersimpan, harap untuk tidak mengubah jawaban!");
   } else if (value == "false") {
     if (score == 0) {
-      score = 0;
+      // score = 0;
+      alert("Jawaban tersimpan, harap untuk tidak mengubah jawaban!");
     } else if (score > 0) {
-      score = score - 1;
+      alert("Jawaban tersimpan, harap untuk tidak mengubah jawaban!");
     }
   }
   console.log(score);
@@ -40,7 +42,7 @@ let nilaiKuis = document.getElementById("nilai-kuis");
 hitungSkor.addEventListener("click", function () {
   questionWrapper.style.display = "none";
   nilaiCard.style.display = "block";
-  let nilaiAkhir = (score / jumlahSoal) * 100;
+  let nilaiAkhir = (score / jumlahSoal) * 100 * 2;
   nilaiKuis.innerHTML = nilaiAkhir.toFixed(0);
   if (nilaiAkhir > 80) {
     nilaiKuis.style.color = "green";
@@ -55,4 +57,5 @@ hitungSkor.addEventListener("click", function () {
     nilaiKuis.style.color = "red";
     nilai.setAttribute("value", nilaiAkhir);
   }
+  console.log(nilaiAkhir);
 });

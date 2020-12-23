@@ -79,12 +79,49 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
 </div>
 
 
+
+
+<h3>Pembahasan</h3>
+
+<div>
+<?php foreach ($quiz->getResult() as $q) : ?>
+    <div id="pertanyaan-<?= $i; ?>" class="pertanyaan">
+      <form action="">
+        <p><?= $q->pertanyaan; ?></p>
+        <p style="font-size: 10px;">Jawaban yang benar adalah opsi yang ditandai</p>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" disabled <?php if ($q->jawaban == 'a') {echo "checked";} ?>>
+          <label class="form-check-label"><?= $q->pilihan_a; ?></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" disabled <?php if ($q->jawaban == 'b') {echo "checked";} ?>>
+          <label class="form-check-label"><?= $q->pilihan_b; ?></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" disabled <?php if ($q->jawaban == 'c') {echo "checked";} ?>>
+          <label class="form-check-label"><?= $q->pilihan_c; ?></label>
+        </div>
+        <div class="form-check form-check-inline">
+          <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" disabled <?php if ($q->jawaban == 'd') {echo "checked";} ?>>
+          <label class="form-check-label"><?= $q->pilihan_d; ?></label>
+        </div>
+
+      </form>
+    </div>
+    <hr>
+    <?php $i++; ?>
+  <?php endforeach; ?>
+
 <form action="/kuis/action" class="mt-3" method="post">
   <input type="hidden" id="nilai" value="0" name="nilaiKuis">
   <input type="hidden" id="kode-materi" value="<?= $_GET['kode_materi']; ?>" name="kode_materi">
   <input type="hidden" id="nama-materi" value="<?= $_GET['nama_materi']; ?>" name="nama_materi">
-  <input type="submit" id="selesai" value="selesai" class="btn btn-mulai">
+  <input type="submit" id="selesai" value="Selesai Review" class="btn btn-mulai">
 </form>
+
+</div>
+
+
 
 <script src="/js/kuis.js"></script>
 </div>
