@@ -23,7 +23,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
         <div onclick="style='display: none; transition: 0.3s; content: haha'">
         <div class="row">
           <div class="col-sm-3">
-            <div class="form-check form-check-inline">
+            <div class="form-check form-check-inline"  style="width: 100%;">
               <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'a') {
                                                                                                       echo "true";
                                                                                                     } else {
@@ -33,7 +33,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
             </div>
           </div>
           <div class="col-sm-3">
-          <div class="form-check form-check-inline">
+          <div class="form-check form-check-inline" >
             <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'b') {
                                                                                                     echo "true";
                                                                                                   } else {
@@ -43,7 +43,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
           </div>
           </div>
           <div class="col-sm-3">
-          <div class="form-check form-check-inline">
+          <div class="form-check form-check-inline" >
             <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'c') {
                                                                                                     echo "true";
                                                                                                   } else {
@@ -53,7 +53,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
           </div>
           </div>
           <div class="col-sm-3">
-          <div class="form-check form-check-inline">
+          <div class="form-check form-check-inline" >
             <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'd') {
                                                                                                     echo "true";
                                                                                                   } else {
