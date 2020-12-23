@@ -10,14 +10,7 @@ function displayResult(value) {
   // console.log(value)
   if (value == "true") {
     score++;
-    alert("Jawaban tersimpan, harap untuk tidak mengubah jawaban!");
-  } else if (value == "false") {
-    if (score == 0) {
-      // score = 0;
-      alert("Jawaban tersimpan, harap untuk tidak mengubah jawaban!");
-    } else if (score > 0) {
-      alert("Jawaban tersimpan, harap untuk tidak mengubah jawaban!");
-    }
+    alert("Jawaban tersimpan!");
   }
   console.log(score);
 }
@@ -59,3 +52,7 @@ hitungSkor.addEventListener("click", function () {
   }
   console.log(nilaiAkhir);
 });
+
+function functionClick() {
+  style = "display: none; transition: 0.3s;";
+}

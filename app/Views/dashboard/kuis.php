@@ -19,37 +19,39 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
     <div id="pertanyaan-<?= $i; ?>" class="pertanyaan">
       <form action="">
         <p><?= $q->pertanyaan; ?></p>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'a') {
-                                                                                                  echo "true";
-                                                                                                } else {
-                                                                                                  echo "false";
-                                                                                                } ?>" onclick="displayResult(this.value)">
-          <label class="form-check-label"><?= $q->pilihan_a; ?></label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'b') {
-                                                                                                  echo "true";
-                                                                                                } else {
-                                                                                                  echo "false";
-                                                                                                } ?>" onclick="displayResult(this.value)">
-          <label class="form-check-label"><?= $q->pilihan_b; ?></label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'c') {
-                                                                                                  echo "true";
-                                                                                                } else {
-                                                                                                  echo "false";
-                                                                                                } ?>" onclick="displayResult(this.value)">
-          <label class="form-check-label"><?= $q->pilihan_c; ?></label>
-        </div>
-        <div class="form-check form-check-inline">
-          <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'd') {
-                                                                                                  echo "true";
-                                                                                                } else {
-                                                                                                  echo "false";
-                                                                                                } ?>" onclick="displayResult(this.value)">
-          <label class="form-check-label"><?= $q->pilihan_d; ?></label>
+        <div onclick="style='display: none; transition: 0.3s;'">
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'a') {
+                                                                                                    echo "true";
+                                                                                                  } else {
+                                                                                                    echo "false";
+                                                                                                  } ?>" onclick="displayResult(this.value)">
+            <label class="form-check-label"><?= $q->pilihan_a; ?></label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'b') {
+                                                                                                    echo "true";
+                                                                                                  } else {
+                                                                                                    echo "false";
+                                                                                                  } ?>" onclick="displayResult(this.value)">
+            <label class="form-check-label"><?= $q->pilihan_b; ?></label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'c') {
+                                                                                                    echo "true";
+                                                                                                  } else {
+                                                                                                    echo "false";
+                                                                                                  } ?>" onclick="displayResult(this.value)">
+            <label class="form-check-label"><?= $q->pilihan_c; ?></label>
+          </div>
+          <div class="form-check form-check-inline">
+            <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'd') {
+                                                                                                    echo "true";
+                                                                                                  } else {
+                                                                                                    echo "false";
+                                                                                                  } ?>" onclick="displayResult(this.value)">
+            <label class="form-check-label"><?= $q->pilihan_d; ?></label>
+          </div>
         </div>
 
       </form>
