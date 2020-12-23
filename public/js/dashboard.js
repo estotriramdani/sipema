@@ -5,7 +5,7 @@ $("#menu-toggle").click(function (e) {
 
 let namaKuis = document.querySelectorAll(".nama-kuis");
 for (let i = 0; i < namaKuis.length; i++) {
-  if (namaKuis[i].innerHTML.length > 18) {
-    namaKuis[i].innerHTML = namaKuis[i].innerHTML.substr(0, 18) + "...";
+  if (namaKuis[i].innerHTML.length > 17) {
+    namaKuis[i].innerHTML = namaKuis[i].innerHTML.substr(0, 17) + " ...";
   }
 }

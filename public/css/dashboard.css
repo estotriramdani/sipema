@@ -204,10 +204,14 @@ h3::after {
 }
 
 .bungkus-materi {
-  border: 5px #f53eaf solid;
+  border: 3px #f53eaf solid;
   box-sizing: border-box;
   padding: 20px;
   border-radius: 5px;
+}
+
+.identitas-materi {
+  height: 200px;
 }
 
 /* materi */

@@ -63,6 +63,7 @@ $daftarsoal = $db->query("SELECT * from `materis` where kode_materi='" . $_GET['
       <?php endif; ?>
     <?php endforeach; ?>
   </tbody>
-</table>
+</table>  
+<p style="font-size: 10px;">Jika belum muncul silakan pilih materi kembali</p>
 
 <?= $this->endSection();; ?>

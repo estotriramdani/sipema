@@ -25,7 +25,6 @@
   </div>
 </div>
 
-<div>
   <?php
   $kodeMateri = $_GET['kode_materi'];
   $namaMateri = $_GET['nama_materi'];
@@ -36,7 +35,34 @@
 
   foreach ($query->getResult() as $row) {
     echo "<h3>Materi: $namaMateri</h3>";
-    echo "<div class='bungkus-materi shadow'>$row->isi_materi</div>";
+    echo "<div class=\"row\">\n";
+    echo "  <div class=\"col-sm-3\">\n";
+    echo "    <div class=\"card\">\n";
+    echo "      <div class=\"card-body\">\n";
+    echo "        <div class=\"row\">\n";
+    echo "          <div class=\"col-8\">\n";
+    echo "            <h6 class=\"card-subtitle mb-2\">Kode materi</h6>\n";
+    echo "            <h5 class=\"card-title\">$row->kode_materi</h5>\n";
+    echo "            </div>\n";
+    echo "          </div>\n";
+    echo "        </div>\n";
+    echo "      </div>\n";
+    echo "    </div>\n";
+    echo "    <div class=\"col-sm\">\n";
+    echo "      <div class=\"card\">\n";
+    echo "        <div class=\"card-body\">\n";
+    echo "          <div class=\"row\">\n";
+    echo "            <div class=\"col-12\">\n";
+    echo "              <h5 class=\"card-title\">Deskripsi Materi</h5>\n";
+    echo "              <h6 class=\"card-subtitle mb-2\">$row->deskripsi</h6>\n";
+    echo "              </div>\n";
+    echo "            </div>\n";
+    echo "          </div>\n";
+    echo "        </div>\n";
+    echo "      </div>\n";
+    echo "    </div>\n";
+    echo "<div>";
+    echo "<div class='bungkus-materi mt-4'>$row->isi_materi</div>";
   }
 
   ?>

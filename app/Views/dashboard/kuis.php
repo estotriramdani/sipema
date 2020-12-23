@@ -13,6 +13,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
 ?>
 
 <div id="question-wrapper">
+  <p style="font-size: 11px;">Soal bersifat berurut. Ketika jawaban dipilih maka jawaban akan menghilang dan jawaban akan tersimpan.</p>
 
   <?php $i = 1; ?>
   <?php foreach ($quiz->getResult() as $q) : ?>
