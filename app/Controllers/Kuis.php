@@ -19,7 +19,7 @@ class Kuis extends BaseController
     $kode_materi = $this->request->getVar('kode_materi');
     $nama_materi = $this->request->getVar('nama_materi');
     $nilai = $this->request->getVar('nilaiKuis');
-    $nilai = ((int)floor($nilai));
+    $nilai = ((int)round($nilai));
 
     $find = $nilaiModel->where('kode_materi', $kode_materi)
       ->where('email', $email)

@@ -9,7 +9,7 @@
     <div class="form-group row">
       <label for="kode_materi" class="col-sm-2 col-form-label">Kode Materi</label>
       <div class="col-sm-10">
-        <input type="text" class="form-control" id="kode_materi" name="kode_materi" value="<?= (old('kode_materi')) ? old('kode_materi') : $kode_materi; ?>">
+        <input type="text" class="form-control" disabled id="kode_materi" name="kode_materi" value="<?= (old('kode_materi')) ? old('kode_materi') : $kode_materi; ?>">
       </div>
     </div>
     <div class="form-group row">
@@ -32,7 +32,7 @@
     </div>
 
     <input type="hidden" name=email value="<?= $email; ?>">
-    <input type="hidden" name=id_materi value="<?= $id_materi; ?>">
+    <input type="hidden" name=kode_materi value="<?= $kode_materi; ?>">
 
     <div class="form-group row">
       <div class="col-sm-10">

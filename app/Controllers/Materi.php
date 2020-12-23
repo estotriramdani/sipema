@@ -65,7 +65,7 @@ class Materi extends BaseController
                 'deskripsi'         => $this->request->getPost('deskripsi'),
                 'isi_materi'        => $this->request->getPost('isi_materi'),
             ];
-            $this->materiModel->save($data);
+            $this->materiModel->insert($data);
 
             session()->setFlashdata('message', 'Materi telah ditambahkan');
             return redirect()->to(base_url('pojokguru'));
@@ -94,7 +94,7 @@ class Materi extends BaseController
 
         $validation->setRules([
             'kode_materi'        => 'required|exact_length[6]|is_unique[materis.kode_materi,kode_materi,{kode_materi}]',
-            'nama_materi'        => 'required|max_length[50]|is_unique[materis.nama_materi,id_materi,{id_materi}]',
+            'nama_materi'        => 'required|max_length[50]|is_unique[materis.nama_materi,nama_materi,{nama_materi}]',
             'deskripsi'          => 'required',
             'isi_materi'         => 'required',
         ],    [   // Errors
@@ -131,7 +131,6 @@ class Materi extends BaseController
         } else {
 
             $data = [
-                'id_materi'          => $this->request->getPost('id_materi'),
                 'kode_materi'        => $this->request->getPost('kode_materi'),
                 'nama_materi'        => $this->request->getPost('nama_materi'),
                 'deskripsi'          => $this->request->getPost('deskripsi'),
@@ -147,9 +146,9 @@ class Materi extends BaseController
 
     public function delete($kode_materi)
     {
-        $materidelete = $this->materiModel->where('kode_materi', $kode_materi)->first();
-        $id_materi = $materidelete->id_materi;
-        $this->materiModel->delete($id_materi);
+        // $materidelete = $this->materiModel->where('kode_materi', $kode_materi)->first();
+        // $id_materi = $materidelete->id_materi;
+        $this->materiModel->delete($kode_materi);
         session()->setFlashdata('pesan', 'Hapus materi sukses');
         return redirect()->to(base_url('pojokguru/daftarmateri'));
     }

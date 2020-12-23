@@ -11,11 +11,6 @@ class Materis extends Migration
 	public function up()
 	{
 		$this->forge->addField([
-			'id_materi' => [
-				'type'           => 'INT',
-				'constraint'     => '5',
-				'auto_increment' => TRUE,
-			],
 			'kode_materi' => [
 				'type'           => 'VARCHAR',
 				'constraint'     => '6',
@@ -44,7 +39,7 @@ class Materis extends Migration
 			],
 
 		]);
-		$this->forge->addKey('id_materi', true);
+		$this->forge->addKey('kode_materi', true);
 		// $this->forge->addForeignKey('kode_materi', 'materis', 'kode_materi', 'CASCADE', 'CASCADE');
 		$this->forge->createTable($this->table);
 	}

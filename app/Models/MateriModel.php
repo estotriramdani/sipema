@@ -8,7 +8,7 @@ use CodeIgniter\Model;
 class MateriModel extends Model
 {
     protected $table      = 'materis';
-    protected $primaryKey = 'id_materi';
+    protected $primaryKey = 'kode_materi';
 
     protected $returnType     = 'object';
     protected $useSoftDeletes = false;

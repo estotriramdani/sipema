@@ -330,7 +330,6 @@ class Dashboard extends BaseController
             'kode_materi' => $kode_materi,
             'materi' => $this->materi,
             // 'materiedit' => $materiedit,
-            'id_materi' => $materiedit->id_materi,
             'nama_materi' => $materiedit->nama_materi,
             'deskripsi' => $materiedit->deskripsi,
             'isi_materi' => $materiedit->isi_materi,
