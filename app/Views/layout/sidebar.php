@@ -52,9 +52,9 @@
                             <a class="dropdown-toggle" href="#" role="button" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Kuis
                             </a>
-                            <div class="dropdown-menu" aria-labelledby=" dropdownMenuLink" style="z-index: 99!important;">
+                            <div class="dropdown-menu" aria-labelledby=" dropdownMenuLink" style="z-index: 99!important; margin-left: 4px!important;">
                                 <?php foreach ($materi as $m) : ?>
-                                    <a class="dropdown-item" href="/kuis?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>" style="z-index: 100;"><?= $m->nama_materi; ?></a>
+                                    <a class="dropdown-item nama-kuis" href="/kuis?kode_materi=<?= $m->kode_materi; ?>&nama_materi=<?= $m->nama_materi; ?>" style="z-index: 100;"><?= $m->nama_materi; ?></a>
                                 <?php endforeach; ?>
                             </div>
                         </div>

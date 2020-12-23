@@ -1,15 +1,11 @@
 $("#menu-toggle").click(function (e) {
-    e.preventDefault();
-    $("#wrapper").toggleClass("toggled");
+  e.preventDefault();
+  $("#wrapper").toggleClass("toggled");
 });
 
-
-//akfikan jenis page pada halaman
-// let lokasi = $(location).attr('pathname'); // return : /forumsk/index.php
-// let res = lokasi.substr(1);
-// console.log(res);
-
-// // var active = document.getElementById(res);
-// // active.classList.add("active-page");
-
-
+let namaKuis = document.querySelectorAll(".nama-kuis");
+for (let i = 0; i < namaKuis.length; i++) {
+  if (namaKuis[i].innerHTML.length > 18) {
+    namaKuis[i].innerHTML = namaKuis[i].innerHTML.substr(0, 18) + "...";
+  }
+}
