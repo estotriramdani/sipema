@@ -32,7 +32,7 @@
   $db = \Config\Database::connect();
 
   $query = $db->query("SELECT * FROM materis WHERE kode_materi='$kodeMateri'");
-
+  
   foreach ($query->getResult() as $row) {
     echo "<h3>Materi: $namaMateri</h3>";
     echo "<div class=\"row\">\n";
