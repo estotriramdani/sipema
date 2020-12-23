@@ -23,7 +23,7 @@ class Soal extends BaseController
         $data = $this->request->getPost();
 
         $validation->setRules([
-            'kode_materi' => 'required|min_length[6]|max_length[6]',
+            'kode_materis' => 'required',
             'pertanyaan'  => 'required',
             'pilihan_a'   => 'required|max_length[200]',
             'pilihan_b'   => 'required|max_length[200]',
@@ -32,8 +32,7 @@ class Soal extends BaseController
             'jawaban'     => 'required|max_length[1]',
             // 'nilai_soal'  => 'nilai_soal'
         ],    [   // Errors
-            'kode_materi'    => [
-                'required'    => 'Mohon pilih Nama Materi.',
+            'kode_materis'    => [
                 'required'    => 'Mohon pilih Nama Materi yang sesuai.',
             ],
             'pertanyaan' => [
@@ -71,13 +70,13 @@ class Soal extends BaseController
 
             return redirect()->to(base_url('dashboard/pojokguru/index'))->withInput();
         } else {
-            $kode_materi = $this->request->getPost('kode_materi');
-            $query = $this->db->query("SELECT kode_materi FROM materis WHERE kode_materi='$kode_materi'");
-            $result   = $query->getRow();
-            $kode_materi = $result->kode_materi;
+            // $kode_materi = $this->request->getPost('nama_materis');
+            // $query = $this->db->query("SELECT kode_materi FROM materis WHERE kode_materi='$kode_materi'");
+            // $result   = $query->getRow();
+            // $kode_materi = $result->kode_materi;
 
             $data = [
-                'kode_materi'     => $this->request->getPost('kode_materi'),
+                'kode_materi'     => $this->request->getPost('kode_materis'),
                 'pertanyaan'      => $this->request->getPost('pertanyaan'),
                 'pilihan_a'       => $this->request->getPost('pilihan_a'),
                 'pilihan_b'       => $this->request->getPost('pilihan_b'),
