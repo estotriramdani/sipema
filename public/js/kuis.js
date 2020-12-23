@@ -11,13 +11,13 @@ function displayResult(value) {
   if (value == "true") {
     score++;
     alert("Jawaban tersimpan!");
+  } else if (value == "false") {
+    alert("Jawaban tersimpan!");
   }
   console.log(score);
 }
 
-// for (let i = 1; i < pertanyaan.length; i++) {
-console.log(document.getElementById("pertanyaan-1"));
-// }
+console.log(score);
 
 let jumlahSoal = document.querySelectorAll(".pertanyaan").length;
 
@@ -45,14 +45,10 @@ hitungSkor.addEventListener("click", function () {
     nilaiKuis.style.fontWeight = "bold";
     nilaiKuis.style.color = "yellow";
     nilai.setAttribute("value", nilaiAkhir);
-  } else if (nilaiAkhir < 50) {
+  } else if (nilaiAkhir <= 50) {
     nilaiKuis.style.fontWeight = "bold";
     nilaiKuis.style.color = "red";
     nilai.setAttribute("value", nilaiAkhir);
   }
   console.log(nilaiAkhir);
 });
-
-function functionClick() {
-  style = "display: none; transition: 0.3s;";
-}
