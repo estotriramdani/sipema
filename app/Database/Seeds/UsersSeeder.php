@@ -22,8 +22,8 @@ class UsersSeeder extends Seeder
 
 		// Simple Queries
 		$this->db->query(
-			"INSERT INTO users (kode_identitas, nama, email, password, foto, tanggal_lahir, role_id, created_at, updated_at) 
-						  VALUES(:kode_identitas:, :nama:, :email:, :password:, :foto:, :tanggal_lahir:,:role_id:, :created_at:, :updated_at:)",
+			"INSERT INTO users (kode_identitas, nama, email, password, tanggal_lahir, role_id, created_at, updated_at) 
+						  VALUES(:kode_identitas:, :nama:, :email:, :password:, :tanggal_lahir:,:role_id:, :created_at:, :updated_at:)",
 			$data
 		);
 		$data = [
@@ -39,8 +39,8 @@ class UsersSeeder extends Seeder
 
 		// Simple Queries
 		$this->db->query(
-			"INSERT INTO users (kode_identitas, nama, email, password, foto, tanggal_lahir, role_id, created_at, updated_at) 
-						  VALUES(:kode_identitas:, :nama:, :email:, :password:, :foto:, :tanggal_lahir:,:role_id:, :created_at:, :updated_at:)",
+			"INSERT INTO users (kode_identitas, nama, email, password, tanggal_lahir, role_id, created_at, updated_at) 
+						  VALUES(:kode_identitas:, :nama:, :email:, :password:, :tanggal_lahir:,:role_id:, :created_at:, :updated_at:)",
 			$data
 		);
 
