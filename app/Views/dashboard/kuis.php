@@ -82,6 +82,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
 <form action="/kuis/action" class="mt-3" method="post">
   <input type="hidden" id="nilai" value="0" name="nilaiKuis">
   <input type="hidden" id="kode-materi" value="<?= $_GET['kode_materi']; ?>" name="kode_materi">
+  <input type="hidden" id="nama-materi" value="<?= $_GET['nama_materi']; ?>" name="nama_materi">
   <input type="submit" id="selesai" value="selesai" class="btn btn-mulai">
 </form>
 

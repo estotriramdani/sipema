@@ -24,7 +24,7 @@ class Materi extends BaseController
         $validation->setRules([
             'kode_materi'       => 'required|exact_length[6]|is_unique[materis.kode_materi]',
             'deskripsi'         => 'required',
-            'nama_materi'       => 'required|is_unique[materis.judul_materi]|max_length[50]',
+            'nama_materi'       => 'required|is_unique[materis.nama_materi]|max_length[50]',
             'isi_materi'        => 'required',
         ],    [   // Errors
             'kode_materi'    => [

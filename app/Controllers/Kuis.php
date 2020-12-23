@@ -15,32 +15,38 @@ class Kuis extends BaseController
   {
     $nilaiModel = new NilaiModel();
     $email = session()->get('email');
+    $role_id = session()->get('role_id');
     $kode_materi = $this->request->getVar('kode_materi');
+    $nama_materi = $this->request->getVar('nama_materi');
     $nilai = $this->request->getVar('nilaiKuis');
     $nilai = ((int)floor($nilai));
 
     $find = $nilaiModel->where('kode_materi', $kode_materi)
       ->where('email', $email)
       ->first();
-
-    if ($find == null) {
-      $data = [
-        'email'         => $email,
-        'kode_materi'   => $kode_materi,
-        'nilai'         => $nilai
-      ];
-      $nilaiModel->save($data);
-      session()->setFlashdata('pesan', 'Nilai Kuis Berhasil tersimpan.');
-      return redirect()->to('/dashboard');
+    if ($role_id == 3) {
+      if ($find == null) {
+        $data = [
+          'email'         => $email,
+          'kode_materi'   => $kode_materi,
+          'nilai'         => $nilai
+        ];
+        $nilaiModel->save($data);
+        session()->setFlashdata('pesan', 'Nilai Kuis Berhasil tersimpan.');
+        return redirect()->to('/dashboard');
+      } else {
+        $data = [
+          'id_nilai'       => $find->id_nilai,
+          'email'         => $email,
+          'kode_materi'   => $kode_materi,
+          'nilai'         => $nilai
+        ];
+        $nilaiModel->save($data);
+        session()->setFlashdata('pesan', 'Nilai Kuis Berhasil terupdate.');
+        return redirect()->to('/dashboard');
+      }
     } else {
-      $data = [
-        'id_nilai'       => $find->id_nilai,
-        'email'         => $email,
-        'kode_materi'   => $kode_materi,
-        'nilai'         => $nilai
-      ];
-      $nilaiModel->save($data);
-      session()->setFlashdata('pesan', 'Nilai Kuis Berhasil terupdate.');
+      session()->setFlashdata('pesan', 'Simulasi Kuis selesai.');
       return redirect()->to('/dashboard');
     }
   }

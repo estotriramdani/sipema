@@ -40,7 +40,7 @@ class Filters extends BaseConfig
 	//    'isLoggedIn' => ['before' => ['account/*', 'profiles/*']],
 	public $filters = [
 		'auth' => ['before' => ['dashboard', '/auth/logout']],
-		'noauth' => ['before' => ['', 'auth/registration',  '/auth/login']],
+		'noauth' => ['before' => ['', 'auth/registration', 'auth', '/auth/login']],
 		//'authadmin' => ['before' => []],
 		'authguru' => ['before' => ['pojokguru/*', 'materi/create', 'materi/edit', 'materi/save', 'soal/create', 'soal/edit']],
 	];

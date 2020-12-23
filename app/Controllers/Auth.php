@@ -75,6 +75,10 @@ class Auth extends BaseController
             if ($user) {
                 // cek password
                 if (password_verify($password, $user->password)) {
+                    if ($this->session->get('email')) {
+                        session()->setFlashdata('pesan', 'Login gagal, anda sudah login menggunakan akun lain.');
+                        return redirect()->to('/dashboard');
+                    }
                     $newdata = [
                         'email' => $user->email,
                         'role_id' => $user->role_id

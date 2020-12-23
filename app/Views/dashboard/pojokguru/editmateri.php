@@ -36,7 +36,7 @@
 
     <div class="form-group row">
       <div class="col-sm-10">
-        <button type="submit" class="btn btn-mulai">Tambah Materi</button>
+        <button type="submit" class="btn btn-mulai">Ubah Materi</button>
       </div>
     </div>
   </form>
