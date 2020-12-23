@@ -342,14 +342,6 @@ class Dashboard extends BaseController
 
     public function daftarSoal()
     {
-
-        $daftarmateri = [];
-
-        foreach ($this->soal as $s) {
-            $daftarmateri[] = $s->kode_materi;
-        }
-        $Armateri = (array_unique($daftarmateri));
-
         $user   = $this->user;
         $data = [
             'title' => 'Daftar Soal',
@@ -364,7 +356,6 @@ class Dashboard extends BaseController
             'alamat' => $user->alamat,
             'materi' => $this->materi,
             'soal' => $this->soal,
-            'armateri' => $Armateri
         ];
 
 
