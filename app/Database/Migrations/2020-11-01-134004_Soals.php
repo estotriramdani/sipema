@@ -43,10 +43,6 @@ class Soals extends Migration
 				'type'           => 'VARCHAR',
 				'constraint'     => '200',
 			],
-			'nilai_soal' => [
-				'type'           => 'INT',
-				'constraint'	 => '2',
-			],
 			'created_at' => [
 				'type'			=> 'DATETIME',
 				'null'			=> TRUE,
