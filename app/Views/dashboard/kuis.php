@@ -19,7 +19,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
     <div id="pertanyaan-<?= $i; ?>" class="pertanyaan">
       <form action="">
         <p><?= $q->pertanyaan; ?></p>
-        <div onclick="style='display: none; transition: 0.3s;'">
+        <div onclick="style='display: none; transition: 0.3s; content: haha'">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'a') {
                                                                                                     echo "true";
