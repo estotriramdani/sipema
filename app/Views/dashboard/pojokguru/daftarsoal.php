@@ -46,20 +46,20 @@ $daftarsoal = $db->query("SELECT * from `materis` where kode_materi='" . $_GET['
   <tbody>
     <?php $i = 1; ?>
     <?php foreach ($soal as $s) : ?>
-    <?php if($s->kode_materi == $_GET['kode_materi'] ) : ?>
-      <tr>
-        <td><?= $i; ?></td>
-        <td><?= $s->kode_materi . "/" . $s->id_soal; ?></td>
-        <td style="width: 40%;"><?= $s->pertanyaan; ?></td>
-        <td><?= $s->jawaban; ?></td>
-        <td>
-          <a href="editsoal/<?= $s->id_soal; ?>" class="btn btn-sm btn-success mb-2" style="width: 100%;">Ubah </a>
-          <form action=<?= base_url("soal/delete/$s->id_soal"); ?> class="d-inline">
-            <input type="submit" value="hapus" class="btn btn-sm btn-danger" style="width: 100%;">
-          </form>
-        </td>
-      </tr>
-      <?php $i++; ?>
+      <?php if ($s->kode_materi == $_GET['kode_materi']) : ?>
+        <tr>
+          <td><?= $i; ?></td>
+          <td><?= $s->kode_materi . "/" . $s->id_soal; ?></td>
+          <td style="width: 40%;"><?= $s->pertanyaan; ?></td>
+          <td><?= $s->jawaban; ?></td>
+          <td>
+            <a href="editsoal/<?= $s->id_soal; ?>" class="btn btn-sm btn-success mb-2" style="width: 100%;">Ubah </a>
+            <form action=<?= base_url("soal/delete/$s->id_soal"); ?> class="d-inline">
+              <input type="submit" value="hapus" class="btn btn-sm btn-danger" style="width: 100%;">
+            </form>
+          </td>
+        </tr>
+        <?php $i++; ?>
       <?php endif; ?>
     <?php endforeach; ?>
   </tbody>

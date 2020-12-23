@@ -333,7 +333,6 @@ class Dashboard extends BaseController
             'id_materi' => $materiedit->id_materi,
             'nama_materi' => $materiedit->nama_materi,
             'deskripsi' => $materiedit->deskripsi,
-            'judul_materi' => $materiedit->judul_materi,
             'isi_materi' => $materiedit->isi_materi,
             'soal' => $this->soal,
             'validation' => \Config\Services::validation()
@@ -356,8 +355,10 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'materi' => $this->materi,
-            'soal' => $this->soal
+            'soal' => $this->soal,
         ];
+
+
         return view('dashboard/pojokguru/daftarsoal', $data);
     }
 
@@ -379,6 +380,7 @@ class Dashboard extends BaseController
             'email' => $user->email,
             'alamat' => $user->alamat,
             'kode_soal' => $id_soal,
+            'kode_materi' => $soaledit->kode_materi,
             'pertanyaan' => $soaledit->pertanyaan,
             'pilihan_a' => $soaledit->pilihan_a,
             'pilihan_b' => $soaledit->pilihan_b,
