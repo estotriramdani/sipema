@@ -13,7 +13,7 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
 ?>
 
 <div id="question-wrapper">
-  <p style="font-size: 11px;">Soal bersifat berurut. Ketika jawaban dipilih maka jawaban akan menghilang dan jawaban akan tersimpan.</p>
+  <p style="font-size: 11px;">Soal bersifat berurut. Ketika jawaban dipilih maka opsi akan menghilang dan jawaban akan tersimpan.</p>
 
   <?php $i = 1; ?>
   <?php foreach ($quiz->getResult() as $q) : ?>
@@ -21,14 +21,18 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
       <form action="">
         <p><?= $q->pertanyaan; ?></p>
         <div onclick="style='display: none; transition: 0.3s; content: haha'">
-          <div class="form-check form-check-inline">
-            <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'a') {
-                                                                                                    echo "true";
-                                                                                                  } else {
-                                                                                                    echo "false";
-                                                                                                  } ?>" onclick="displayResult(this.value)">
-            <label class="form-check-label"  for="inlineRadio1"><?= $q->pilihan_a; ?></label>
+        <div class="row">
+          <div class="col-sm-3">
+            <div class="form-check form-check-inline">
+              <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'a') {
+                                                                                                      echo "true";
+                                                                                                    } else {
+                                                                                                      echo "false";
+                                                                                                    } ?>" onclick="displayResult(this.value)">
+              <label class="form-check-label"  for="inlineRadio1"><?= $q->pilihan_a; ?></label>
+            </div>
           </div>
+          <div class="col-sm-3">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'b') {
                                                                                                     echo "true";
@@ -37,6 +41,8 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
                                                                                                   } ?>" onclick="displayResult(this.value)">
             <label class="form-check-label" for="inlineRadio1"><?= $q->pilihan_b; ?></label>
           </div>
+          </div>
+          <div class="col-sm-3">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'c') {
                                                                                                     echo "true";
@@ -45,6 +51,8 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
                                                                                                   } ?>" onclick="displayResult(this.value)">
             <label class="form-check-label" for="inlineRadio1"><?= $q->pilihan_c; ?></label>
           </div>
+          </div>
+          <div class="col-sm-3">
           <div class="form-check form-check-inline">
             <input class="form-check-input" type="radio" name="jawaban" id="inlineRadio1" value="<?php if ($q->jawaban == 'd') {
                                                                                                     echo "true";
@@ -52,6 +60,8 @@ $quiz = $db->query("SELECT * from `soals` where kode_materi='" . $_GET['kode_mat
                                                                                                     echo "false";
                                                                                                   } ?>" onclick="displayResult(this.value)">
             <label class="form-check-label"><?= $q->pilihan_d; ?></label>
+          </div>
+          </div>
           </div>
         </div>
 
