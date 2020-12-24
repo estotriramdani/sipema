@@ -57,7 +57,7 @@
     <thead>
       <tr>
         <th scope="col">#</th>
-        <th scope="col">Email Siswa</th>
+        <th scope="col">NIS Siswa</th>
         <th scope="col">Kode Materi</th>
         <th scope="col">Nilai</th>
       </tr>
@@ -67,7 +67,7 @@
       <?php foreach ($tblnilai as $t) { ?>
         <tr>
           <th scope="row"><?= $i ?></th>
-          <td><?= $t->email ?></td>
+          <td><?= $t->kode_identitas ?></td>
           <td><?= $t->kode_materi ?></td>
           <td><?= $t->nilai ?></td>
         </tr>

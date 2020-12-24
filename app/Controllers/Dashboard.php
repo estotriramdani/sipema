@@ -79,6 +79,9 @@ class Dashboard extends BaseController
             $result = $query->getRow();
             $jumlahsoal = $result->total;
 
+            $query = $this->db->query("SELECT id_nilai, nilais.email, users.kode_identitas, kode_materi, nilai, nilais.created_at, nilais.updated_at from nilais left join users on nilais.email=users.email");
+            $nisnilai = $query->getResult();
+
             $data = [
                 'role' => $user->role_id,
                 'nama' => $user->nama,
@@ -94,7 +97,7 @@ class Dashboard extends BaseController
                 'soal' => $this->soal,
                 'jumlahmaterianda' => $jumlahmaterianda,
                 'jumlahsoal' => $jumlahsoal,
-                'tblnilai' => $this->tblnilai,
+                'tblnilai' => $nisnilai,
             ];
             return view('dashboard/index', $data);
         }
